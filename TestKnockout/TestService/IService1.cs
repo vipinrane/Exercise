@@ -29,21 +29,21 @@ namespace TestService
         //[WebGet(UriTemplate = "Book/{id}")]
         BookModel GetBookById(string id);
 
-        [OperationContract]
-        //[WebInvoke(UriTemplate = "AddBook/{name}")]
-        void AddBook(string name);
+        //[OperationContract]
+        ////[WebInvoke(UriTemplate = "AddBook/{name}")]
+        //void AddBook(string name);
 
-        [OperationContract]
-        //[WebInvoke(UriTemplate = "UpdateBook/{id}/{name}")]
-        void UpdateBook(string id, string name);
+        //[OperationContract]
+        ////[WebInvoke(UriTemplate = "UpdateBook/{id}/{name}")]
+        //void UpdateBook(string id, string name);
 
-        [OperationContract]
-        //[WebInvoke(UriTemplate = "DeleteBook/{id}")]
-        void DeleteBook(string id);
+        //[OperationContract]
+        ////[WebInvoke(UriTemplate = "DeleteBook/{id}")]
+        //void DeleteBook(string id);
 
-        [OperationContract]
-        //[WebGet(ResponseFormat = WebMessageFormat.Json)]
-        List<string> GetBooksNames();
+        //[OperationContract]
+        ////[WebGet(ResponseFormat = WebMessageFormat.Json)]
+        //List<string> GetBooksNames();
     }
 
 
