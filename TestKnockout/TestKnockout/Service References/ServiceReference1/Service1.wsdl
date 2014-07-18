@@ -4,22 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:54883/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:54883/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:54883/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TestService" />
-      <xsd:import schemaLocation="http://localhost:54883/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/KnockModel" />
+      <xsd:import schemaLocation="http://localhost:54883/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KnockModel" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GetBooksList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBooksList" />
   </wsdl:message>
@@ -33,14 +20,6 @@
     <wsdl:part name="parameters" element="tns:GetBookByIdResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetBooksList">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBooksList" message="tns:IService1_GetBooksList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBooksListResponse" message="tns:IService1_GetBooksList_OutputMessage" />

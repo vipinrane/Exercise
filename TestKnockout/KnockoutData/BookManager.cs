@@ -12,7 +12,7 @@ namespace KnockoutData
         public List<BookModel> GetBooksList()
         {
             List<BookModel> bookList = new List<BookModel>();
-            BookModel objBook = new BookModel();
+           
             try
             {
                 using (TestKnockoutMVCEntities entities = new TestKnockoutMVCEntities())
@@ -20,7 +20,8 @@ namespace KnockoutData
                     var books = entities.Books.ToList();
 
                     foreach (var item in books)
-                    {
+                    { 
+                        BookModel objBook = new BookModel();
                         objBook.ID = item.ID;
                         objBook.BookName = item.BookName;
                         bookList.Add(objBook);
