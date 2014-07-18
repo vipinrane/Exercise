@@ -1,0 +1,4 @@
+E:\Exercise\TestKnockout\KnockModel\bin\Debug\KnockModel.dll
+E:\Exercise\TestKnockout\KnockModel\bin\Debug\KnockModel.pdb
+E:\Exercise\TestKnockout\KnockModel\obj\Debug\KnockModel.dll
+E:\Exercise\TestKnockout\KnockModel\obj\Debug\KnockModel.pdb

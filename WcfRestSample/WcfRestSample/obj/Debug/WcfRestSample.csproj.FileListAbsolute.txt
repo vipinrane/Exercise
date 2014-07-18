@@ -1,0 +1,7 @@
+E:\Exercise\WcfRestSample\WcfRestSample\bin\WcfRestSample.dll
+E:\Exercise\WcfRestSample\WcfRestSample\bin\WcfRestSample.pdb
+E:\Exercise\WcfRestSample\WcfRestSample\bin\EntityFramework.dll
+E:\Exercise\WcfRestSample\WcfRestSample\bin\EntityFramework.xml
+E:\Exercise\WcfRestSample\WcfRestSample\obj\Debug\WcfRestSample.dll
+E:\Exercise\WcfRestSample\WcfRestSample\obj\Debug\WcfRestSample.pdb
+E:\Exercise\WcfRestSample\WcfRestSample\obj\Debug\WcfRestSample.csprojResolveAssemblyReference.cache
