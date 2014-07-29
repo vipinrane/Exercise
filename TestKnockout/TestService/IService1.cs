@@ -17,10 +17,12 @@ namespace TestService
         // TODO: Add your service operations here
         [OperationContract]
         //[WebGet]
+        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetBooksList")]
         List<BookModel> GetBooksList();
 
         [OperationContract]
-        //[WebGet(UriTemplate = "Book/{id}")]
+        //[WebGet]
+        //[WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "Book/{id}")]
         BookModel GetBookById(string id);
 
         //[OperationContract]

@@ -1,0 +1,10 @@
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\KnockoutData.dll.config
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\KnockoutData.dll
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\KnockoutData.pdb
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\EntityFramework.dll
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\KnockModel.dll
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\KnockModel.pdb
+E:\Exercise\TestKnockout\KnockoutData\bin\Release\EntityFramework.xml
+E:\Exercise\TestKnockout\KnockoutData\obj\Release\KnockoutData.csprojResolveAssemblyReference.cache
+E:\Exercise\TestKnockout\KnockoutData\obj\Release\KnockoutData.dll
+E:\Exercise\TestKnockout\KnockoutData\obj\Release\KnockoutData.pdb

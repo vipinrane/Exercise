@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Exercise\\TestKnockout\\TestService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Exercise\\TestKnockout\\TestService\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="TestKnockoutMVCEntities-Web.config Connection String" description="" value="metadata=res://*/BookData.csdl|res://*/BookData.ssdl|res://*/BookData.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=EZESTL-462;initial catalog=TestKnockoutMVC;user id=sa;password=sa@12345;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Exercise\\TestKnockout\\TestService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TestKnockoutMVCEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,6 @@
+E:\Exercise\TestIocDI\TestIocDI\bin\Debug\TestIocDI.exe.config
+E:\Exercise\TestIocDI\TestIocDI\bin\Debug\TestIocDI.exe
+E:\Exercise\TestIocDI\TestIocDI\bin\Debug\TestIocDI.pdb
+E:\Exercise\TestIocDI\TestIocDI\obj\Debug\TestIocDI.exe
+E:\Exercise\TestIocDI\TestIocDI\obj\Debug\TestIocDI.pdb
+E:\Exercise\TestIocDI\TestIocDI\obj\Debug\TestIocDI.csprojResolveAssemblyReference.cache

@@ -1,0 +1,11 @@
+E:\Exercise\TestKnockout\TestService\bin\TestService.dll
+E:\Exercise\TestKnockout\TestService\bin\TestService.pdb
+E:\Exercise\TestKnockout\TestService\bin\KnockModel.dll
+E:\Exercise\TestKnockout\TestService\bin\KnockoutData.dll
+E:\Exercise\TestKnockout\TestService\bin\EntityFramework.dll
+E:\Exercise\TestKnockout\TestService\bin\KnockModel.pdb
+E:\Exercise\TestKnockout\TestService\bin\KnockoutData.pdb
+E:\Exercise\TestKnockout\TestService\bin\EntityFramework.xml
+E:\Exercise\TestKnockout\TestService\obj\Release\TestService.csprojResolveAssemblyReference.cache
+E:\Exercise\TestKnockout\TestService\obj\Release\TestService.dll
+E:\Exercise\TestKnockout\TestService\obj\Release\TestService.pdb
