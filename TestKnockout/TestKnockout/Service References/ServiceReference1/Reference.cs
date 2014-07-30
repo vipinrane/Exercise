@@ -79,10 +79,10 @@ namespace TestKnockout.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBooksList", ReplyAction="http://tempuri.org/IService1/GetBooksListResponse")]
-        TestKnockout.ServiceReference1.BookModel[] GetBooksList();
+        System.Collections.Generic.List<TestKnockout.ServiceReference1.BookModel> GetBooksList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBooksList", ReplyAction="http://tempuri.org/IService1/GetBooksListResponse")]
-        System.Threading.Tasks.Task<TestKnockout.ServiceReference1.BookModel[]> GetBooksListAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<TestKnockout.ServiceReference1.BookModel>> GetBooksListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookById", ReplyAction="http://tempuri.org/IService1/GetBookByIdResponse")]
         TestKnockout.ServiceReference1.BookModel GetBookById(string id);
@@ -118,11 +118,11 @@ namespace TestKnockout.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public TestKnockout.ServiceReference1.BookModel[] GetBooksList() {
+        public System.Collections.Generic.List<TestKnockout.ServiceReference1.BookModel> GetBooksList() {
             return base.Channel.GetBooksList();
         }
         
-        public System.Threading.Tasks.Task<TestKnockout.ServiceReference1.BookModel[]> GetBooksListAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<TestKnockout.ServiceReference1.BookModel>> GetBooksListAsync() {
             return base.Channel.GetBooksListAsync();
         }
         

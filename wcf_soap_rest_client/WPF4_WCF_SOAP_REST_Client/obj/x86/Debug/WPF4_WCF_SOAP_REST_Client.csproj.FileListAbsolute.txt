@@ -1,0 +1,14 @@
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\bin\Debug\WPF4_WCF_SOAP_REST_Client.exe
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\bin\Debug\WPF4_WCF_SOAP_REST_Client.pdb
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\MainWindow.baml
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\MainWindow.g.cs
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\App.g.cs
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\WPF4_WCF_SOAP_REST_Client_MarkupCompile.cache
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\WPF4_WCF_SOAP_REST_Client.g.resources
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\WPF4_WCF_SOAP_REST_Client.Properties.Resources.resources
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\WPF4_WCF_SOAP_REST_Client.exe
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\obj\x86\Debug\WPF4_WCF_SOAP_REST_Client.pdb
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WPF4_WCF_SOAP_REST_Client\bin\Debug\WPF4_WCF_SOAP_REST_Client.exe.config

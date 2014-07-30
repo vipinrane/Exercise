@@ -1,0 +1,13 @@
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WCF_SOAP_REST_Service\obj\Debug\ResolveAssemblyReference.cache
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.dll
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.pdb
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.dll
+H:\Mahesh_Practice\DotNet40\RTM\WPF_40\WPF_Solutions_DevCurry\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.pdb
+E:\SampleCodes\wcf_soap_rest_client\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.dll
+E:\SampleCodes\wcf_soap_rest_client\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.pdb
+E:\SampleCodes\wcf_soap_rest_client\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.dll
+E:\SampleCodes\wcf_soap_rest_client\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.pdb
+E:\Exercise\wcf_soap_rest_client\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.dll
+E:\Exercise\wcf_soap_rest_client\WCF_SOAP_REST_Service\bin\WCF_SOAP_REST_Service.pdb
+E:\Exercise\wcf_soap_rest_client\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.dll
+E:\Exercise\wcf_soap_rest_client\WCF_SOAP_REST_Service\obj\Debug\WCF_SOAP_REST_Service.pdb

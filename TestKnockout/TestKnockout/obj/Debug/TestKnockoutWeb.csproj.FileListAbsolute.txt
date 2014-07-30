@@ -82,3 +82,4 @@ E:\Exercise\TestKnockout\TestKnockout\bin\zh-Hans\System.Spatial.resources.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\zh-Hant\System.Spatial.resources.dll
 E:\Exercise\TestKnockout\TestKnockout\obj\Debug\TestKnockout.dll
 E:\Exercise\TestKnockout\TestKnockout\obj\Debug\TestKnockout.pdb
+E:\Exercise\TestKnockout\TestKnockout\obj\Debug\TestKnockoutWeb.csprojResolveAssemblyReference.cache

@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WCF_SOAP_REST_Service.Service" 
+CodeBehind="Service.svc.cs" 
+ %>

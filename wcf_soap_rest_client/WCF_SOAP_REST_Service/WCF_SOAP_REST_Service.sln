@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF_SOAP_REST_Service", "WCF_SOAP_REST_Service.csproj", "{D922EAFA-9057-41D8-99E3-21799C5E699B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb1", "..\TestWeb1\TestWeb1.csproj", "{9FF54A1A-C086-439C-85BA-8EAD06832F70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D922EAFA-9057-41D8-99E3-21799C5E699B} = {D922EAFA-9057-41D8-99E3-21799C5E699B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D922EAFA-9057-41D8-99E3-21799C5E699B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D922EAFA-9057-41D8-99E3-21799C5E699B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D922EAFA-9057-41D8-99E3-21799C5E699B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D922EAFA-9057-41D8-99E3-21799C5E699B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF54A1A-C086-439C-85BA-8EAD06832F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF54A1A-C086-439C-85BA-8EAD06832F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF54A1A-C086-439C-85BA-8EAD06832F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF54A1A-C086-439C-85BA-8EAD06832F70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

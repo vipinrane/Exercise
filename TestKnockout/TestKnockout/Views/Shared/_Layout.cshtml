@@ -32,7 +32,10 @@
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
-                <ul><li>@Html.ActionLink("Books", "BookList", "Home")</li></ul>
+                <ul>
+                    <li>@Html.ActionLink("Books", "BookList", "Home")</li>
+                    <li>@Html.ActionLink("BookList Using REST call", "BookListUsingREST", "Home")</li>
+                </ul>
             </section>
         </div>
         <footer>

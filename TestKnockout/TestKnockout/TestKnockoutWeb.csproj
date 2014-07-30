@@ -329,7 +329,7 @@
     <None Include="Service References\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\ServiceReference1\TestKnockout.ServiceReference1.BookModel.datasource">
+    <Content Include="Service References\ServiceReference1\TestKnockout.ServiceReference1.BookModel1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
   </ItemGroup>
