@@ -1,0 +1,5 @@
+E:\Exercise\TestBarCodeScanner\TestStruct\bin\Debug\TestStruct.exe
+E:\Exercise\TestBarCodeScanner\TestStruct\bin\Debug\TestStruct.pdb
+E:\Exercise\TestBarCodeScanner\TestStruct\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestBarCodeScanner\TestStruct\obj\Debug\TestStruct.exe
+E:\Exercise\TestBarCodeScanner\TestStruct\obj\Debug\TestStruct.pdb

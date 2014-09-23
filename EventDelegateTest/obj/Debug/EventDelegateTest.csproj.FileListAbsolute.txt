@@ -1,0 +1,5 @@
+E:\Exercise\EventDelegateTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\EventDelegateTest\bin\Debug\EventDelegateTest.exe
+E:\Exercise\EventDelegateTest\bin\Debug\EventDelegateTest.pdb
+E:\Exercise\EventDelegateTest\obj\Debug\EventDelegateTest.exe
+E:\Exercise\EventDelegateTest\obj\Debug\EventDelegateTest.pdb

@@ -648,15 +648,17 @@ namespace SimpleScannerTest
                             }
                         }
                         break;
+
+                    case ISktScanProperty.values.notifications.kSktScanNotificationsPowerState:
                     case ISktScanProperty.propId.kSktScanPropIdPowerStateDevice:
                         if (SktScanErrors.SKTSUCCESS(result))
                         {
                             int powerState=ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ISktScanProperty.propId.kSktScanPropIdNotificationsDevice);
-
                             //switch (powerState)
                             //{
                             //    case ScanAPI.ISktScanProperty.values.powerStates
                             //}
+                            //ScanAPI.SktScan.helper.SKTBATTERY_GETCURLEVEL
                             selectedScanner.OriginalProperties.General.PowerState = powerState.ToString();
                         }
                         else
