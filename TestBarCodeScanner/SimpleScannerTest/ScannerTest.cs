@@ -320,7 +320,7 @@ namespace SimpleScannerTest
             _scanApiHelper.PostGetPostambleDevice(device, CommandContextCallback);
             count++;
 
-            _scanApiHelper.PostGetChangeIdDevice(device, CommandContextCallback);
+            _scanApiHelper.PostGetChangeId(device, CommandContextCallback);
             count++;
 
             _scanApiHelper.PostGetCapabilitiesDevice(device, CommandContextCallback);

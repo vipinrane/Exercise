@@ -993,12 +993,12 @@ namespace ScanApiHelper
         }
 
         /// <summary>
-        /// PostGetChangeIdDevice
+        /// PostGetChangeId
         /// retrives a Change ID of the device symbology configuration and the device preamble and postamble.
         /// </summary>
         /// <param name="device"></param>
         /// <param name="callback"></param>
-        public void PostGetChangeIdDevice(DeviceInfo device, ICommandContextCallback callback)
+        public void PostGetChangeId(DeviceInfo device, ICommandContextCallback callback)
         {
             ISktScanObject newScanObj = SktClassFactory.createScanObject();
             newScanObj.Property.ID = ISktScanProperty.propId.kSktScanPropIdChangeIdDevice;
