@@ -8,6 +8,7 @@ using System.Windows.Forms;
 namespace EventAndDelegateTest
 {
     public delegate void DelEventHandler();
+
     class Program : Form
     {
         public event DelEventHandler add;
@@ -27,10 +28,10 @@ namespace EventAndDelegateTest
             btn.Parent = this;
             btn.Text = "Click here to exit";
             btn.Location = new Point(100, 50);
-            btn.Click +=new EventHandler(OnExit_Click);
-            
-            
-            add +=new DelEventHandler(Initiate);//Event subscription
+            btn.Click += new EventHandler(OnExit_Click);
+
+
+            add += new DelEventHandler(Initiate);//Event subscription-Registration
             //invoke the event
             add();//call
 

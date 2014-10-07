@@ -57,8 +57,9 @@ namespace SimpleScannerTest
             InitializeComponent();
             lblStatus.Text = "Initializing...";
             _scanApiHelper = new ScanApiHelper.ScanApiHelper();
+            
+
             _scanApiHelper.SetNotification(this);
-            //_scanApiHelper.SetNotification(ScanAPI.ISktScanProperty.values.notifications.kSktScanNotificationsPowerState);
             _bInitialized = false;
             Load += new EventHandler(SingleEntry_Load);
 
@@ -230,7 +231,7 @@ namespace SimpleScannerTest
             lblBatteryLevelValue.Text = strPercent;
 
             lblBluetoothAddressValue.Text = SelectedScanner.OriginalProperties.General.BluetoothAddress;
-            lblPowerState.Text = SelectedScanner.OriginalProperties.General.PowerState;
+            lblPowerStateValue.Text = SelectedScanner.OriginalProperties.General.PowerState;
               
 //ChangeIdDevice
 //ConnectReasonDevice
@@ -248,10 +249,12 @@ namespace SimpleScannerTest
             if (_scanApiHelper.IsDeviceConnected())
             {
                 menuItem2_ReadProperties.Enabled = true;
+                btnGetStatisticCounters.Enabled = true;
             }
             else
             {
                 menuItem2_ReadProperties.Enabled = false;
+                btnGetStatisticCounters.Enabled = false;
             }
         }
 
@@ -404,6 +407,8 @@ namespace SimpleScannerTest
             SetModifiedProperties();
             SaveModifiedSettings();
             ReadGeneralPageControlStates();
+            int result = ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ScanAPI.ISktScanProperty.values.notifications.kSktScanNotificationsPowerState);////ScanAPI.ISktScanProperty.values.powerStates.
+
             //// start the ScannerProperty form asynchronously
             //BeginInvoke((MethodInvoker)delegate
             //{
@@ -690,7 +695,69 @@ namespace SimpleScannerTest
 
         #endregion
 
+        private void btnGetStatisticCounters_Click(object sender, EventArgs e)
+        {
+            _scanApiHelper.PostGetStatistics(connectedDevice, OnGetStatistics);
+        }
 
+        private void OnGetStatistics(long result, ISktScanObject scanObj)
+        {
+            if (scanObj.Property.Type == ISktScanProperty.types.kSktScanPropTypeArray)
+            {
+                int nArraySize = scanObj.Property.Array.Size;
+                // Should have a counter to string table, see ScanApi.PDF section 16.25
+                // Statitics table is a UInt16 count, followed by UInt32 pairs, Counter ID and Value
+                byte[] bArray = scanObj.Property.Array.Value;
+                int nValues = (bArray[0] << 8) + bArray[1];
+                string strStatValues = String.Format("Stat Values {0}(Counter:value):\n", nValues);
+                for (var i = 2; i < nArraySize - 8; i += 4)
+                {
+                    UInt32 Counter = (UInt32)(bArray[i] << 24) + (UInt32)(bArray[i + 1] << 16) + (UInt32)(bArray[i + 2] << 8) + (UInt32)bArray[i + 3];
+                    i += 4;
+                    UInt32 Value = (UInt32)(bArray[i] << 24) + (UInt32)(bArray[i + 1] << 16) + (UInt32)(bArray[i + 2] << 8) + (UInt32)bArray[i + 3];
+                    strStatValues += String.Format("{0}: {1}\n ", getStatisticCountID()[(int)Counter], Value);
+                }
+                MessageBox.Show(strStatValues,"Statistic Counters");
+            }
+        }
+
+        private string[] getStatisticCountID()
+        {
+            return new string[]
+              {
+				    "Unknown",
+				    "Connect",
+				    "Disconnect",
+				    "Unbond",
+				    "FactoryReset",
+				    "Scans",
+				    "ScanButtonUp",
+				    "ScanButtonDown",
+				    "PowerButtonUp",
+				    "PowerButtonDown",
+				    "PowerOnACTimeInMinutes",
+				    "PowerOnBatTimeInMinutes",
+				    "RfcommSend",
+				    "RfcommReceive",
+				    "RfcommReceiveDiscarded",
+				    "UartSend",
+				    "UartReceive",
+				    "UartReceiveDiscarded",
+	                "ButtonLeftPress",
+	                "ButtonLeftRelease",
+	                "ButtonRightPress",
+	                "ButtonRightRelease",
+	                "RingUnitDetachEvents",
+	                "RingUnitAttachEvents",
+                    "DecodedBytes",
+	                "AbnormalShutdowns",
+	                "BatteryChargeCycles",
+	                "BatteryChangeCount",
+                    "PowerOnCount",
+                    "PowerOffCount",
+                    "StandModeChanges"
+              };
+        }
 
 
 

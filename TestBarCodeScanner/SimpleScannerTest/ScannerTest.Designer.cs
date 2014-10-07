@@ -48,7 +48,6 @@
             this.lblStatisticCounterOfDevice = new System.Windows.Forms.Label();
             this.lblScannerType = new System.Windows.Forms.Label();
             this.lblScannerTypeValue = new System.Windows.Forms.Label();
-            this.lblStatisticCounterValue = new System.Windows.Forms.Label();
             this.lblBatteryLevel = new System.Windows.Forms.Label();
             this.pbBattery = new System.Windows.Forms.ProgressBar();
             this.lblBatteryLevelValue = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.lblFirmwareVersionValue = new System.Windows.Forms.Label();
             this.lblPowerState = new System.Windows.Forms.Label();
             this.lblPowerStateValue = new System.Windows.Forms.Label();
+            this.btnGetStatisticCounters = new System.Windows.Forms.Button();
             menuItem_GeneralControlStates = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
@@ -192,13 +192,6 @@
             this.lblScannerTypeValue.Size = new System.Drawing.Size(100, 20);
             this.lblScannerTypeValue.Text = "ScannerType";
             // 
-            // lblStatisticCounterValue
-            // 
-            this.lblStatisticCounterValue.Location = new System.Drawing.Point(114, 267);
-            this.lblStatisticCounterValue.Name = "lblStatisticCounterValue";
-            this.lblStatisticCounterValue.Size = new System.Drawing.Size(100, 20);
-            this.lblStatisticCounterValue.Text = "Statistic Counter";
-            // 
             // lblBatteryLevel
             // 
             this.lblBatteryLevel.Location = new System.Drawing.Point(8, 287);
@@ -249,12 +242,24 @@
             this.lblPowerStateValue.Size = new System.Drawing.Size(100, 20);
             this.lblPowerStateValue.Text = "PowerState";
             // 
+            // btnGetStatisticCounters
+            // 
+            this.btnGetStatisticCounters.Enabled = false;
+            this.btnGetStatisticCounters.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
+            this.btnGetStatisticCounters.Location = new System.Drawing.Point(114, 264);
+            this.btnGetStatisticCounters.Name = "btnGetStatisticCounters";
+            this.btnGetStatisticCounters.Size = new System.Drawing.Size(95, 20);
+            this.btnGetStatisticCounters.TabIndex = 18;
+            this.btnGetStatisticCounters.Text = "Get Statistic Counters";
+            this.btnGetStatisticCounters.Click += new System.EventHandler(this.btnGetStatisticCounters_Click);
+            // 
             // ScannerTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 450);
+            this.Controls.Add(this.btnGetStatisticCounters);
             this.Controls.Add(this.lblPowerStateValue);
             this.Controls.Add(this.lblPowerState);
             this.Controls.Add(this.lblFirmwareVersionValue);
@@ -262,7 +267,6 @@
             this.Controls.Add(this.lblBatteryLevelValue);
             this.Controls.Add(this.pbBattery);
             this.Controls.Add(this.lblBatteryLevel);
-            this.Controls.Add(this.lblStatisticCounterValue);
             this.Controls.Add(this.lblScannerTypeValue);
             this.Controls.Add(this.lblScannerType);
             this.Controls.Add(this.lblStatisticCounterOfDevice);
@@ -305,7 +309,6 @@
         private System.Windows.Forms.Label lblStatisticCounterOfDevice;
         private System.Windows.Forms.Label lblScannerType;
         private System.Windows.Forms.Label lblScannerTypeValue;
-        private System.Windows.Forms.Label lblStatisticCounterValue;
         private System.Windows.Forms.Label lblBatteryLevel;
         private System.Windows.Forms.ProgressBar pbBattery;
         private System.Windows.Forms.Label lblBatteryLevelValue;
@@ -313,6 +316,7 @@
         private System.Windows.Forms.Label lblFirmwareVersionValue;
         private System.Windows.Forms.Label lblPowerState;
         private System.Windows.Forms.Label lblPowerStateValue;
+        private System.Windows.Forms.Button btnGetStatisticCounters;
     }
 }
 

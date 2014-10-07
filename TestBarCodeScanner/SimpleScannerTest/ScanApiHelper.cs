@@ -975,6 +975,22 @@ namespace ScanApiHelper
             CommandContext command = new CommandContext(false, newScanObj, device.SktScanDevice, null, callback);
             AddCommand(command);
         }
+        /**
+         * PostGetStatistics
+         * 
+         * Retrieve the statistics values from the scanner
+         * @param device
+         * @param suffix
+         */
+        public void PostGetStatistics(DeviceInfo device, ICommandContextCallback callback)
+        {
+            ISktScanObject newScanObj = SktClassFactory.createScanObject();
+            newScanObj.Property.ID = ISktScanProperty.propId.kSktScanPropIdStatisticCountersDevice;
+            newScanObj.Property.Type = ISktScanProperty.types.kSktScanPropTypeNone;
+
+            CommandContext command = new CommandContext(true, newScanObj, device.SktScanDevice, null, callback);
+            AddCommand(command);
+        }
 
         /**
          * PostScanApiAbort
@@ -1147,6 +1163,11 @@ namespace ScanApiHelper
 			    }
 			    break;
 		    case ISktScanEvent.id.kSktScanEventPower:
+                ISktScanEvent asynchronousEvent = scanObject.Msg.Event;
+                if (asynchronousEvent.DataType == ISktScanEvent.types.kSktScanEventDataTypeUlong)
+                {
+                    DisplayPowerState(asynchronousEvent.DataLong);
+                }
 			    break;
 		    case ISktScanEvent.id.kSktScanEventButtons:
 			    break;
@@ -1297,6 +1318,33 @@ namespace ScanApiHelper
                 if (_notification!=null)
                     _notification.OnScanApiTerminated();
             }
+        }
+
+        public string DisplayPowerState(long ulPowerState)
+        {
+            string powerState = string.Empty;
+            int nState = SktScan.helper.SKTPOWER_GETSTATE((int)ulPowerState);
+            if ((nState & ISktScanProperty.values.powerStates.kSktScanPowerStatusOnBattery) ==
+                ISktScanProperty.values.powerStates.kSktScanPowerStatusOnBattery)
+            {
+                powerState = "On Battery ";
+            }
+            if ((nState & ISktScanProperty.values.powerStates.kSktScanPowerStatusOnCradle) ==
+                ISktScanProperty.values.powerStates.kSktScanPowerStatusOnCradle)
+            {
+                powerState = "On Cradle ";
+            }
+            if ((nState & ISktScanProperty.values.powerStates.kSktScanPowerStatusOnAc) ==
+                ISktScanProperty.values.powerStates.kSktScanPowerStatusOnAc)
+            {
+                powerState = "On AC ";
+            }
+            if (nState == ISktScanProperty.values.powerStates.kSktScanPowerStatusUnknown)
+            {
+                powerState = "Unknown state ";
+            }
+
+            return powerState;
         }
     }
 

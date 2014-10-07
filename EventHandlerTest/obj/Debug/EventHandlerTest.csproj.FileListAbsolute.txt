@@ -1,0 +1,8 @@
+E:\Exercise\EventHandlerTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\EventHandlerTest\obj\Debug\EventHandlerTest.Form1.resources
+E:\Exercise\EventHandlerTest\obj\Debug\EventHandlerTest.Properties.Resources.resources
+E:\Exercise\EventHandlerTest\obj\Debug\EventHandlerTest.csproj.GenerateResource.Cache
+E:\Exercise\EventHandlerTest\bin\Debug\EventHandlerTest.exe
+E:\Exercise\EventHandlerTest\bin\Debug\EventHandlerTest.pdb
+E:\Exercise\EventHandlerTest\obj\Debug\EventHandlerTest.exe
+E:\Exercise\EventHandlerTest\obj\Debug\EventHandlerTest.pdb
