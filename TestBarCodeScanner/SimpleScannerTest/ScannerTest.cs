@@ -232,11 +232,12 @@ namespace SimpleScannerTest
 
             lblBluetoothAddressValue.Text = SelectedScanner.OriginalProperties.General.BluetoothAddress;
             lblPowerStateValue.Text = SelectedScanner.OriginalProperties.General.PowerState;
+            lblChangeIdValue.Text = SelectedScanner.OriginalProperties.General.ChangeId.ToString();
               
 //ChangeIdDevice
-//ConnectReasonDevice
-//StatisticCountersDevice
-//PowerStateDevice
+//ConnectReasonDevice - Not supported
+
+//PowerStateDevice - Not supported
 
             return;
         }
@@ -319,6 +320,9 @@ namespace SimpleScannerTest
             _scanApiHelper.PostGetPostambleDevice(device, CommandContextCallback);
             count++;
 
+            _scanApiHelper.PostGetChangeIdDevice(device, CommandContextCallback);
+            count++;
+
             _scanApiHelper.PostGetCapabilitiesDevice(device, CommandContextCallback);
             count++;
 
@@ -356,6 +360,13 @@ namespace SimpleScannerTest
                     SelectedScanner.ModifiedProperties.General.FriendlyName, CommandContextCallback);
                 count++;
             }
+
+            if (SelectedScanner.OriginalProperties.General.ChangeId.CompareTo(
+                SelectedScanner.ModifiedProperties.General.ChangeId) != 0)
+            {
+                SelectedScanner.OriginalProperties.General.ChangeId = SelectedScanner.ModifiedProperties.General.ChangeId;
+            }
+
 
             // check if the Local Decode Action has to be modified
             if (SelectedScanner.OriginalProperties.Configuration.ScanConfirmation !=
@@ -673,6 +684,21 @@ namespace SimpleScannerTest
                             StopRetrievingPropertiesAndDisplayError("Failed to retrieve the Power State Level: " + result);
                         }
                         break;
+                    case ISktScanProperty.propId.kSktScanPropIdChangeIdDevice:
+                        if (scanObj.Msg.ID == ISktScanMsg.kSktScanMsgGetComplete)
+                        {
+                            if (SktScanErrors.SKTSUCCESS(result))
+                            {
+                                selectedScanner.OriginalProperties.General.ChangeId = scanObj.Property.Ulong;
+                            }
+                            else
+                            {
+                                // unable to get the Bluetooth address even after multiple retries
+                                // by ScanAPI Helper
+                                StopRetrievingPropertiesAndDisplayError("Failed to retrieve the Change ID: " + result);
+                            }
+                        }
+                        break;
                 }
             }
         }
@@ -799,6 +825,7 @@ namespace SimpleScannerTest
         public String FirmwareVersion { get; set; }
         public int BatteryLevel { get; set; }
         public String PowerState { get; set; }
+        public int ChangeId { get; set; }
     }
 
     public class ConfigurationProperties

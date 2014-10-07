@@ -56,6 +56,8 @@
             this.lblPowerState = new System.Windows.Forms.Label();
             this.lblPowerStateValue = new System.Windows.Forms.Label();
             this.btnGetStatisticCounters = new System.Windows.Forms.Button();
+            this.lblChangeId = new System.Windows.Forms.Label();
+            this.lblChangeIdValue = new System.Windows.Forms.Label();
             menuItem_GeneralControlStates = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
@@ -253,12 +255,28 @@
             this.btnGetStatisticCounters.Text = "Get Statistic Counters";
             this.btnGetStatisticCounters.Click += new System.EventHandler(this.btnGetStatisticCounters_Click);
             // 
+            // lblChangeId
+            // 
+            this.lblChangeId.Location = new System.Drawing.Point(8, 349);
+            this.lblChangeId.Name = "lblChangeId";
+            this.lblChangeId.Size = new System.Drawing.Size(100, 20);
+            this.lblChangeId.Text = "ChangeId:";
+            // 
+            // lblChangeIdValue
+            // 
+            this.lblChangeIdValue.Location = new System.Drawing.Point(114, 349);
+            this.lblChangeIdValue.Name = "lblChangeIdValue";
+            this.lblChangeIdValue.Size = new System.Drawing.Size(100, 20);
+            this.lblChangeIdValue.Text = "ChangeIdValue";
+            // 
             // ScannerTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 450);
+            this.Controls.Add(this.lblChangeIdValue);
+            this.Controls.Add(this.lblChangeId);
             this.Controls.Add(this.btnGetStatisticCounters);
             this.Controls.Add(this.lblPowerStateValue);
             this.Controls.Add(this.lblPowerState);
@@ -317,6 +335,8 @@
         private System.Windows.Forms.Label lblPowerState;
         private System.Windows.Forms.Label lblPowerStateValue;
         private System.Windows.Forms.Button btnGetStatisticCounters;
+        private System.Windows.Forms.Label lblChangeId;
+        private System.Windows.Forms.Label lblChangeIdValue;
     }
 }
 
