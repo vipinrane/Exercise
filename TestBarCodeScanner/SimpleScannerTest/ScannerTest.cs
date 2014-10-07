@@ -12,7 +12,6 @@ namespace SimpleScannerTest
         private ScanApiHelper.ScanApiHelper _scanApiHelper;
         private ScanApiHelper.DeviceInfo connectedDevice;
         private bool _bInitialized;
-        private ScannerTest.ScannerRecord Scanner { get; set; }
         private delegate void MethodInvoker();
 
         // for the Scan Test window to receive the decoded data
