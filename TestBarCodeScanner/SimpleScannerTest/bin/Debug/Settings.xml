@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="DataConfirmationMode" value="Device" />
+    <add key="PreambleDevice" value="pp" />
+    <add key="PostambleDevice" value="pp" />
+    <add key="SecurityModeDevice" value="None" />
+    <add key="SoundConfigDevice" value="0 0078" />
+    <add key="TimersDevice" value="0 0 0" />
+    <add key="LocalAcknowledgmentDevice" value="enable" />
+    <add key="LocalDecodeActionDevice" value="beep+flash+rumble" />
+    <add key="RumbleConfigDevice" value="0 0 10 10" />
+    <add key="DataStoreDevice" value="1 10 78" />
+    <add key="NotificationsDevice" value="scanPress+scanRelease+powerPress+powerRelease+powerState+batteryLevel" />
+    <add key="ConnectionBeepConfigDevice" value="on" />
+  </appSettings>
+</configuration>

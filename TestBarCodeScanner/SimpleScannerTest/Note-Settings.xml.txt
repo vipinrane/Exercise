@@ -1,0 +1,37 @@
+﻿
+    <!--kSktScanPropIdDataConfirmationMode Off/Device/ScanAPI/App -->
+    <add key="DataConfirmationMode" value="Device" />
+
+    <!--kSktScanPropIdPreambleDevice \"pp\" -->
+    <add key="PreambleDevice" value="pp" />
+
+    <!--kSktScanPropIdPostambleDevice \"pp\"-->
+    <add key="PostambleDevice" value="pp" />
+    
+    <!--kSktScanPropIdSecurityModeDevice [None|Authentication|AuthenticationEncryption|WrongPara] -->
+    <add key="SecurityModeDevice" value="None" />
+    
+    <!-- kSktScanPropIdSoundConfigDevice [0|1|2|3] [NbTones] [Freq Tone1] [Duration Tone1] [Pause Tone1] -->
+    <add key="SoundConfigDevice" value="0 0078" />
+
+    <!-- kSktScanPropIdTimersDevice [LockOut+Disconnected+Connected] [Trigger Lock out] [DisconnectedTimeout] [ConnectedTimeout]-->
+    <add key="TimersDevice" value="0 0 0" />
+    
+    <!-- kSktScanPropIdLocalAcknowledgmentDevice [enable|disable] -->
+    <add key="LocalAcknowledgmentDevice" value="enable" />
+    
+    <!-- kSktScanPropIdLocalDecodeActionDevice <none|beep+flash+rumble> -->
+    <add key="LocalDecodeActionDevice" value="beep+flash+rumble" />
+
+    <!-- kSktScanPropIdRumbleConfigDevice [0|1|2|3] [NbRumbles] [On Duration] [Off Duration] -->
+    <add key="RumbleConfigDevice" value="0 0 10 10" />
+    
+    <!-- kSktScanPropIdDataStoreDevice [0..15][Length][Value in hexa]-->
+    <add key="DataStoreDevice" value="1 10 78" />
+    
+    <!-- kSktScanPropIdNotificationsDevice scanPress+scanRelease+powerPress+powerRelease+powerState+batteryLevel or None -->
+    <add key="NotificationsDevice" value="scanPress+scanRelease+powerPress+powerRelease+powerState+batteryLevel" />
+    
+    <!-- kSktScanPropIdConnectionBeepConfigDevice [off|on] -->
+    <add key="ConnectionBeepConfigDevice" value="on" />
+    

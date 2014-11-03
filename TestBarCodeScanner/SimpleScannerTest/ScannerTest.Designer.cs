@@ -58,6 +58,8 @@
             this.btnGetStatisticCounters = new System.Windows.Forms.Button();
             this.lblChangeId = new System.Windows.Forms.Label();
             this.lblChangeIdValue = new System.Windows.Forms.Label();
+            this.btnReadConfigProperties = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             menuItem_GeneralControlStates = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
@@ -269,12 +271,31 @@
             this.lblChangeIdValue.Size = new System.Drawing.Size(100, 20);
             this.lblChangeIdValue.Text = "ChangeIdValue";
             // 
+            // btnReadConfigProperties
+            // 
+            this.btnReadConfigProperties.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
+            this.btnReadConfigProperties.Location = new System.Drawing.Point(126, 112);
+            this.btnReadConfigProperties.Name = "btnReadConfigProperties";
+            this.btnReadConfigProperties.Size = new System.Drawing.Size(114, 20);
+            this.btnReadConfigProperties.TabIndex = 37;
+            this.btnReadConfigProperties.Text = "Read Config Properties";
+            this.btnReadConfigProperties.Click += new System.EventHandler(this.btnReadConfigProperties_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Location = new System.Drawing.Point(109, 38);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(131, 58);
+            this.listBox1.TabIndex = 78;
+            // 
             // ScannerTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 450);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnReadConfigProperties);
             this.Controls.Add(this.lblChangeIdValue);
             this.Controls.Add(this.lblChangeId);
             this.Controls.Add(this.btnGetStatisticCounters);
@@ -337,6 +358,8 @@
         private System.Windows.Forms.Button btnGetStatisticCounters;
         private System.Windows.Forms.Label lblChangeId;
         private System.Windows.Forms.Label lblChangeIdValue;
+        private System.Windows.Forms.Button btnReadConfigProperties;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

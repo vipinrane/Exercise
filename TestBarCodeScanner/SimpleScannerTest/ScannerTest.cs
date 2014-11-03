@@ -5,7 +5,7 @@ using ScanAPI;
 
 namespace SimpleScannerTest
 {
-    public partial class ScannerTest :  Form, ScanApiHelper.ScanApiHelper.ScanApiHelperNotification
+    public partial class ScannerTest : Form, ScanApiHelper.ScanApiHelper.ScanApiHelperNotification
     {
         private const int SCANAPI_TIMER_PERIOD = 100;		// milliseconds
 
@@ -56,8 +56,6 @@ namespace SimpleScannerTest
             InitializeComponent();
             lblStatus.Text = "Initializing...";
             _scanApiHelper = new ScanApiHelper.ScanApiHelper();
-            
-
             _scanApiHelper.SetNotification(this);
             _bInitialized = false;
             Load += new EventHandler(SingleEntry_Load);
@@ -80,7 +78,7 @@ namespace SimpleScannerTest
             timerScanners.Enabled = true;
             //timerScanners.Start();
         }
-        
+
         // ScanAPI Helper provides a series of Callbacks
         // indicating some asynchronous events has occured
         #region ScanApiHelperNotification Members
@@ -96,7 +94,7 @@ namespace SimpleScannerTest
             else
             {
                 string strMsg = String.Format("Unable to open scanner, error = %d.", result);
-                MessageBox.Show(strMsg, "SingleEntry", MessageBoxButtons.OK, MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button1);
+                MessageBox.Show(strMsg, "SingleEntry", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
 
             SetReadPropertyMenuItem();
@@ -126,7 +124,7 @@ namespace SimpleScannerTest
         // (ScanAPI has some internal testing that might take
         // few seconds to complete)
         public void OnScanApiInitializeComplete(long result)
-        {            
+        {
             if (SktScanErrors.SKTSUCCESS(result))
             {
                 _bInitialized = true;
@@ -203,7 +201,7 @@ namespace SimpleScannerTest
         private void menuItem_GeneralControlStates_Click(object sender, EventArgs e)
         {
             ReadProperties();
-            
+
         }
 
         private void menuItem_ConfigurationStates_Click(object sender, EventArgs e)
@@ -220,7 +218,7 @@ namespace SimpleScannerTest
             lblFirmwareVersionValue.Text = SelectedScanner.OriginalProperties.General.FirmwareVersion;
             lblScannerTypeValue.Text = SelectedScanner.OriginalProperties.General.ScannerType;
             lblFriendlyNameValue.Text = SelectedScanner.OriginalProperties.General.FriendlyName;
-            
+
             pbBattery.Minimum = SktScan.helper.SKTBATTERY_GETMINLEVEL((long)SelectedScanner.OriginalProperties.General.BatteryLevel);
             pbBattery.Maximum = SktScan.helper.SKTBATTERY_GETMAXLEVEL((long)SelectedScanner.OriginalProperties.General.BatteryLevel);
             pbBattery.Value = SktScan.helper.SKTBATTERY_GETCURLEVEL((long)SelectedScanner.OriginalProperties.General.BatteryLevel);
@@ -232,11 +230,11 @@ namespace SimpleScannerTest
             lblBluetoothAddressValue.Text = SelectedScanner.OriginalProperties.General.BluetoothAddress;
             lblPowerStateValue.Text = SelectedScanner.OriginalProperties.General.PowerState;
             lblChangeIdValue.Text = SelectedScanner.OriginalProperties.General.ChangeId.ToString();
-              
-//ChangeIdDevice
-//ConnectReasonDevice - Not supported
 
-//PowerStateDevice - Not supported
+            //ChangeIdDevice
+            //ConnectReasonDevice - Not supported
+
+            //PowerStateDevice - Not supported
 
             return;
         }
@@ -270,7 +268,7 @@ namespace SimpleScannerTest
             }
         }
 
-       
+
         // RequestAllSettings
         //
         // "All settings" refers to all of the properties in the scanner that this GUI program is interested in:
@@ -417,7 +415,6 @@ namespace SimpleScannerTest
             SetModifiedProperties();
             SaveModifiedSettings();
             ReadGeneralPageControlStates();
-            int result = ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ScanAPI.ISktScanProperty.values.notifications.kSktScanNotificationsPowerState);////ScanAPI.ISktScanProperty.values.powerStates.
 
             //// start the ScannerProperty form asynchronously
             //BeginInvoke((MethodInvoker)delegate
@@ -668,7 +665,7 @@ namespace SimpleScannerTest
                     case ISktScanProperty.propId.kSktScanPropIdPowerStateDevice:
                         if (SktScanErrors.SKTSUCCESS(result))
                         {
-                            int powerState=ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ISktScanProperty.propId.kSktScanPropIdNotificationsDevice);
+                            int powerState = ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ISktScanProperty.propId.kSktScanPropIdNotificationsDevice);
                             //switch (powerState)
                             //{
                             //    case ScanAPI.ISktScanProperty.values.powerStates
@@ -742,7 +739,7 @@ namespace SimpleScannerTest
                     UInt32 Value = (UInt32)(bArray[i] << 24) + (UInt32)(bArray[i + 1] << 16) + (UInt32)(bArray[i + 2] << 8) + (UInt32)bArray[i + 3];
                     strStatValues += String.Format("{0}: {1}\n ", getStatisticCountID()[(int)Counter], Value);
                 }
-                MessageBox.Show(strStatValues,"Statistic Counters");
+                MessageBox.Show(strStatValues, "Statistic Counters");
             }
         }
 
@@ -784,6 +781,23 @@ namespace SimpleScannerTest
               };
         }
 
+        private void btnReadConfigProperties_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox1.Items.Add("DataConfirmationMode=" + Settings.DataConfirmationMode);
+            listBox1.Items.Add("PreambleDevice=" + Settings.PreambleDevice);
+            listBox1.Items.Add("PostambleDevice=" + Settings.PostambleDevice);
+            listBox1.Items.Add("SecurityModeDevice=" + Settings.SecurityModeDevice);
+            listBox1.Items.Add("SoundConfigDevice=" + Settings.SoundConfigDevice);
+            listBox1.Items.Add("TimersDevice=" + Settings.TimersDevice);
+            listBox1.Items.Add("LocalAcknowledgmentDevice=" + Settings.LocalAcknowledgmentDevice);
+            listBox1.Items.Add("LocalDecodeActionDevice=" + Settings.LocalDecodeActionDevice);
+            listBox1.Items.Add("RumbleConfigDevice=" + Settings.RumbleConfigDevice);
+            listBox1.Items.Add("DataStoreDevice=" + Settings.DataStoreDevice);
+            listBox1.Items.Add("NotificationsDevice=" + Settings.NotificationsDevice);
+            listBox1.Items.Add("ConnectionBeepConfigDevice=" + Settings.ConnectionBeepConfigDevice);
+        }
+
 
 
         #region Scanner Property
@@ -798,7 +812,7 @@ namespace SimpleScannerTest
         //            Close();
         //    }
         //}
-      
+
         #endregion
 
     }

@@ -9,7 +9,6 @@ E:\Projects\EndirePro\TestProjects\SimpleScannerTest\obj\Debug\SimpleScannerTest
 E:\Projects\EndirePro\TestProjects\SimpleScannerTest\obj\Debug\SimpleScannerTest.exe
 E:\Projects\EndirePro\TestProjects\SimpleScannerTest\obj\Debug\SimpleScannerTest.pdb
 E:\Projects\EndirePro\TestProjects\SimpleScannerTest\obj\Debug\SimpleScannerTest.ProgressBar.resources
-E:\Exercise\TestBarCodeScanner\SimpleScannerTest\bin\Debug\ScanAPIDLLWM.dll
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\bin\Debug\SimpleScannerTest.exe
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\bin\Debug\SimpleScannerTest.pdb
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\obj\Debug\ResolveAssemblyReference.cache
@@ -19,3 +18,4 @@ E:\Exercise\TestBarCodeScanner\SimpleScannerTest\obj\Debug\SimpleScannerTest.Sca
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\obj\Debug\SimpleScannerTest.csproj.GenerateResource.Cache
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\obj\Debug\SimpleScannerTest.exe
 E:\Exercise\TestBarCodeScanner\SimpleScannerTest\obj\Debug\SimpleScannerTest.pdb
+E:\Exercise\TestBarCodeScanner\SimpleScannerTest\bin\Debug\Settings.xml

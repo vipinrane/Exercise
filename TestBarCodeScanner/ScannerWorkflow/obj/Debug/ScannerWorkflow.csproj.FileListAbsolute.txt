@@ -1,0 +1,5 @@
+E:\Exercise\TestBarCodeScanner\ScannerWorkflow\bin\Debug\ScannerWorkflow.exe
+E:\Exercise\TestBarCodeScanner\ScannerWorkflow\bin\Debug\ScannerWorkflow.pdb
+E:\Exercise\TestBarCodeScanner\ScannerWorkflow\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestBarCodeScanner\ScannerWorkflow\obj\Debug\ScannerWorkflow.exe
+E:\Exercise\TestBarCodeScanner\ScannerWorkflow\obj\Debug\ScannerWorkflow.pdb

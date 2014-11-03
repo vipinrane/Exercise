@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <ScannerP name="DataConfirmationMode">
+    <param name="OffMode" value="Off" ></param>
+    <param name="DeviceMode" value="Device"></param>
+    <param name="ScanAPIMode" value="ScanAPI"></param>
+    <param name="AppMode" value="App"></param>
+  </ScannerP>
+</root>

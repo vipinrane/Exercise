@@ -14,12 +14,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_14C9516562914C0F986B6A1F1CE060DF"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_20FDEB2B3D61BD10E491B8911F615EBD"
         "OwnerKey" = "8:_80F3D22F157696A9D148F0DEB52F9779"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,6 +21,12 @@
         "Entry"
         {
         "MsmKey" = "8:_20FDEB2B3D61BD10E491B8911F615EBD"
+        "OwnerKey" = "8:_8FB287667B7544698CB9C0EB872E0085"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_277426630D36E2B73EC6235EA777D92C"
         "OwnerKey" = "8:_8FB287667B7544698CB9C0EB872E0085"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -98,12 +98,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8D94DB060716D9B306439D44A8451A2D"
-        "OwnerKey" = "8:_8FB287667B7544698CB9C0EB872E0085"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8FB287667B7544698CB9C0EB872E0085"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -141,7 +135,7 @@
         "Entry"
         {
         "MsmKey" = "8:_CE37220D8BCCB04A3EE6D44923AC0814"
-        "OwnerKey" = "8:_8D94DB060716D9B306439D44A8451A2D"
+        "OwnerKey" = "8:_277426630D36E2B73EC6235EA777D92C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -224,24 +218,6 @@
     {
         "File"
         {
-            "{BA458234-9B71-4F46-8107-E91156377184}:_14C9516562914C0F986B6A1F1CE060DF"
-            {
-            "SourcePath" = "8:..\\SimpleScannerTest\\bin\\Debug\\ScanAPIDLLWM.dll"
-            "TargetName" = "8:ScanAPIDLLWM.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_B5227FC22EA14B718722E659D43862DA"
-            "Condition" = "8:"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "Register" = "3:0"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_20FDEB2B3D61BD10E491B8911F615EBD"
             {
             "AssemblyIsInGAC" = "11:FALSE"
@@ -267,6 +243,34 @@
             "SharedLegacy" = "11:FALSE"
             "Register" = "3:0"
             "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_277426630D36E2B73EC6235EA777D92C"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ScanAPIManagedWM, Version=10.0.0.0, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_277426630D36E2B73EC6235EA777D92C"
+                    {
+                    "Name" = "8:ScanAPIManagedWM.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ScanAPIManagedWM.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B5227FC22EA14B718722E659D43862DA"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -407,34 +411,6 @@
             "SharedLegacy" = "11:FALSE"
             "Register" = "3:0"
             "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_8D94DB060716D9B306439D44A8451A2D"
-            {
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ScanAPIManagedWM, Version=10.0.0.0, Culture=neutral"
-                "ScatterAssemblies"
-                {
-                    "_8D94DB060716D9B306439D44A8451A2D"
-                    {
-                    "Name" = "8:ScanAPIManagedWM.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ScanAPIManagedWM.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B5227FC22EA14B718722E659D43862DA"
-            "Condition" = "8:"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "Register" = "3:0"
-            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }

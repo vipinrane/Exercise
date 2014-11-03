@@ -1,0 +1,6 @@
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.Form1.resources
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.frmMain.resources
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.Properties.Resources.resources
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.TestSettingsUsingConfig.resources
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.csproj.GenerateResource.Cache
