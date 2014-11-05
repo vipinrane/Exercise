@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ServerIP" value="192.168.5.22" />
+    <add key="UserName" value="testuser" />
+    <add key="Password" value="jdhs822@@*" />
+    <add key="PhoneNumber" value="5555555555" />
+    <add key="TimeOut" value="60" />
+    <add key="LastTransmit" value="03/03/2004 9:12:33 PM" />
+    <add key="DatabasePath" value="\Program Files\DB\test.sdf" />
+  </appSettings>
+</configuration>

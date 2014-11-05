@@ -239,6 +239,7 @@ namespace SimpleScannerTest
             return;
         }
 
+
         /// <summary>
         /// local method that sets the ReadProperty Menuitem with appropriate submenus[Like Name,BatteryLevel]
         /// </summary>
