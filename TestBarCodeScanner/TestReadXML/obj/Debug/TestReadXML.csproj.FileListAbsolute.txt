@@ -2,5 +2,11 @@ E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\ResolveAssemblyReference.ca
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.Form1.resources
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.frmMain.resources
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.Properties.Resources.resources
-E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.TestSettingsUsingConfig.resources
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.csproj.GenerateResource.Cache
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\data.xml
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\Settings.xml
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\XMLFile1.xml
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\TestReadXML.exe
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\TestReadXML.pdb
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.exe
+E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.pdb
