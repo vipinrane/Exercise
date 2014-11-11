@@ -60,16 +60,22 @@
             this.lblChangeIdValue = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnReadAllProperties = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtDataConfirmationMode = new System.Windows.Forms.TextBox();
+            this.lblDataConfirmationMode = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnReadConfigProperties = new System.Windows.Forms.Button();
-            this.lblDataConfirmationMode = new System.Windows.Forms.Label();
-            this.lblDataConfirmationModeValue = new System.Windows.Forms.Label();
             menuItem_GeneralControlStates = new System.Windows.Forms.MenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menuItem_GeneralControlStates
+            // 
+            menuItem_GeneralControlStates.Text = "General Control States";
+            menuItem_GeneralControlStates.Click += new System.EventHandler(this.menuItem_GeneralControlStates_Click);
             // 
             // lblStatus
             // 
@@ -95,6 +101,7 @@
             // menuItem_Cancel
             // 
             this.menuItem_Cancel.Text = "Cancel";
+            this.menuItem_Cancel.Click += new System.EventHandler(this.menuItem_Cancel_Click);
             // 
             // menuItem_ConfigurationStates
             // 
@@ -162,11 +169,6 @@
             this.btnScan.TabIndex = 5;
             this.btnScan.Text = "&Scan";
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
-            // 
-            // menuItem_GeneralControlStates
-            // 
-            menuItem_GeneralControlStates.Text = "General Control States";
-            menuItem_GeneralControlStates.Click += new System.EventHandler(this.menuItem_GeneralControlStates_Click);
             // 
             // lblBluetoothAddress
             // 
@@ -291,6 +293,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnReadAllProperties);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.lblStatus);
@@ -320,16 +323,42 @@
             this.tabPage1.Size = new System.Drawing.Size(227, 377);
             this.tabPage1.Text = "tabPage1";
             // 
+            // btnReadAllProperties
+            // 
+            this.btnReadAllProperties.Enabled = false;
+            this.btnReadAllProperties.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
+            this.btnReadAllProperties.Location = new System.Drawing.Point(104, 47);
+            this.btnReadAllProperties.Name = "btnReadAllProperties";
+            this.btnReadAllProperties.Size = new System.Drawing.Size(100, 21);
+            this.btnReadAllProperties.TabIndex = 33;
+            this.btnReadAllProperties.Text = "ReadAllProperties";
+            this.btnReadAllProperties.Click += new System.EventHandler(this.btnReadAllProperties_Click);
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.lblDataConfirmationModeValue);
+            this.tabPage2.Controls.Add(this.txtDataConfirmationMode);
             this.tabPage2.Controls.Add(this.lblDataConfirmationMode);
             this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.btnReadConfigProperties);
             this.tabPage2.Location = new System.Drawing.Point(0, 0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(227, 377);
+            this.tabPage2.Size = new System.Drawing.Size(219, 374);
             this.tabPage2.Text = "tabPage2";
+            // 
+            // txtDataConfirmationMode
+            // 
+            this.txtDataConfirmationMode.Location = new System.Drawing.Point(115, 104);
+            this.txtDataConfirmationMode.Name = "txtDataConfirmationMode";
+            this.txtDataConfirmationMode.Size = new System.Drawing.Size(100, 21);
+            this.txtDataConfirmationMode.TabIndex = 81;
+            // 
+            // lblDataConfirmationMode
+            // 
+            this.lblDataConfirmationMode.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
+            this.lblDataConfirmationMode.Location = new System.Drawing.Point(7, 105);
+            this.lblDataConfirmationMode.Name = "lblDataConfirmationMode";
+            this.lblDataConfirmationMode.Size = new System.Drawing.Size(102, 20);
+            this.lblDataConfirmationMode.Text = "DataConfirmationMode";
             // 
             // listBox1
             // 
@@ -347,22 +376,6 @@
             this.btnReadConfigProperties.TabIndex = 79;
             this.btnReadConfigProperties.Text = "Read Config Properties";
             this.btnReadConfigProperties.Click += new System.EventHandler(this.btnReadConfigProperties_Click);
-            // 
-            // lblDataConfirmationMode
-            // 
-            this.lblDataConfirmationMode.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
-            this.lblDataConfirmationMode.Location = new System.Drawing.Point(7, 105);
-            this.lblDataConfirmationMode.Name = "lblDataConfirmationMode";
-            this.lblDataConfirmationMode.Size = new System.Drawing.Size(102, 20);
-            this.lblDataConfirmationMode.Text = "DataConfirmationMode";
-            // 
-            // lblDataConfirmationModeValue
-            // 
-            this.lblDataConfirmationModeValue.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular);
-            this.lblDataConfirmationModeValue.Location = new System.Drawing.Point(108, 105);
-            this.lblDataConfirmationModeValue.Name = "lblDataConfirmationModeValue";
-            this.lblDataConfirmationModeValue.Size = new System.Drawing.Size(119, 20);
-            this.lblDataConfirmationModeValue.Text = "DataConfirmationModeValue";
             // 
             // ScannerTest
             // 
@@ -417,8 +430,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnReadConfigProperties;
-        private System.Windows.Forms.Label lblDataConfirmationModeValue;
         private System.Windows.Forms.Label lblDataConfirmationMode;
+        private System.Windows.Forms.Button btnReadAllProperties;
+        private System.Windows.Forms.TextBox txtDataConfirmationMode;
 
 
     }

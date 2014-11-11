@@ -616,21 +616,73 @@ namespace ScanApiHelper
             AddCommand(command);
         }
 
+        /// <summary>
+        /// PostGetDataConfirmationMode gets the dataconfirmation feature.
+        /// </summary>
+        /// <param name="deviceInfo"></param>
+        /// <param name="callback"></param>
+        public void PostGetDataConfirmationMode(DeviceInfo deviceInfo, ICommandContextCallback callback)
+        {
+            //ISktScanDevice device = deviceInfo.SktScanDevice;
+            //// create and initialize the property to send to the device
+            //ISktScanObject newScanObj = SktClassFactory.createScanObject();
+            //newScanObj.Property.ID = ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode;
+            //newScanObj.Property.Type = ISktScanProperty.types.kSktScanPropTypeNone;
+
+            //// add the property and the device to the command context list
+            //// to send it as soon as it is possible
+            //CommandContext command = new CommandContext(true, newScanObj, device, deviceInfo, callback);
+            //AddCommand(command);
+
+            // create and initialize the property to send to the device
+            ISktScanObject newScanObj = SktClassFactory.createScanObject();
+            newScanObj.Property.ID = ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode;
+            newScanObj.Property.Type = ISktScanProperty.types.kSktScanPropTypeNone;
+
+            CommandContext command = new CommandContext(true, newScanObj, _scanApi, deviceInfo, callback);
+            AddCommand(command);
+        }
+
         /**
          * PostSetConfirmationMode
          * Configures ScanAPI so that scanned data must be confirmed by this application before the
          * scanner can be triggered again.
          */
-        public void PostSetConfirmationMode(char mode, ICommandContextCallback callback)
+        public void PostSetConfirmationMode(DeviceInfo device, string dataConfirmationMode, ICommandContextCallback callback)
         {
-            ISktScanObject newScanObj = SktClassFactory.createScanObject();
-            newScanObj.Property.ID=ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode;
-            newScanObj.Property.Type=ISktScanProperty.types.kSktScanPropTypeByte;
-            newScanObj.Property.Byte=(byte)mode;
+            //ISktScanObject newScanObj = SktClassFactory.createScanObject();
+            //newScanObj.Property.ID=ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode;
+            //newScanObj.Property.Type=ISktScanProperty.types.kSktScanPropTypeByte;
+            //newScanObj.Property.Byte=(byte)1;
 
-            CommandContext command = new CommandContext(false, newScanObj, _scanApi, null, callback);
+            //CommandContext command = new CommandContext(false, newScanObj, _scanApi, null, callback);
+            //AddCommand(command);
+
+            
+
+            ISktScanObject newScanObj = SktClassFactory.createScanObject();
+            newScanObj.Property.ID = ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode;
+            newScanObj.Property.Type = ISktScanProperty.types.kSktScanPropTypeString;
+            
+            if (dataConfirmationMode.Equals("off", StringComparison.OrdinalIgnoreCase))
+            {
+                newScanObj.Property.Byte = ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeOff;
+            }
+            else if (dataConfirmationMode.Equals("device", StringComparison.OrdinalIgnoreCase))
+            {
+                newScanObj.Property.Byte = ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeDevice;
+            }
+            else if (dataConfirmationMode.Equals("scanapi", StringComparison.OrdinalIgnoreCase))
+            {
+                newScanObj.Property.Byte = ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeScanAPI;
+            }
+            else if (dataConfirmationMode.Equals("app", StringComparison.OrdinalIgnoreCase))
+            {
+                newScanObj.Property.Byte = ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeApp;
+            }
+
+            CommandContext command = new CommandContext(false, newScanObj, device.SktScanDevice, null, callback);
             AddCommand(command);
-            return;
         }
 
         /**

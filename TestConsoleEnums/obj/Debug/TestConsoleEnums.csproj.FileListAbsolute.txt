@@ -1,0 +1,7 @@
+E:\Practice\TestConsoleEnums\bin\Debug\TestConsoleEnums.exe
+E:\Practice\TestConsoleEnums\bin\Debug\TestConsoleEnums.pdb
+E:\Practice\TestConsoleEnums\obj\Debug\ResolveAssemblyReference.cache
+E:\Practice\TestConsoleEnums\obj\Debug\TestConsoleEnums.exe
+E:\Practice\TestConsoleEnums\obj\Debug\TestConsoleEnums.pdb
+E:\Exercise\TestConsoleEnums\obj\Debug\TestConsoleEnums.exe
+E:\Exercise\TestConsoleEnums\obj\Debug\TestConsoleEnums.pdb

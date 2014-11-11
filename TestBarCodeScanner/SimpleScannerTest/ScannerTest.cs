@@ -2,13 +2,16 @@
 using System.Windows.Forms;
 
 using ScanAPI;
+using System.Collections;
+using System.Reflection;
+using System.Collections.Generic;
 
 namespace SimpleScannerTest
 {
     public partial class ScannerTest : Form, ScanApiHelper.ScanApiHelper.ScanApiHelperNotification
     {
         private const int SCANAPI_TIMER_PERIOD = 100;		// milliseconds
-
+        private static Hashtable _stringValues = new Hashtable();
         private ScanApiHelper.ScanApiHelper _scanApiHelper;
         private ScanApiHelper.DeviceInfo connectedDevice;
         private bool _bInitialized;
@@ -196,17 +199,25 @@ namespace SimpleScannerTest
         }
 
 
-
+        private void btnReadAllProperties_Click(object sender, EventArgs e)
+        {
+            ReadProperties();
+        }
 
         private void menuItem_GeneralControlStates_Click(object sender, EventArgs e)
         {
-            ReadProperties();
-
+            tabControl1.SelectedIndex = 0;
         }
 
         private void menuItem_ConfigurationStates_Click(object sender, EventArgs e)
         {
-            ReadGeneralPageControlStates();
+            ReadConfigurationPageControlStates();
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void menuItem_Cancel_Click(object sender, EventArgs e)
+        {
+            //this.Close();
         }
 
         // ReadGeneralPageControlStates
@@ -239,6 +250,94 @@ namespace SimpleScannerTest
             return;
         }
 
+        private void ReadConfigurationPageControlStates()
+        {
+            //if ((Scanner.OriginalProperties.Configuration.ScanConfirmation & ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionBeep) ==
+            //    ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionBeep)
+            //{
+            //    rbnScanBeepON.Checked = true;
+            //}
+            //else
+            //    rbnScanBeepOFF.Checked = true;
+
+            //if ((Scanner.OriginalProperties.Configuration.ScanConfirmation & ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionFlash) ==
+            //    ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionFlash)
+            //{
+            //    rbnScanFlashON.Checked = true;
+            //}
+            //else
+            //    rbnScanFlashOFF.Checked = true;
+
+            //if (Scanner.OriginalProperties.Configuration.DoesRumble == false)
+            //{
+            //    rbnVibrateModeON.Enabled = false;
+            //    rbnVibrateModeOFF.Enabled = false;
+            //}
+            //else
+            //{
+            //    if ((Scanner.OriginalProperties.Configuration.ScanConfirmation & ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionRumble) ==
+            //        ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionRumble)
+            //    {
+            //        rbnVibrateModeON.Checked = true;
+            //    }
+            //    else
+            //        rbnVibrateModeOFF.Checked = true;
+            //}
+
+            //if ((Scanner.OriginalProperties.Configuration.Suffix == "\n") ||
+            //    (Scanner.OriginalProperties.Configuration.Suffix == "\r"))
+            //{
+            //    rbnAppendCR.Checked = true;
+            //}
+            //else if (Scanner.OriginalProperties.Configuration.Suffix == "\t")
+            //{
+            //    rbnAppendTAB.Checked = true;
+            //}
+            //else
+            //{
+            //    rbnDonot.Checked = true;
+            //}
+
+            txtDataConfirmationMode.Text = SelectedScanner.OriginalProperties.Configuration.DataConfirmationMode;
+        }
+
+        void WriteConfigurationPageControlStates()
+        {
+            //Scanner.ModifiedProperties.Configuration.ScanConfirmation = 0;
+            //if (rbnScanBeepON.Checked == true)
+            //{
+            //    Scanner.ModifiedProperties.Configuration.ScanConfirmation +=
+            //        ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionBeep;
+            //}
+
+            //if (rbnScanFlashON.Checked == true)
+            //{
+            //    Scanner.ModifiedProperties.Configuration.ScanConfirmation +=
+            //        ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionFlash;
+            //}
+
+            //if (Scanner.OriginalProperties.Configuration.DoesRumble == true)
+            //{
+            //    if (rbnVibrateModeON.Checked == true)
+            //    {
+            //        Scanner.ModifiedProperties.Configuration.ScanConfirmation +=
+            //            ISktScanProperty.values.localDecodeAction.kSktScanLocalDecodeActionRumble;
+            //    }
+            //}
+
+            //if (rbnAppendCR.Checked == true)
+            //{
+            //    Scanner.ModifiedProperties.Configuration.Suffix = "\r";
+            //}
+            //else if (rbnAppendTAB.Checked == true)
+            //{
+            //    Scanner.ModifiedProperties.Configuration.Suffix = "\t";
+            //}
+            //else
+            //{
+            //    Scanner.ModifiedProperties.Configuration.Suffix = "";
+            //}
+        }
 
         /// <summary>
         /// local method that sets the ReadProperty Menuitem with appropriate submenus[Like Name,BatteryLevel]
@@ -248,11 +347,13 @@ namespace SimpleScannerTest
             if (_scanApiHelper.IsDeviceConnected())
             {
                 menuItem2_ReadProperties.Enabled = true;
+                btnReadAllProperties.Enabled = true;
                 btnGetStatisticCounters.Enabled = true;
             }
             else
             {
                 menuItem2_ReadProperties.Enabled = false;
+                btnReadAllProperties.Enabled = false;
                 btnGetStatisticCounters.Enabled = false;
             }
         }
@@ -327,6 +428,9 @@ namespace SimpleScannerTest
             //int str = ScanAPI.SktScan.helper.SKTPOWER_GETSTATE(ISktScanProperty.propId.kSktScanPropIdNotificationsDevice);
             //count++;
 
+            _scanApiHelper.PostGetDataConfirmationMode(device, CommandContextCallback);
+            count++;
+
             for (int id = 1; id < ISktScanSymbology.id.kSktScanSymbologyLastSymbologyID; id++)
             {
                 _scanApiHelper.PostGetSymbologyInfo(device, id, CommandContextCallback);
@@ -384,6 +488,12 @@ namespace SimpleScannerTest
                 count++;
             }
 
+            //Check and Set Dataconfirmationmode property if Dataconfirmation has modified.
+            if (SelectedScanner.OriginalProperties.Configuration.DataConfirmationMode != SelectedScanner.ModifiedProperties.Configuration.DataConfirmationMode)
+            {
+                _scanApiHelper.PostSetConfirmationMode(SelectedScanner.DeviceInfo,SelectedScanner.ModifiedProperties.Configuration.DataConfirmationMode, CommandContextCallback);
+                count++;
+            }
             // check if the Symbology has to be modified
             SymbologyProperties originalSymbologies = SelectedScanner.OriginalProperties.Symbologies;
             SymbologyProperties modifiedSymbologies = SelectedScanner.ModifiedProperties.Symbologies;
@@ -413,9 +523,10 @@ namespace SimpleScannerTest
         {
             //call 'SetModifiedProperties' copies original properties to modified properties due to which call 'SaveModifiedSettings' will do nothing.
             //This is the time being provision made to have minimal code change in order to Read and Write the properties.
-            SetModifiedProperties();
+            //SetModifiedProperties();
             SaveModifiedSettings();
             ReadGeneralPageControlStates();
+            //ReadConfigurationPageControlStates();
 
             //// start the ScannerProperty form asynchronously
             //BeginInvoke((MethodInvoker)delegate
@@ -696,6 +807,42 @@ namespace SimpleScannerTest
                             }
                         }
                         break;
+                    case ISktScanProperty.propId.kSktScanPropIdDataConfirmationMode:
+                        if (scanObj.Msg.ID == ISktScanMsg.kSktScanMsgGetComplete)
+                        {
+                            string strDataConfirmationMode = string.Empty;
+                            if (SktScanErrors.SKTSUCCESS(result))
+                            {
+                                switch (scanObj.Property.Byte)
+                                {
+                                    case ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeOff:
+                                        strDataConfirmationMode = DataConfirmationModes.Off.ToString();
+                                        break;
+                                    case ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeDevice:
+                                        strDataConfirmationMode = DataConfirmationModes.Device.ToString();
+                                        break;
+                                    case ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeScanAPI:
+                                        strDataConfirmationMode = DataConfirmationModes.ScanAPI.ToString();
+                                        break;
+                                    case ISktScanProperty.values.confirmationMode.kSktScanDataConfirmationModeApp:
+                                        strDataConfirmationMode = DataConfirmationModes.App.ToString();
+                                        break;
+                                    default:
+                                        strDataConfirmationMode = "Value: Type unknown or not implemented:" + scanObj.Property.Type;
+                                        break;
+                                }
+
+                                //strDataConfirmationMode = StringEnum.Parse(typeof(DataConfirmationModes), scanObj.Property.Byte.ToString()).ToString();
+                                selectedScanner.OriginalProperties.Configuration.DataConfirmationMode = strDataConfirmationMode;
+                            }
+                            else
+                            {
+                                // unable to get the Data confirmation mode even after multiple retries
+                                // by ScanAPI Helper
+                                StopRetrievingPropertiesAndDisplayError("Failed to retrieve Data confirmation mode: " + result);
+                            }
+                        }
+                        break;
                 }
             }
         }
@@ -799,8 +946,6 @@ namespace SimpleScannerTest
             listBox1.Items.Add("ConnectionBeepConfigDevice=" + Settings.ConnectionBeepConfigDevice);
         }
 
-
-
         #region Scanner Property
         //// close this dialog if the scanner is removed
         //private void DeviceRemovalNotification(ScanApiHelper.DeviceInfo removedDevice)
@@ -816,8 +961,32 @@ namespace SimpleScannerTest
 
         #endregion
 
-    }
+        public DataConfirmationModes Test(string dataConfirmationMode)
+        {
 
+            DataConfirmationModes objDataconfirmationMode = DataConfirmationModes.App;
+             if (dataConfirmationMode.Equals("Device"))
+             {
+                 objDataconfirmationMode = DataConfirmationModes.Device;
+             }
+             else if (dataConfirmationMode.Equals("Device"))
+             {
+                 objDataconfirmationMode = DataConfirmationModes.Device;
+             }
+             else if (dataConfirmationMode.Equals("Device"))
+             {
+                 objDataconfirmationMode = DataConfirmationModes.Device;
+             }
+             else if (dataConfirmationMode.Equals("Device"))
+             {
+                 objDataconfirmationMode = DataConfirmationModes.Device;
+             }
+            
+             return objDataconfirmationMode;
+        }
+        
+    }
+   
     public class ScannerProperties
     {
         public GeneralProperties General { get; set; }
@@ -847,6 +1016,7 @@ namespace SimpleScannerTest
         public int ScanConfirmation { get; set; }
         public String Suffix { get; set; }
         public bool DoesRumble { get; set; }
+        public string DataConfirmationMode { get; set; }
     }
 
     public class SymbologyProperties
@@ -877,5 +1047,23 @@ namespace SimpleScannerTest
         {
             return _symbologies[index];
         }
+    }
+
+    public enum DataConfirmationModes
+    {
+        Off = 0,
+        Device = 1,
+        ScanAPI = 2,
+        App = 3
+
+        //[StringValue("Off")]
+        //Off = 0,
+        //[StringValue("Device")]
+        //Device = 1,
+        //[StringValue("ScanAPI")]
+        //ScanAPI = 2,
+        //[StringValue("ScanAPI")]
+        //App = 3
+
     }
 }
