@@ -9,7 +9,13 @@ namespace TestEventService
 {
     public class TestService
     {
-        [EventSubscription(TestEventNames.SayHello, ThreadOption.Caller)]
+        [EventSubscription(TestEventNames.GetWelcomeMessage, ThreadOption.Caller)]
+        public string GetWelcomeMessage()
+        {
+            return "Welcome ABC";
+        }
+
+        //[EventSubscription(TestEventNames.SayHello, ThreadOption.Caller)]
         public void TestHello()
         {
             string str = "Inside TestHello Method";

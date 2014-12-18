@@ -17,7 +17,12 @@ namespace TestEvents
             objEvent = RootWorkItem.Services.AddNew<TestEvent>();
             //objEvent.SayHello += objService.TestHello;
             //objEvent.GetCount += objService.TestGetCount;
+
+
+
             InitializeComponent();
+
+            lblWelcomeMessage.Text = objEvent.RaiseGetWelcomeMessage();
         }
 
         [EventSubscription(TestEventNames.SayHello, ThreadOption.UserInterface)]

@@ -6,3 +6,11 @@ E:\Practice\TestReadAppSetting\TestEventService\bin\Debug\OpenNETCF.IoC.pdb
 E:\Practice\TestReadAppSetting\TestEventService\obj\Debug\ResolveAssemblyReference.cache
 E:\Practice\TestReadAppSetting\TestEventService\obj\Debug\TestEventService.dll
 E:\Practice\TestReadAppSetting\TestEventService\obj\Debug\TestEventService.pdb
+E:\Exercise\TestReadAppSetting\TestEventService\bin\Debug\TestEventService.dll
+E:\Exercise\TestReadAppSetting\TestEventService\bin\Debug\TestEventService.pdb
+E:\Exercise\TestReadAppSetting\TestEventService\bin\Debug\OpenNETCF.IoC.dll
+E:\Exercise\TestReadAppSetting\TestEventService\bin\Debug\OpenNETCF.Extensions.dll
+E:\Exercise\TestReadAppSetting\TestEventService\bin\Debug\OpenNETCF.IoC.pdb
+E:\Exercise\TestReadAppSetting\TestEventService\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\TestEventService\obj\Debug\TestEventService.dll
+E:\Exercise\TestReadAppSetting\TestEventService\obj\Debug\TestEventService.pdb

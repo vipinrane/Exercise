@@ -32,6 +32,7 @@
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn
@@ -45,10 +46,17 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(47, 22);
+            this.label1.Location = new System.Drawing.Point(47, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.Text = "label1";
+            // 
+            // lblWelcomeMessage
+            // 
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(47, 0);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(100, 20);
+            this.lblWelcomeMessage.Text = "Welcome Msg";
             // 
             // Form1
             // 
@@ -56,6 +64,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 268);
+            this.Controls.Add(this.lblWelcomeMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn);
             this.Menu = this.mainMenu1;
@@ -69,6 +78,7 @@
 
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcomeMessage;
     }
 }
 
