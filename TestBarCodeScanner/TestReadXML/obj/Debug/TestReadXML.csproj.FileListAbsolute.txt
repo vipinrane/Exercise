@@ -5,8 +5,9 @@ E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.Properties.Reso
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.csproj.GenerateResource.Cache
 E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\data.xml
 E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\Settings.xml
-E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\XMLFile1.xml
 E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\TestReadXML.exe
 E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\TestReadXML.pdb
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.exe
 E:\Exercise\TestBarCodeScanner\TestReadXML\obj\Debug\TestReadXML.pdb
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\Employee.xml
+E:\Exercise\TestBarCodeScanner\TestReadXML\bin\Debug\ConfigPropertiesNew.xml

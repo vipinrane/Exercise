@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ConfigProperties>
+  <Property>
+    <Name>DataConfirmationMode</Name>
+    <parameterData value="App"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>PreambleDevice</Name>
+    <parameterData value="*"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>PostambleDevice</Name>
+    <parameterData value="pp"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>SecurityModeDevice</Name>
+    <parameterData value="AuthenticationEncryption"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>SoundConfigDeviceGoodScan</Name>
+    <ParametersWithData>
+      <ActionType>0</ActionType>
+      <Frequency>Medium</Frequency>
+      <Duration>120</Duration>
+      <Pause>75</Pause>
+    </ParametersWithData>
+  </Property>
+
+  <Property>
+    <Name>SoundConfigDeviceGoodScanLocal</Name>
+    <ParametersWithData>
+      <ActionType>1</ActionType>
+      <Frequency>Medium</Frequency>
+      <Duration>120</Duration>
+      <Pause>75</Pause>
+    </ParametersWithData>
+  </Property>
+
+  <Property>
+    <Name>SoundConfigDeviceBadScan</Name>
+    <ParametersWithData>
+      <ActionType>2</ActionType>
+      <Frequency>Low</Frequency>
+      <Duration>120</Duration>
+      <Pause>200</Pause>
+    </ParametersWithData>
+  </Property>
+
+  <Property>
+    <Name>SoundConfigDeviceBadScanLocal</Name>
+    <ParametersWithData>
+      <ActionType>3</ActionType>
+      <Frequency>Low</Frequency>
+      <Duration>120</Duration>
+      <Pause>200</Pause>
+    </ParametersWithData>
+  </Property>
+
+  <Property>
+    <Name>TimersDevice</Name>
+    <parameterData value="0 0 0"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>LocalAcknowledgmentDevice</Name>
+    <parameterData value="enable"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>RumbleConfigDevice</Name>
+    <parameterData value="0 0 10 10"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>DataStoreDevice</Name>
+    <parameterData value="1 10 78"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>NotificationsDevice</Name>
+    <parameterData value="scanPress+scanRelease+powerPress+powerRelease+powerState+batteryLevel"></parameterData>
+  </Property>
+
+  <Property>
+    <Name>ConnectionBeepConfigDevice</Name>
+    <parameterData value="on"></parameterData>
+  </Property>
+
+</ConfigProperties>

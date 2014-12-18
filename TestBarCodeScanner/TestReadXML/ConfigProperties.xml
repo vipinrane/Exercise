@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<add key="DataConfirmationMode" value="App" />
+<add key="PreambleDevice" value="*" />
+<add key="PostambleDevice" value="pp" />
+<add key="SecurityModeDevice" value="AuthenticationEncryption" />
+<add key="SoundConfigDevice" value="0 0078"/>
+<add key="TimersDevice" value="0 0 0" />
+<add key="LocalAcknowledgmentDevice" value="enable" />
+<add key="LocalDecodeActionDevice" value="beep+flash+rumble" />
+<add key="RumbleConfigDevice" value="0 0 10 10" />
+<add key="DataStoreDevice" value="1 10 78" />
+<add key="NotificationsDevice" value="scanPress+scanRelease+powerPress+powerRelease+powerState+batteryLevel" />
+<add key="ConnectionBeepConfigDevice" value="on" />
+<add key="SoundConfigDeviceGoodScan" value="ActionType=GoodScan+Frequency=Medium+Duration=120+Pause=75" />
+<add key="SoundConfigDeviceGoodScanLocal" value="ActionType=GoodScanLocal+Frequency=Medium+Duration=120+Pause=75" />
+<add key="SoundConfigDeviceBadScan" value="ActionType=BadScan+Frequency=Low+Duration=120+Pause=200" />
+<add key="SoundConfigDeviceBadScanLocal" value="ActionType=BadScanLocal+Frequency=Low+Duration=120+Pause=200" />
