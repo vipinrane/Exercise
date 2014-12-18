@@ -1,0 +1,5 @@
+E:\Practice\TestReadAppSetting\OpenNETCF\IoC\2.0\deploy\CF\2.0\Debug\OpenNETCF.IoC.UI.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\IoC\2.0\deploy\CF\2.0\Debug\OpenNETCF.IoC.UI.pdb
+E:\Practice\TestReadAppSetting\OpenNETCF\IoC\2.0\OpenNETCF.IoC.UI\obj\Debug\ResolveAssemblyReference.cache
+E:\Practice\TestReadAppSetting\OpenNETCF\IoC\2.0\OpenNETCF.IoC.UI\obj\Debug\OpenNETCF.IoC.UI.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\IoC\2.0\OpenNETCF.IoC.UI\obj\Debug\OpenNETCF.IoC.UI.pdb

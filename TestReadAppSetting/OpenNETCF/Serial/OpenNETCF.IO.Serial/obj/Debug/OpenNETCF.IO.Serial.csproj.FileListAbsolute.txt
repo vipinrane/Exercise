@@ -1,0 +1,50 @@
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.XML
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.XML
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb

@@ -1,0 +1,11 @@
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.XML
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+D:\Alex\Coding\OpenNETCF\OpenNETCF Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb

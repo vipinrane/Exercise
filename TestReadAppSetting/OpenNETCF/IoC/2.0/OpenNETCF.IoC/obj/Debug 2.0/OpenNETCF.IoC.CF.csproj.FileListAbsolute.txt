@@ -1,0 +1,7 @@
+D:\Temp\ioc-71833\OpenNETCF.IoC\deploy\CF\3.5\Debug\OpenNETCF.IoC.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\deploy\CF\3.5\Debug\OpenNETCF.IoC.pdb
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC\obj\Debug 2.0\ResolveAssemblyReference.cache
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC\obj\Debug 2.0\OpenNETCF.IoC.Properties.Resources.resources
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC\obj\Debug 2.0\OpenNETCF.IoC.CF.csproj.GenerateResource.Cache
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC\obj\Debug 2.0\OpenNETCF.IoC.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC\obj\Debug 2.0\OpenNETCF.IoC.pdb

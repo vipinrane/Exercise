@@ -1,0 +1,17 @@
+E:\Practice\TestReadAppSetting\TestModule\obj\Debug\ResolveAssemblyReference.cache
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\TestModule.dll.config
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\TestModule.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\TestModule.pdb
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Configuration.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IoC.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Extensions.dll
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.pdb
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.xml
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.pdb
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.xml
+E:\Practice\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IoC.pdb
+E:\Practice\TestReadAppSetting\TestModule\obj\Debug\TestModule.dll
+E:\Practice\TestReadAppSetting\TestModule\obj\Debug\TestModule.pdb

@@ -1,0 +1,66 @@
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.XML
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.XML
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\OpenNETCF\Smart Device Framework\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.pdb
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.XML
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Alex\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.dll
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.XML
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Coding\Visual Studio 2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.dll
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.XML
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Coding\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\deploy\CF\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+D:\Coding\VisualStudio\VS2008\Projects\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb

@@ -1,0 +1,8 @@
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\bin\Debug 2.0\OpenNETCF.IoC.UI.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\bin\Debug 2.0\OpenNETCF.IoC.UI.pdb
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\bin\Debug 2.0\OpenNETCF.Extensions.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\bin\Debug 2.0\OpenNETCF.IoC.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\bin\Debug 2.0\OpenNETCF.IoC.pdb
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\obj\Debug 2.0\ResolveAssemblyReference.cache
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\obj\Debug 2.0\OpenNETCF.IoC.UI.dll
+D:\Temp\ioc-71833\OpenNETCF.IoC\OpenNETCF.IoC.UI\obj\Debug 2.0\OpenNETCF.IoC.UI.pdb
