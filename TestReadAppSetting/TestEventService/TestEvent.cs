@@ -8,9 +8,10 @@ namespace TestEventService
 {
     public class TestEvent
     {
+        public delegate string DelegateGetWelcomeMessage();
         public delegate void DelegateSayHello();
         public delegate int DelegateCount();
-        public delegate string DelegateGetWelcomeMessage();
+        
 
         [EventPublication(TestEventNames.GetWelcomeMessage)]
         public event DelegateGetWelcomeMessage GetWelcomeMessage;

@@ -9,6 +9,9 @@ namespace TestEventService
 {
     public class TestService
     {
+        public int testId { get; set; }
+        public string testName { get; set; }
+
         [EventSubscription(TestEventNames.GetWelcomeMessage, ThreadOption.Caller)]
         public string GetWelcomeMessage()
         {

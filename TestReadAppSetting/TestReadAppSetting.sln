@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNETCF.IoC.CF", "OpenNET
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNETCF.IoC.UI.CF", "OpenNETCF\IoC\2.0\OpenNETCF.IoC.UI\OpenNETCF.IoC.UI.CF.csproj", "{45F51EA2-A27F-44BB-B549-FEB3F9E3C887}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDeviceWithCF2.0", "..\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0.csproj", "{9B624ADB-ACDE-4F23-B712-B3170B91020F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug 2.0|Any CPU = Debug 2.0|Any CPU
@@ -279,6 +281,30 @@ Global
 		{45F51EA2-A27F-44BB-B549-FEB3F9E3C887}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45F51EA2-A27F-44BB-B549-FEB3F9E3C887}.Timebomb|Any CPU.ActiveCfg = Debug 2.0|Any CPU
 		{45F51EA2-A27F-44BB-B549-FEB3F9E3C887}.Timebomb|Any CPU.Build.0 = Debug 2.0|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug 2.0|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug 2.0|Any CPU.Build.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug 2.0|Any CPU.Deploy.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestDebug|Any CPU.Build.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestDebug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestRelease|Any CPU.Build.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.IntegrationTestRelease|Any CPU.Deploy.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.NDoc|Any CPU.ActiveCfg = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.NDoc|Any CPU.Build.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.NDoc|Any CPU.Deploy.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release 2.0|Any CPU.ActiveCfg = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release 2.0|Any CPU.Build.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release 2.0|Any CPU.Deploy.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Timebomb|Any CPU.ActiveCfg = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Timebomb|Any CPU.Build.0 = Release|Any CPU
+		{9B624ADB-ACDE-4F23-B712-B3170B91020F}.Timebomb|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
