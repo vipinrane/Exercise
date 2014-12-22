@@ -14,7 +14,7 @@
       <appender-ref ref="LogFileAppender" />
     </root>
     <appender name="LogFileAppender" type="log4net.Appender.RollingFileAppender">
-      <file value="logtxt.txt" />
+      <file value="d:\\logtxt.txt" />
       <appendToFile value="true" />
       <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
       <rollingStyle value="Size" />
