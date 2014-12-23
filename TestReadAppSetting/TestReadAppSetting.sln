@@ -39,8 +39,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDeviceWithCF2.0", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLog4NetLogging", "TestLog4NetLogging\TestLog4NetLogging.csproj", "{05EC20B5-D706-45B8-A055-E5FEDD28938F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetTest", "Log4NetTest\Log4NetTest.csproj", "{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug 2.0|Any CPU = Debug 2.0|Any CPU
@@ -749,46 +747,6 @@ Global
 		{05EC20B5-D706-45B8-A055-E5FEDD28938F}.Timebomb|Mixed Platforms.Build.0 = Release|Any CPU
 		{05EC20B5-D706-45B8-A055-E5FEDD28938F}.Timebomb|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{05EC20B5-D706-45B8-A055-E5FEDD28938F}.Timebomb|x86.ActiveCfg = Release|Any CPU
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug 2.0|Any CPU.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug 2.0|Mixed Platforms.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug 2.0|Mixed Platforms.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug 2.0|x86.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug 2.0|x86.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug|x86.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Debug|x86.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestDebug|Any CPU.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestDebug|Mixed Platforms.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestDebug|Mixed Platforms.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestDebug|x86.ActiveCfg = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestDebug|x86.Build.0 = Debug|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestRelease|Any CPU.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestRelease|Mixed Platforms.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestRelease|Mixed Platforms.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestRelease|x86.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.IntegrationTestRelease|x86.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.NDoc|Any CPU.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.NDoc|Mixed Platforms.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.NDoc|Mixed Platforms.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.NDoc|x86.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.NDoc|x86.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release 2.0|Any CPU.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release 2.0|Mixed Platforms.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release 2.0|Mixed Platforms.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release 2.0|x86.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release 2.0|x86.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release|Any CPU.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release|Mixed Platforms.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release|x86.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Release|x86.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Timebomb|Any CPU.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Timebomb|Mixed Platforms.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Timebomb|Mixed Platforms.Build.0 = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Timebomb|x86.ActiveCfg = Release|x86
-		{465FEDEA-1B2D-48AF-9EA8-ABC696BCC803}.Timebomb|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

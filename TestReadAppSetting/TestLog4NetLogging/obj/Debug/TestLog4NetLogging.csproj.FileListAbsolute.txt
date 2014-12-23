@@ -1,0 +1,9 @@
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\bin\Debug\TestLog4NetLogging.exe
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\bin\Debug\TestLog4NetLogging.pdb
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\TestLog4NetLogging.Form1.resources
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\TestLog4NetLogging.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\TestLog4NetLogging.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\TestLog4NetLogging.exe
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\obj\Debug\TestLog4NetLogging.pdb
+E:\Exercise\TestReadAppSetting\TestLog4NetLogging\bin\Debug\log4netCF.dll
