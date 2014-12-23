@@ -39,3 +39,10 @@ E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.I
 E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.csproj.GenerateResource.Cache
 E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.dll
 E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.pdb
