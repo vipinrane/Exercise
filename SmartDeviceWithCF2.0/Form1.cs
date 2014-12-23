@@ -35,8 +35,6 @@ namespace SmartDeviceWithCF2._0
                 txtLogRead.Text = string.Empty;
                 txtLogRead.Text = "We have Log File";
                 Log.Error("This is Compact Framework with log4net demo");
-                Log.Debug("TEST-Debug.");
-                Log.Warn("TEST-Warning." + DateTime.Now);
             }
             else
             {
