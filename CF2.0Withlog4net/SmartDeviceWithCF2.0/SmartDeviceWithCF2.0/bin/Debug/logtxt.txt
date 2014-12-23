@@ -1,5 +1,0 @@
-
- ERROR 
- 29-May-2013 07:28:38 PM 
- This is Compact Framework with log4net demo 
- 
