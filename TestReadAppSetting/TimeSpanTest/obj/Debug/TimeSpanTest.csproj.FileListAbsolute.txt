@@ -6,3 +6,11 @@ E:\Practice\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.Properties.Re
 E:\Practice\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.csproj.GenerateResource.Cache
 E:\Practice\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.exe
 E:\Practice\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.pdb
+E:\Exercise\TestReadAppSetting\TimeSpanTest\bin\Debug\TimeSpanTest.exe
+E:\Exercise\TestReadAppSetting\TimeSpanTest\bin\Debug\TimeSpanTest.pdb
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.Form1.resources
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.exe
+E:\Exercise\TestReadAppSetting\TimeSpanTest\obj\Debug\TimeSpanTest.pdb

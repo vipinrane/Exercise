@@ -64,3 +64,10 @@ E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\O
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb

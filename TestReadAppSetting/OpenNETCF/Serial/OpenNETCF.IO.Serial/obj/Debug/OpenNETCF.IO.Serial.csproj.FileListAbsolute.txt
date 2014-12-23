@@ -48,3 +48,8 @@ E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\Op
 E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
 E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
 E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb

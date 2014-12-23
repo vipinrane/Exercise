@@ -11,3 +11,16 @@ E:\Practice\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestModule.pdb
 E:\Practice\TestReadAppSetting\TestReadAppSetting\bin\Debug\OpenNETCF.Configuration.pdb
 E:\Practice\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.exe
 E:\Practice\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.pdb
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestModule.dll.config
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestReadAppSetting.exe
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestReadAppSetting.pdb
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestModule.dll
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestModule.pdb
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.Form1.resources
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.exe
+E:\Exercise\TestReadAppSetting\TestReadAppSetting\obj\Debug\TestReadAppSetting.pdb

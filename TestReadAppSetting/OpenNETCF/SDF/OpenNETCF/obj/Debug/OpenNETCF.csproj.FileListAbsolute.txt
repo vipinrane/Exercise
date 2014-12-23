@@ -16,3 +16,9 @@ E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.xml
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\ResolveAssemblyReference.cache
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.dll
 E:\Practice\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.pdb
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.xml
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.dll
+E:\Exercise\TestReadAppSetting\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.pdb

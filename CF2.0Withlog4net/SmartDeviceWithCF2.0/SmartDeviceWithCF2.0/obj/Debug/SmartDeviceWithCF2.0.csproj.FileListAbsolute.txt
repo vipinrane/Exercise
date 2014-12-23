@@ -8,6 +8,8 @@ D:\Article\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\
 D:\Article\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.csproj.GenerateResource.Cache
 D:\Article\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.exe
 D:\Article\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.pdb
+E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\AppDatabase1.sdf
+E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\Config.xml-old
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\SmartDeviceWithCF2.0.exe
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\SmartDeviceWithCF2.0.pdb
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\log4netCF.dll
@@ -17,5 +19,3 @@ E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.csproj.GenerateResource.Cache
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.exe
 E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\obj\Debug\SmartDeviceWithCF2.0.pdb
-E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\AppDatabase1.sdf
-E:\Exercise\CF2.0Withlog4net\SmartDeviceWithCF2.0\SmartDeviceWithCF2.0\bin\Debug\Config.xml-old
