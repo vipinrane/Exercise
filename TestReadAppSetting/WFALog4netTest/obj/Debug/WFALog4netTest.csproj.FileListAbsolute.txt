@@ -1,0 +1,10 @@
+E:\Exercise\TestReadAppSetting\WFALog4netTest\bin\Debug\WFALog4netTest.exe.config
+E:\Exercise\TestReadAppSetting\WFALog4netTest\bin\Debug\WFALog4netTest.exe
+E:\Exercise\TestReadAppSetting\WFALog4netTest\bin\Debug\WFALog4netTest.pdb
+E:\Exercise\TestReadAppSetting\WFALog4netTest\bin\Debug\log4net.dll
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\WFALog4netTest.Form1.resources
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\WFALog4netTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\WFALog4netTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\WFALog4netTest.exe
+E:\Exercise\TestReadAppSetting\WFALog4netTest\obj\Debug\WFALog4netTest.pdb

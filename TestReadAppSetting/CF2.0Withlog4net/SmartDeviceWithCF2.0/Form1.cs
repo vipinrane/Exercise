@@ -1,10 +1,5 @@
 ﻿using System;
 
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using log4net.Config;
 using System.IO;
@@ -24,10 +19,7 @@ namespace SmartDeviceWithCF2._0
         private void btnCreateLog_Click_1(object sender, EventArgs e)
         {
             //To get the Config File
-            string path = System.IO.Path.GetDirectoryName(
-               System.Reflection.Assembly.GetExecutingAssembly()
-              .GetModules()[0].FullyQualifiedName)
-              + "\\Config.xml";
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName) + "\\Config.xml";
 
             if (System.IO.File.Exists(path))
             {
@@ -35,8 +27,8 @@ namespace SmartDeviceWithCF2._0
                 txtLogRead.Text = string.Empty;
                 txtLogRead.Text = "We have Log File";
                 Log.Error("This is Compact Framework with log4net demo");
-                Log.Debug("TEST-Debug.");
-                Log.Warn("TEST-Warning." + DateTime.Now);
+                Log.Info("Info-vipin");
+                Log.Debug("Debug-Vipin" + DateTime.Now);
             }
             else
             {
@@ -52,10 +44,7 @@ namespace SmartDeviceWithCF2._0
 
         private void btnOPenLogFile_Click_1(object sender, EventArgs e)
         {
-            string path = System.IO.Path.GetDirectoryName(
-              System.Reflection.Assembly.GetExecutingAssembly()
-             .GetModules()[0].FullyQualifiedName)
-             + "\\logtxt.txt";
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName) + "\\logtxt.txt";
 
             if (System.IO.File.Exists(path))
             {
@@ -68,8 +57,19 @@ namespace SmartDeviceWithCF2._0
             {
                 txtLogRead.Text = "We dont have Log File";
             }
-
         }
 
+        private void btnDBLogging_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                log4net.Config.XmlConfigurator.Configure();
+                Log.Error("Test");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

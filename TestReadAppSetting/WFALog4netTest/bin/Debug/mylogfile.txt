@@ -1,0 +1,18 @@
+2014-12-24 15:56:12,891 [10] FATAL WFALog4netTest.Form1 - Fatal error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44
+2014-12-24 16:47:28,654 [10] DEBUG WFALog4netTest.Form1 - Debug error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44
+2014-12-24 16:47:28,684 [10] INFO WFALog4netTest.Form1 - Info error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44
+2014-12-24 16:47:28,684 [10] WARN WFALog4netTest.Form1 - Warn error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44
+2014-12-24 16:47:29,624 [10] ERROR WFALog4netTest.Form1 - Error error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44
+2014-12-24 16:47:29,624 [10] FATAL WFALog4netTest.Form1 - Fatal error logging
+System.IO.FileNotFoundException: Unable to find the specified file.
+   at WFALog4netTest.Form1.butRunTest_Click(Object sender, EventArgs e) in E:\Exercise\TestReadAppSetting\WFALog4netTest\Form1.cs:line 44

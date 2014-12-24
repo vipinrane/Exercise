@@ -29,17 +29,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.btnCreateLog = new System.Windows.Forms.Button();
             this.txtLogRead = new System.Windows.Forms.TextBox();
             this.btnOPenLogFile = new System.Windows.Forms.Button();
             this.btnclr = new System.Windows.Forms.Button();
-            this.btnAddLogInDB = new System.Windows.Forms.Button();
+            this.btnDBLogging = new System.Windows.Forms.Button();
+            this.dytrexLogTableAdapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGrid1 = new System.Windows.Forms.DataGrid();
+            ((System.ComponentModel.ISupportInitialize)(this.dytrexLogTableAdapterBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateLog
             // 
-            this.btnCreateLog.Location = new System.Drawing.Point(5, 212);
+            this.btnCreateLog.Location = new System.Drawing.Point(3, 212);
             this.btnCreateLog.Name = "btnCreateLog";
             this.btnCreateLog.Size = new System.Drawing.Size(72, 20);
             this.btnCreateLog.TabIndex = 1;
@@ -58,7 +62,7 @@
             // 
             // btnOPenLogFile
             // 
-            this.btnOPenLogFile.Location = new System.Drawing.Point(83, 212);
+            this.btnOPenLogFile.Location = new System.Drawing.Point(81, 212);
             this.btnOPenLogFile.Name = "btnOPenLogFile";
             this.btnOPenLogFile.Size = new System.Drawing.Size(97, 20);
             this.btnOPenLogFile.TabIndex = 4;
@@ -67,28 +71,42 @@
             // 
             // btnclr
             // 
-            this.btnclr.Location = new System.Drawing.Point(186, 212);
+            this.btnclr.Location = new System.Drawing.Point(184, 212);
             this.btnclr.Name = "btnclr";
             this.btnclr.Size = new System.Drawing.Size(51, 20);
             this.btnclr.TabIndex = 5;
             this.btnclr.Text = "Clear";
-            this.btnclr.Click += new System.EventHandler(this.btnclr_Click);
             // 
-            // btnAddLogInDB
+            // btnDBLogging
             // 
-            this.btnAddLogInDB.Location = new System.Drawing.Point(5, 245);
-            this.btnAddLogInDB.Name = "btnAddLogInDB";
-            this.btnAddLogInDB.Size = new System.Drawing.Size(104, 20);
-            this.btnAddLogInDB.TabIndex = 6;
-            this.btnAddLogInDB.Text = "Add Log In DB";
+            this.btnDBLogging.Location = new System.Drawing.Point(3, 238);
+            this.btnDBLogging.Name = "btnDBLogging";
+            this.btnDBLogging.Size = new System.Drawing.Size(72, 20);
+            this.btnDBLogging.TabIndex = 6;
+            this.btnDBLogging.Text = "DB Logging";
+            this.btnDBLogging.Click += new System.EventHandler(this.btnDBLogging_Click);
+            // 
+            // dytrexLogTableAdapterBindingSource
+            // 
+            this.dytrexLogTableAdapterBindingSource.DataSource = typeof(SmartDeviceWithCF2._0.DytrexLoggingDBDataSetTableAdapters.DytrexLogTableAdapter);
+            // 
+            // dataGrid1
+            // 
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dataGrid1.DataSource = this.dytrexLogTableAdapterBindingSource;
+            this.dataGrid1.Location = new System.Drawing.Point(3, 264);
+            this.dataGrid1.Name = "dataGrid1";
+            this.dataGrid1.Size = new System.Drawing.Size(229, 46);
+            this.dataGrid1.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(240, 268);
-            this.Controls.Add(this.btnAddLogInDB);
+            this.ClientSize = new System.Drawing.Size(240, 359);
+            this.Controls.Add(this.dataGrid1);
+            this.Controls.Add(this.btnDBLogging);
             this.Controls.Add(this.btnclr);
             this.Controls.Add(this.btnOPenLogFile);
             this.Controls.Add(this.txtLogRead);
@@ -96,6 +114,7 @@
             this.Menu = this.mainMenu1;
             this.Name = "Form1";
             this.Text = "Use Log4Net in CF2.0";
+            ((System.ComponentModel.ISupportInitialize)(this.dytrexLogTableAdapterBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,7 +125,9 @@
         private System.Windows.Forms.TextBox txtLogRead;
         private System.Windows.Forms.Button btnOPenLogFile;
         private System.Windows.Forms.Button btnclr;
-        private System.Windows.Forms.Button btnAddLogInDB;
+        private System.Windows.Forms.Button btnDBLogging;
+        private System.Windows.Forms.DataGrid dataGrid1;
+        private System.Windows.Forms.BindingSource dytrexLogTableAdapterBindingSource;
     }
 }
 
