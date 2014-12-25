@@ -58,12 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OpenNETCF\IoC\OpenNETCF.IoC\OpenNETCF.IoC.csproj">
-      <Project>{E2095D96-8EC2-4382-AEEF-55D9DF2325C0}</Project>
-      <Name>OpenNETCF.IoC</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

@@ -78,22 +78,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpenNETCF\IoC\2.0\OpenNETCF.IoC.UI\OpenNETCF.IoC.UI.CF.csproj">
-      <Project>{45F51EA2-A27F-44BB-B549-FEB3F9E3C887}</Project>
-      <Name>OpenNETCF.IoC.UI.CF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenNETCF\IoC\2.0\OpenNETCF.IoC\OpenNETCF.IoC.CF.csproj">
-      <Project>{7A635E7D-58C1-42B0-B5AD-E08AA192F229}</Project>
-      <Name>OpenNETCF.IoC.CF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenNETCF\SDF\OpenNETCF.Configuration\OpenNETCF.Configuration.csproj">
-      <Project>{C9C83714-D202-49D3-9033-73FC3E88691B}</Project>
-      <Name>OpenNETCF.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenNETCF\Serial\OpenNETCF.IO.Serial\OpenNETCF.IO.Serial.csproj">
-      <Project>{1B629491-168E-4B05-9937-D9679F980E98}</Project>
-      <Name>OpenNETCF.IO.Serial</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestEventService\TestEventService.csproj">
       <Project>{EBE5EC03-F9AC-42F4-B46B-AAC9E2DE6FA3}</Project>
       <Name>TestEventService</Name>

@@ -32,13 +32,6 @@ E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\IoC\OpenNETCF.
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.csproj.GenerateResource.Cache
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.dll
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.pdb
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.dll
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.pdb
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\ResolveAssemblyReference.cache
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.Properties.Resources.resources
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.csproj.GenerateResource.Cache
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.dll
-E:\Practice\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\OpenNETCF.IoC.pdb
 E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.dll
 E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\bin\Debug\OpenNETCF.IoC.pdb
 E:\Exercise\TestReadAppSetting\OpenNETCF\IoC\OpenNETCF.IoC\obj\Debug\ResolveAssemblyReference.cache

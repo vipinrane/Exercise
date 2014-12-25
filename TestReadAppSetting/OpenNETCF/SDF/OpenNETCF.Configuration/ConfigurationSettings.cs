@@ -64,11 +64,12 @@ namespace OpenNETCF.Configuration
         /// <returns>The application settings.</returns>
         public static NameValueCollection GetAppSettings ( string codeBase )
         {
-            if (!m_settings.ContainsKey(codeBase))
+            if ( !m_settings.ContainsKey ( codeBase ) )
             {
-                var css = new ConfigurationSettingsSystem(codeBase);
-                m_settings.Add(codeBase, css);
+                var css = new ConfigurationSettingsSystem ( codeBase );
+                m_settings.Add ( codeBase, css );
             }
+
             return ( m_settings.ContainsKey ( codeBase ) ) ?
                 m_settings[ codeBase ].AppSettings : null;
         }

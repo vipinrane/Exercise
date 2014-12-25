@@ -43,11 +43,6 @@ E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNET
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
 E:\Projects\EndirePro\WorkingSourceCode\DytrexEndirePro\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
-E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
-E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
-E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
-E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.dll
-E:\Practice\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\OpenNETCF.IO.Serial.pdb
 E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.dll
 E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\bin\Debug\OpenNETCF.IO.Serial.pdb
 E:\Exercise\TestReadAppSetting\OpenNETCF\Serial\OpenNETCF.IO.Serial\obj\Debug\ResolveAssemblyReference.cache
