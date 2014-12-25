@@ -102,6 +102,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy /y E:\Practice\TestReadAppSetting\TestReadAppSetting\bin\Debug\TestModule.dll.config E:\TestModule1.dll.config</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
