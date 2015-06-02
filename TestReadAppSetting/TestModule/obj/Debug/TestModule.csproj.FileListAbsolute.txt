@@ -20,11 +20,8 @@ E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\TestModule.dll
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\TestModule.pdb
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Configuration.dll
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.dll
-E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.dll
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IoC.dll
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Extensions.dll
-E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.pdb
-E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.IO.Serial.xml
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.Configuration.pdb
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.pdb
 E:\Exercise\TestReadAppSetting\TestModule\bin\Debug\OpenNETCF.xml

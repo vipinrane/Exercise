@@ -23,6 +23,10 @@ namespace SmartDeviceWithCF2._0
 
         private void btnCreateLog_Click_1(object sender, EventArgs e)
         {
+            //NLog.LogManager objLog= new NLog.LogManager();
+
+            
+
             //To get the Config File
             string path = System.IO.Path.GetDirectoryName(
                System.Reflection.Assembly.GetExecutingAssembly()

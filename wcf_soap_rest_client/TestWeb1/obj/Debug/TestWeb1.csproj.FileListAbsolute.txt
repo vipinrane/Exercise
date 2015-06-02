@@ -99,12 +99,9 @@ E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\Microsoft.Web.Infrastructure.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\Microsoft.Web.WebPages.OAuth.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\Newtonsoft.Json.dll
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Net.Http.Formatting.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Spatial.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Helpers.dll
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Http.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Http.OData.dll
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Http.WebHost.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Mvc.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Optimization.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Razor.dll
@@ -116,10 +113,7 @@ E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\WebMatrix.Data.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\WebMatrix.WebData.dll
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\EntityFramework.xml
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\Newtonsoft.Json.xml
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Net.Http.Formatting.xml
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Helpers.xml
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Http.xml
-E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Http.WebHost.xml
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Mvc.xml
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.Razor.xml
 E:\Exercise\wcf_soap_rest_client\TestWeb1\bin\System.Web.WebPages.xml

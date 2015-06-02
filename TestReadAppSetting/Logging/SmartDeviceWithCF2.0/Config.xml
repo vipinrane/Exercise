@@ -1,33 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" autoReload="true">
 
-<!-- .NET application configuration file -->
-<configuration>
-  <!--Log for net config section start-->
-  <configSections>
-    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" />
-  </configSections>
-  
-  <log4net>
-    <root>
-      <level value="All" />
-      <!--Off,Fatel,Error,Info,Debug,All-->
-      <appender-ref ref="LogFileAppender" />
-    </root>
-    <appender name="LogFileAppender" type="log4net.Appender.RollingFileAppender">
-      <file value="logtxt.txt" />
-      <appendToFile value="true" />
-      <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
-      <rollingStyle value="Size" />
-      <maxSizeRollBackups value="10" />
-      <maximumFileSize value="10MB" />
-      <staticLogFileName value="true" />
-      <layout type="log4net.Layout.PatternLayout">
-        <param name="ConversionPattern" value="%n %-5p %n %d{dd-MMM-yyyy hh:mm:ss tt} %n %message %n %exception" />
-      </layout>
-    </appender>
-  </log4net>
-  <!--Log for net config section end-->
-  
-  
-  
-</configuration>
+  <!-- 
+  See http://nlog-project.org/wiki/Configuration_file 
+  for information on customizing logging rules and outputs.
+   -->
+  <targets>
+    <!-- add your targets here -->
+
+    <target name="database" xsi:type="Database" />
+    <target xsi:type="Database"
+          name="String"
+          dbUserName="Layout"
+          dbProvider="sqlserver"
+          useTransactions="false"
+          connectionStringName="String"
+          connectionString="Data Source=DytrexLoggingDB.sdf;Initial Catalog=master;Integrated Security=True"
+          keepConnection="true"
+          dbDatabase="Layout"
+          dbPassword="Layout"
+          dbHost="Layout"
+          installConnectionString="Layout"
+          commandText="INSERT INTO Logs (Machine_Name, Username, Logon_Time, Screensaver_On, Screensaver_Off, Logoff_Time, Program_Start) Values (@MachineName, @Username, @LogonTime, @Screensaver_On, @Screensaver_Off, @LogoffTime, @ProgramStart) "/>
+
+  </targets>
+
+
+
+  <rules>
+
+
+    <logger name="*" minlevel="Trace" writeTo="database" />
+
+
+
+  </rules>
+</nlog>

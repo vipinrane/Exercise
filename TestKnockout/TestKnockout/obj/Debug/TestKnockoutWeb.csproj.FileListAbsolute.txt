@@ -14,12 +14,9 @@ E:\Exercise\TestKnockout\TestKnockout\bin\Microsoft.Web.Infrastructure.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\Microsoft.Web.WebPages.OAuth.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\Newtonsoft.Json.dll
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Net.Http.Formatting.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Spatial.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Helpers.dll
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Http.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Http.OData.dll
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Http.WebHost.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Mvc.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Optimization.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Razor.dll
@@ -31,10 +28,7 @@ E:\Exercise\TestKnockout\TestKnockout\bin\WebMatrix.Data.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\WebMatrix.WebData.dll
 E:\Exercise\TestKnockout\TestKnockout\bin\EntityFramework.xml
 E:\Exercise\TestKnockout\TestKnockout\bin\Newtonsoft.Json.xml
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Net.Http.Formatting.xml
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Helpers.xml
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Http.xml
-E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Http.WebHost.xml
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Mvc.xml
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.Razor.xml
 E:\Exercise\TestKnockout\TestKnockout\bin\System.Web.WebPages.xml
