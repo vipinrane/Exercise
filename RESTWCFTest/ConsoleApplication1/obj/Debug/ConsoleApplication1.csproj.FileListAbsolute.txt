@@ -1,0 +1,12 @@
+E:\Exercise\RESTWCFTest\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\RESTService.Lib.dll
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\RESTService.Lib.pdb
+E:\Exercise\RESTWCFTest\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+E:\Exercise\RESTWCFTest\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\EntityFramework.dll
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\EntityFramework.SqlServer.dll
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\EntityFramework.xml
+E:\Exercise\RESTWCFTest\ConsoleApplication1\bin\Debug\EntityFramework.SqlServer.xml

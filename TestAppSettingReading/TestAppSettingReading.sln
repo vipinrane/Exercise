@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppSettingReading", "TestAppSettingReading\TestAppSettingReading.csproj", "{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenNetCF", "OpenNetCF", "{ADA637B4-46AF-4539-A53B-B12D01209148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNETCF", "OpenNETCF\SDF\OpenNETCF\OpenNETCF.csproj", "{ED420160-D2FD-4437-9D28-F10C55E4DB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenNETCF.Configuration", "OpenNETCF\SDF\OpenNETCF.Configuration\OpenNETCF.Configuration.csproj", "{C9C83714-D202-49D3-9033-73FC3E88691B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		IntegrationTestDebug|Any CPU = IntegrationTestDebug|Any CPU
+		IntegrationTestRelease|Any CPU = IntegrationTestRelease|Any CPU
+		NDoc|Any CPU = NDoc|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Timebomb|Any CPU = Timebomb|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestDebug|Any CPU.Build.0 = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestDebug|Any CPU.Deploy.0 = Debug|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestRelease|Any CPU.Build.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.IntegrationTestRelease|Any CPU.Deploy.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.NDoc|Any CPU.ActiveCfg = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.NDoc|Any CPU.Build.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.NDoc|Any CPU.Deploy.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Timebomb|Any CPU.ActiveCfg = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Timebomb|Any CPU.Build.0 = Release|Any CPU
+		{544ADFB2-DACC-4CB6-BAC1-15198ED7CA5F}.Timebomb|Any CPU.Deploy.0 = Release|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.IntegrationTestDebug|Any CPU.ActiveCfg = IntegrationTestDebug|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.IntegrationTestDebug|Any CPU.Build.0 = IntegrationTestDebug|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.IntegrationTestRelease|Any CPU.ActiveCfg = IntegrationTestRelease|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.IntegrationTestRelease|Any CPU.Build.0 = IntegrationTestRelease|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.NDoc|Any CPU.ActiveCfg = NDoc|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.NDoc|Any CPU.Build.0 = NDoc|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Timebomb|Any CPU.ActiveCfg = IntegrationTestRelease|Any CPU
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28}.Timebomb|Any CPU.Build.0 = IntegrationTestRelease|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.IntegrationTestDebug|Any CPU.ActiveCfg = IntegrationTestDebug|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.IntegrationTestDebug|Any CPU.Build.0 = IntegrationTestDebug|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.IntegrationTestRelease|Any CPU.ActiveCfg = IntegrationTestRelease|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.IntegrationTestRelease|Any CPU.Build.0 = IntegrationTestRelease|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.NDoc|Any CPU.ActiveCfg = IntegrationTestRelease|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.NDoc|Any CPU.Build.0 = IntegrationTestRelease|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Timebomb|Any CPU.ActiveCfg = Timebomb|Any CPU
+		{C9C83714-D202-49D3-9033-73FC3E88691B}.Timebomb|Any CPU.Build.0 = Timebomb|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED420160-D2FD-4437-9D28-F10C55E4DB28} = {ADA637B4-46AF-4539-A53B-B12D01209148}
+		{C9C83714-D202-49D3-9033-73FC3E88691B} = {ADA637B4-46AF-4539-A53B-B12D01209148}
+	EndGlobalSection
+EndGlobal

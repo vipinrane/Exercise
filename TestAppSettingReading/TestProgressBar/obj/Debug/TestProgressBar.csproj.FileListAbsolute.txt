@@ -1,0 +1,14 @@
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\TestProgressBar.exe
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\TestProgressBar.pdb
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.Core.CF3.dll
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.ProgressBar.CF3.dll
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.UIElements.CF3.dll
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.ProgressBar.CF3.xml
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.Core.CF3.xml
+E:\Exercise\TestAppSettingReading\TestProgressBar\bin\Debug\Resco.UIElements.CF3.xml
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\TestProgressBar.Form1.resources
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\TestProgressBar.Properties.Resources.resources
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\TestProgressBar.csproj.GenerateResource.Cache
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\TestProgressBar.exe
+E:\Exercise\TestAppSettingReading\TestProgressBar\obj\Debug\TestProgressBar.pdb

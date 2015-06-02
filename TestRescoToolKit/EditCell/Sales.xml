@@ -1,0 +1,405 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="sk-SK">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+                <xs:element name="Sales" type="xs:int" minOccurs="0" />
+                <xs:element name="Change" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <ProductName>Chai</ProductName>
+    <Sales>847000</Sales>
+    <Change>-36</Change>
+  </Table>
+  <Table>
+    <ProductName>Chang</ProductName>
+    <Sales>219000</Sales>
+    <Change>-21</Change>
+  </Table>
+  <Table>
+    <ProductName>Aniseed Syrup</ProductName>
+    <Sales>876000</Sales>
+    <Change>39</Change>
+  </Table>
+  <Table>
+    <ProductName>Chef Anton's Cajun Seasoning</ProductName>
+    <Sales>883000</Sales>
+    <Change>25</Change>
+  </Table>
+  <Table>
+    <ProductName>Chef Anton's Gumbo Mix</ProductName>
+    <Sales>912000</Sales>
+    <Change>-37</Change>
+  </Table>
+  <Table>
+    <ProductName>Grandma's Boysenberry Spread</ProductName>
+    <Sales>730000</Sales>
+    <Change>45</Change>
+  </Table>
+  <Table>
+    <ProductName>Uncle Bob's Organic Dried Pears</ProductName>
+    <Sales>627000</Sales>
+    <Change>22</Change>
+  </Table>
+  <Table>
+    <ProductName>Northwoods Cranberry Sauce</ProductName>
+    <Sales>131000</Sales>
+    <Change>-7</Change>
+  </Table>
+  <Table>
+    <ProductName>Mishi Kobe Niku</ProductName>
+    <Sales>326000</Sales>
+    <Change>-7</Change>
+  </Table>
+  <Table>
+    <ProductName>Ikura</ProductName>
+    <Sales>536000</Sales>
+    <Change>25</Change>
+  </Table>
+  <Table>
+    <ProductName>Queso Cabrales</ProductName>
+    <Sales>169000</Sales>
+    <Change>37</Change>
+  </Table>
+  <Table>
+    <ProductName>Queso Manchego La Pastora</ProductName>
+    <Sales>661000</Sales>
+    <Change>43</Change>
+  </Table>
+  <Table>
+    <ProductName>Konbu</ProductName>
+    <Sales>258000</Sales>
+    <Change>-36</Change>
+  </Table>
+  <Table>
+    <ProductName>Tofu</ProductName>
+    <Sales>892000</Sales>
+    <Change>36</Change>
+  </Table>
+  <Table>
+    <ProductName>Genen Shouyu</ProductName>
+    <Sales>201000</Sales>
+    <Change>22</Change>
+  </Table>
+  <Table>
+    <ProductName>Pavlova</ProductName>
+    <Sales>903000</Sales>
+    <Change>35</Change>
+  </Table>
+  <Table>
+    <ProductName>Alice Mutton</ProductName>
+    <Sales>421000</Sales>
+    <Change>49</Change>
+  </Table>
+  <Table>
+    <ProductName>Carnarvon Tigers</ProductName>
+    <Sales>332000</Sales>
+    <Change>49</Change>
+  </Table>
+  <Table>
+    <ProductName>Teatime Chocolate Biscuits</ProductName>
+    <Sales>12000</Sales>
+    <Change>-42</Change>
+  </Table>
+  <Table>
+    <ProductName>Sir Rodney's Marmalade</ProductName>
+    <Sales>255000</Sales>
+    <Change>-18</Change>
+  </Table>
+  <Table>
+    <ProductName>Sir Rodney's Scones</ProductName>
+    <Sales>450000</Sales>
+    <Change>12</Change>
+  </Table>
+  <Table>
+    <ProductName>Gustaf's Knäckebröd</ProductName>
+    <Sales>871000</Sales>
+    <Change>22</Change>
+  </Table>
+  <Table>
+    <ProductName>Tunnbröd</ProductName>
+    <Sales>724000</Sales>
+    <Change>33</Change>
+  </Table>
+  <Table>
+    <ProductName>Guaraná Fantástica</ProductName>
+    <Sales>653000</Sales>
+    <Change>31</Change>
+  </Table>
+  <Table>
+    <ProductName>NuNuCa Nuß-Nougat-Creme</ProductName>
+    <Sales>633000</Sales>
+    <Change>-5</Change>
+  </Table>
+  <Table>
+    <ProductName>Gumbär Gummibärchen</ProductName>
+    <Sales>971000</Sales>
+    <Change>50</Change>
+  </Table>
+  <Table>
+    <ProductName>Schoggi Schokolade</ProductName>
+    <Sales>129000</Sales>
+    <Change>-34</Change>
+  </Table>
+  <Table>
+    <ProductName>Rössle Sauerkraut</ProductName>
+    <Sales>251000</Sales>
+    <Change>8</Change>
+  </Table>
+  <Table>
+    <ProductName>Thüringer Rostbratwurst</ProductName>
+    <Sales>53000</Sales>
+    <Change>1</Change>
+  </Table>
+  <Table>
+    <ProductName>Nord-Ost Matjeshering</ProductName>
+    <Sales>331000</Sales>
+    <Change>39</Change>
+  </Table>
+  <Table>
+    <ProductName>Gorgonzola Telino</ProductName>
+    <Sales>933000</Sales>
+    <Change>-8</Change>
+  </Table>
+  <Table>
+    <ProductName>Mascarpone Fabioli</ProductName>
+    <Sales>695000</Sales>
+    <Change>35</Change>
+  </Table>
+  <Table>
+    <ProductName>Geitost</ProductName>
+    <Sales>276000</Sales>
+    <Change>40</Change>
+  </Table>
+  <Table>
+    <ProductName>Sasquatch Ale</ProductName>
+    <Sales>668000</Sales>
+    <Change>-20</Change>
+  </Table>
+  <Table>
+    <ProductName>Steeleye Stout</ProductName>
+    <Sales>440000</Sales>
+    <Change>0</Change>
+  </Table>
+  <Table>
+    <ProductName>Inlagd Sill</ProductName>
+    <Sales>450000</Sales>
+    <Change>-21</Change>
+  </Table>
+  <Table>
+    <ProductName>Gravad lax</ProductName>
+    <Sales>505000</Sales>
+    <Change>45</Change>
+  </Table>
+  <Table>
+    <ProductName>Côte de Blaye</ProductName>
+    <Sales>239000</Sales>
+    <Change>24</Change>
+  </Table>
+  <Table>
+    <ProductName>Chartreuse verte</ProductName>
+    <Sales>43000</Sales>
+    <Change>5</Change>
+  </Table>
+  <Table>
+    <ProductName>Boston Crab Meat</ProductName>
+    <Sales>414000</Sales>
+    <Change>-46</Change>
+  </Table>
+  <Table>
+    <ProductName>Jack's New England Clam Chowder</ProductName>
+    <Sales>55000</Sales>
+    <Change>39</Change>
+  </Table>
+  <Table>
+    <ProductName>Singaporean Hokkien Fried Mee</ProductName>
+    <Sales>70000</Sales>
+    <Change>20</Change>
+  </Table>
+  <Table>
+    <ProductName>Ipoh Coffee</ProductName>
+    <Sales>993000</Sales>
+    <Change>-32</Change>
+  </Table>
+  <Table>
+    <ProductName>Gula Malacca</ProductName>
+    <Sales>232000</Sales>
+    <Change>48</Change>
+  </Table>
+  <Table>
+    <ProductName>Røgede sild</ProductName>
+    <Sales>678000</Sales>
+    <Change>-37</Change>
+  </Table>
+  <Table>
+    <ProductName>Spegesild</ProductName>
+    <Sales>152000</Sales>
+    <Change>-17</Change>
+  </Table>
+  <Table>
+    <ProductName>Zaanse koeken</ProductName>
+    <Sales>199000</Sales>
+    <Change>46</Change>
+  </Table>
+  <Table>
+    <ProductName>Chocolade</ProductName>
+    <Sales>44000</Sales>
+    <Change>40</Change>
+  </Table>
+  <Table>
+    <ProductName>Maxilaku</ProductName>
+    <Sales>182000</Sales>
+    <Change>-5</Change>
+  </Table>
+  <Table>
+    <ProductName>Valkoinen suklaa</ProductName>
+    <Sales>788000</Sales>
+    <Change>-32</Change>
+  </Table>
+  <Table>
+    <ProductName>Manjimup Dried Apples</ProductName>
+    <Sales>77000</Sales>
+    <Change>-42</Change>
+  </Table>
+  <Table>
+    <ProductName>Filo Mix</ProductName>
+    <Sales>82000</Sales>
+    <Change>24</Change>
+  </Table>
+  <Table>
+    <ProductName>Perth Pasties</ProductName>
+    <Sales>809000</Sales>
+    <Change>-18</Change>
+  </Table>
+  <Table>
+    <ProductName>Tourtière</ProductName>
+    <Sales>569000</Sales>
+    <Change>-2</Change>
+  </Table>
+  <Table>
+    <ProductName>Pâté chinois</ProductName>
+    <Sales>709000</Sales>
+    <Change>-34</Change>
+  </Table>
+  <Table>
+    <ProductName>Gnocchi di nonna Alice</ProductName>
+    <Sales>516000</Sales>
+    <Change>-41</Change>
+  </Table>
+  <Table>
+    <ProductName>Ravioli Angelo</ProductName>
+    <Sales>838000</Sales>
+    <Change>41</Change>
+  </Table>
+  <Table>
+    <ProductName>Escargots de Bourgogne</ProductName>
+    <Sales>783000</Sales>
+    <Change>50</Change>
+  </Table>
+  <Table>
+    <ProductName>Raclette Courdavault</ProductName>
+    <Sales>448000</Sales>
+    <Change>44</Change>
+  </Table>
+  <Table>
+    <ProductName>Camembert Pierrot</ProductName>
+    <Sales>58000</Sales>
+    <Change>16</Change>
+  </Table>
+  <Table>
+    <ProductName>Sirop d'érable</ProductName>
+    <Sales>748000</Sales>
+    <Change>-23</Change>
+  </Table>
+  <Table>
+    <ProductName>Tarte au sucre</ProductName>
+    <Sales>987000</Sales>
+    <Change>-32</Change>
+  </Table>
+  <Table>
+    <ProductName>Vegie-spread</ProductName>
+    <Sales>608000</Sales>
+    <Change>-7</Change>
+  </Table>
+  <Table>
+    <ProductName>Wimmers gute Semmelknödel</ProductName>
+    <Sales>436000</Sales>
+    <Change>31</Change>
+  </Table>
+  <Table>
+    <ProductName>Louisiana Fiery Hot Pepper Sauce</ProductName>
+    <Sales>809000</Sales>
+    <Change>-12</Change>
+  </Table>
+  <Table>
+    <ProductName>Louisiana Hot Spiced Okra</ProductName>
+    <Sales>165000</Sales>
+    <Change>28</Change>
+  </Table>
+  <Table>
+    <ProductName>Laughing Lumberjack Lager</ProductName>
+    <Sales>877000</Sales>
+    <Change>34</Change>
+  </Table>
+  <Table>
+    <ProductName>Scottish Longbreads</ProductName>
+    <Sales>482000</Sales>
+    <Change>31</Change>
+  </Table>
+  <Table>
+    <ProductName>Gudbrandsdalsost</ProductName>
+    <Sales>594000</Sales>
+    <Change>30</Change>
+  </Table>
+  <Table>
+    <ProductName>Outback Lager</ProductName>
+    <Sales>245000</Sales>
+    <Change>40</Change>
+  </Table>
+  <Table>
+    <ProductName>Fløtemysost</ProductName>
+    <Sales>493000</Sales>
+    <Change>-50</Change>
+  </Table>
+  <Table>
+    <ProductName>Mozzarella di Giovanni</ProductName>
+    <Sales>575000</Sales>
+    <Change>-27</Change>
+  </Table>
+  <Table>
+    <ProductName>Röd Kaviar</ProductName>
+    <Sales>265000</Sales>
+    <Change>36</Change>
+  </Table>
+  <Table>
+    <ProductName>Longlife Tofu</ProductName>
+    <Sales>932000</Sales>
+    <Change>-36</Change>
+  </Table>
+  <Table>
+    <ProductName>Rhönbräu Klosterbier</ProductName>
+    <Sales>92000</Sales>
+    <Change>-7</Change>
+  </Table>
+  <Table>
+    <ProductName>Lakkalikööri</ProductName>
+    <Sales>12000</Sales>
+    <Change>-14</Change>
+  </Table>
+  <Table>
+    <ProductName>Original Frankfurter grüne Soße</ProductName>
+    <Sales>529000</Sales>
+    <Change>29</Change>
+  </Table>
+</NewDataSet>

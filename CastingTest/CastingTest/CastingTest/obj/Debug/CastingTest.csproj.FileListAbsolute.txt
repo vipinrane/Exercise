@@ -1,0 +1,6 @@
+E:\Exercise\CastingTest\CastingTest\CastingTest\bin\Debug\CastingTest.exe.config
+E:\Exercise\CastingTest\CastingTest\CastingTest\bin\Debug\CastingTest.exe
+E:\Exercise\CastingTest\CastingTest\CastingTest\bin\Debug\CastingTest.pdb
+E:\Exercise\CastingTest\CastingTest\CastingTest\obj\Debug\CastingTest.csprojResolveAssemblyReference.cache
+E:\Exercise\CastingTest\CastingTest\CastingTest\obj\Debug\CastingTest.exe
+E:\Exercise\CastingTest\CastingTest\CastingTest\obj\Debug\CastingTest.pdb

@@ -1,0 +1,8 @@
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\WFATestEventDelegates.csproj.GenerateResource.Cache
+E:\Exercise\TestProjects\WFATestEventDelegates\bin\Debug\WFATestEventDelegates.exe
+E:\Exercise\TestProjects\WFATestEventDelegates\bin\Debug\WFATestEventDelegates.pdb
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\WFATestEventDelegates.TestEventDelegates.resources
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\WFATestEventDelegates.exe
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\WFATestEventDelegates.pdb
+E:\Exercise\TestProjects\WFATestEventDelegates\obj\Debug\TestEventDelegates.Properties.Resources.resources

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Images AccessModifier="Internal" QVGAImportMask="*" VGAImportMask="*.VGA" xmlns="http://www.resco.net/developer/XMLImageManager.xsd">
+  <Folder Name="MainForm">    
+    <Image Name="TopBar">
+      <Dpi Width="96" Height="96">Images\QVGA\TopBar.jpg</Dpi>
+      <Dpi Width="192" Height="192">Images\TopBar.png</Dpi>
+    </Image>
+  </Folder>
+</Images>

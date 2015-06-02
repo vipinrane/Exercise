@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resco.KeyboardPro.CF3</name>
+    </assembly>
+    <members>
+        <member name="T:Resco.Controls.KeyboardPro.SkinButton">
+            <summary>Manages a custom behavior for certain button.</summary>
+            <remarks>SkinButton object manages the custom label and sets/resets the button press callback.</remarks>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.SkinButton.SetCallback(Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallback)">
+            <summary>
+            Registers the callback delegate function which is called each time when this button is pressed. It can be used for overriding the button functionality under certain context.
+            Each callback function should be unregistered by calling <see cref="M:Resco.Controls.KeyboardPro.SkinButton.ResetCallback"/> method when it is no longer used.
+            </summary>
+            <param name="callback">Callback delegate function</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.SkinButton.SetCallback(Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallbackEx)">
+            <summary>
+            Registers the callback delegate function which is called each time when this button is pressed. It can be used for overriding the button functionality under certain context.
+            Each callback function should be unregistered by calling <see cref="M:Resco.Controls.KeyboardPro.SkinButton.ResetCallback"/> method when it is no longer used.
+            </summary>
+            <param name="callback">Callback delegate function</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.SkinButton.ResetCallback">
+            <summary>
+            Unregisters the callback delegate function previously registered by a SetCallback method.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.SkinButton.Dispose">
+            <summary> 
+            Resets the callback and cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.SkinButton.HasCallback">
+            <summary>Indicates whether the button has the activated callback.</summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.SkinButton.Enabled">
+            <summary>Gets or sets the enabled state of this button.</summary>
+            <remarks>Buttons that are not enabled are drawn with different style (depending on the skin definition) and cannot be pressed.</remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.SkinButton.DisablePreview">
+            <summary>Gets or sets the button preview preference for this button.</summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.SkinButton.Label">
+            <summary>Gets or sets the custom label for this button.</summary>
+            <returns>A string representing the custom label or null if the label should not be overridden (the default button label should be used).</returns>
+            <remarks>
+            <para>There is a limitation on button names whose label is allowed to be changed. Such buttons must have one of following predefined names:<br/>
+            "a".."z", "0-"9"<br/>
+            "Layout_.."<br/>
+            "User_1".."User_64"<br/>
+            "Char_1".."Char_32"<br/>
+            "FX_1".."FX_32"<br/>
+            "Symbol_1".."Symbol_31"<br/>
+            "Calc_0".."Calc_9"<br/>
+            "Calc_"+ "[Display|Write|C|CE|MS|MC|Back|MPlus|MR|Minus|Divide|Plus|Multiply|Equal|Sign|Decimal|Percentage|Sqrt|Inversion]"<br/>
+            "Key_0".."Key_9"<br/>
+            "Key_F1".."Key_F24"<br/>
+            "Key_" + "[Shift|Ctrl|Alt|CapsLock|Left|Right|Up|Down|Return|Space|Back|Del|Tab|Comma|Dot|SymbolSet]"<br/>
+            "Key_"+ "[Copy|Cut|Paste|SelectAll|Undo|Redo]<br/>
+            "Key_" + "[Escape|Insert|PageUp|PageDown|Home|Left|Up|Right|Down|Start|ContextMenu|EndData|SpeakerPhone|TFlip|Lock|VoiceDial]"<br/>
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.SkinButtonCollection">
+            <summary>Represents a collection of the <see cref="T:Resco.Controls.KeyboardPro.SkinButton"/> objects which are defining custom behavior of certain buttons.</summary>
+            <remarks>
+            <para>SkinButtonCollection can be used to access a <see cref="T:Resco.Controls.KeyboardPro.SkinButton"/> object for a button defined by its name that should correspond to a name used in active skin file.</para>
+            <para>This collection may be also used to enumerate the buttons that currently have a custom behavior.</para>
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.SkinButtonCollection.Dispose">
+            <summary>
+            Resets the button callbacks and cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.SkinButtonCollection.Item(System.String)">
+            <summary>
+            Gets a <see cref="T:Resco.Controls.KeyboardPro.SkinButton"/> object defined by its name that should correspond to a name used in active skin file.
+            </summary>
+            <param name="skinName">A string defining the button name as it appears in the skin definition.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.PanelPlacementType">
+            <summary>
+            Defines the keyboard input panel position
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PanelPlacementType.FormBottom">
+            <summary>
+            place the panel at the bottom of the form's client area
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PanelPlacementType.FormTop">
+            <summary>
+            place the panel on top the of form's client area (but below system TaskBar)
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PanelPlacementType.Pos">
+            <summary>
+            place the panel on certain screen coordinates
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PanelPlacementType.Auto">
+            <summary>
+            place at the bottom, if the focused control was behind the panel, place it on top
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PanelPlacementType.ScreenBottom">
+            <summary>
+            place the panel at the bottom of the screen, over the menubar
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.PreviewModeType">
+            <summary>
+            Defines the button preview position
+            </summary>
+            <remarks>
+            Used as a value of the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.PreviewMode"/> property.
+            </remarks>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PreviewModeType.NoPreview">
+            <summary>Disables button preview</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PreviewModeType.FloatingPreview">
+            <summary>Button preview will be shown above the currently pressed button.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.PreviewModeType.CenterPreview">
+            <summary>Button preview will be shown at the middle of the screen.</summary>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.GestureModeType">
+            <summary>
+            Defines the gesture recognition mode
+            </summary>
+            <remarks>
+            Used as a value of the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.GestureMode"/> property.
+            </remarks>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.GestureModeType.NoGestures">
+            <summary>Disables gesture recognition.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.GestureModeType.SlidingPanels">
+            <summary>Horizontal gesture starts the layout change animation.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.GestureModeType.AdvGestures">
+            <summary>Horizontal gesture starts the layout change animation.</summary>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.ButtonDefinition">
+            <summary>
+            Button content definition
+            </summary>
+            <remarks>
+            <para>There is a limitation on button names (SkinID) that are allowed to be overridden. Such buttons must have one of following predefined names:<br/>
+            "a".."z", "0-"9"<br/>
+            "Layout_.."<br/>
+            "User_1".."User_64"<br/>
+            "Char_1".."Char_32"<br/>
+            "FX_1".."FX_32"<br/>
+            "Symbol_1".."Symbol_31"<br/>
+            "Calc_0".."Calc_9"<br/>
+            "Calc_"+ "[Display|Write|C|CE|MS|MC|Back|MPlus|MR|Minus|Divide|Plus|Multiply|Equal|Sign|Decimal|Percentage|Sqrt|Inversion]"<br/>
+            "Key_0".."Key_9"<br/>
+            "Key_F1".."Key_F24"<br/>
+            "Key_" + "[Shift|Ctrl|Alt|CapsLock|Left|Right|Up|Down|Return|Space|Back|Del|Tab|Comma|Dot|SymbolSet]"<br/>
+            "Key_"+ "[Copy|Cut|Paste|SelectAll|Undo|Redo]<br/>
+            "Key_" + "[Escape|Insert|PageUp|PageDown|Home|Left|Up|Right|Down|Start|ContextMenu|EndData|SpeakerPhone|TFlip|Lock|VoiceDial]"<br/>
+            </para>
+            </remarks>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.SkinID">
+            <summary>Corresponds to the button name used in a raw skin file. Text buttons have a name of their containing character.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.ScanCode">
+            <summary>Keyboard HW scan code. Text buttons have this code same as the Ascii value of their upper-case character ('A'..'Z').
+            Numeric buttons should also use the Ascii value of the numeric character (0x30 for '0' .. 0x39 for '9').
+            Special characters like arrows or Enter use the particular virtual key (as specified in the _Default.csv language file).
+            All the custom character must use the typing-independent scan code (hex value from interval 0xBA .. 0xCF).</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.Character">
+            <summary>Button character.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.HoldChar">
+            <summary>A character, which is typed after holding the button for a while.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.ShiftChar">
+            <summary>Button character for Shift/Caps mode.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.AdvChars">
+            <summary>An additional list of characters offered after holding the button. Used for accented characters.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonDefinition.AdvShiftChars">
+            <summary>Similar list as "advChars" for Shift/Caps mode</summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.ButtonDefinition.#ctor(System.String,System.Int32,System.Char,System.Char,System.Char,System.String,System.String)">
+            <summary>Constructor</summary>
+            <param name="skinID">Corresponds to the button name used in a raw skin file. Text buttons have a name of their containing character.</param>
+            <param name="scanCode">Keyboard scan code. Text buttons have this code same as the Ascii value of their upper-case character.</param>
+            <param name="character">Button character.</param>
+            <param name="holdChar">A character, which is typed after holding the button for a while.</param>
+            <param name="shiftChar">Button character for Shift/Caps mode.</param>
+            <param name="advChars">An additional list of characters offered after holding the button. Used for accented characters.</param>
+            <param name="advShiftChars">Similar list as "advChars" for Shift/Caps mode</param>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.KeyboardPro">
+            <summary>
+            <p><b>Resco KeyboardPro</b></p>
+            <p>Resco KeyboardPro represents one of the most favorite end-user
+            keyboard applications sold on Windows Mobile market. Now it comes in form of a complex developer
+            component. </p>
+            <p>Resco KeyboardPro is completely customizable. Their owners may
+            easily adjust it to the needed preferences. However, the biggest advantage from
+            now on – the keyboard can be included in a .NET project the same way as other
+            components of our Mobile Forms Toolkit.</p>
+            </summary>
+            <note><b><font color="red">This control is not supported on Win32.</font></b></note>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.#ctor">
+            <summary>Initializes a new instance of the KeyboardPro class.</summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.#ctor(System.Windows.Forms.Form)">
+            <summary>Initializes a new instance of the KeyboardPro class.</summary>
+            <param name="parentForm">The parent Form class instance.</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.#ctor(System.ComponentModel.IContainer)">
+            <summary>Initializes a new instance of the KeyboardPro class and includes the new instance into the container.</summary>
+            <param name="container">IContainer instance</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.#ctor(System.Windows.Forms.Form,System.ComponentModel.IContainer)">
+            <summary>Initializes a new instance of the KeyboardPro class and includes the new instance into the container.</summary>
+            <param name="parentForm">The form Form class instance.</param>
+            <param name="container">IContainer instance</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.Create(System.Windows.Forms.Form)">
+            <summary>Creates KeyboardPro component window.</summary>
+            <remarks>Must be called before showing the keyboard for the first time. Otherwise the <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Show(System.Boolean)"/> method will throw an exception. This method is typically called from constructor and may only be used if the Form instance is not known during the object construction.</remarks>
+            <param name="parent">The form Form class instance.</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.Attach(System.Windows.Forms.Form)">
+            <summary>Attaches a <see cref="T:System.Windows.Forms.Form"/> object to this KeyboardPro component.</summary>
+            <remarks>Must be called at least once before showing the keyboard for the first time.
+            Otherwise the <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Show(System.Boolean)"/> method will throw an exception.
+            </remarks>
+            <param name="form">The form Form class instance which will use the KeyboardPro component.</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.Show(System.Boolean)">
+            <summary>
+            Shows or hides the keyboard input panel
+            </summary>
+            <remarks>
+            If the keyboard panel is not initialized, it creates a static input panel control over the form window.
+            You must call <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Attach(System.Windows.Forms.Form)"/> method before showing the keyboard for the first time. Otherwise an exception will be thrown.
+            You can check the visibility state using <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.Visible"/> property.
+            </remarks>
+            <param name="show">true/false.</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.Move(Resco.Controls.KeyboardPro.PanelPlacementType,System.Drawing.Point)">
+            <summary>
+            Changes the input panel position on the screen.
+            </summary>
+            <remarks>
+            Even if the keyboard panel is not initialized, this method will keep the setting and apply them during panel creation.
+            </remarks>
+            <param name="placement">Defines the basic placement on the screen.</param>
+            <param name="p">Ignored if placement is other than "Pos"</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.SetTextLayout">
+            <summary>
+            Sets the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.Layout"/> property to the default text mode name ("Layout_Text").
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.SetNumLayout">
+            <summary>
+            Sets the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.Layout"/> property to default numeric mode name ("Layout_Num").
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.OverrideButton(System.String,System.Int32,System.Char,System.Char,System.Char,System.String,System.String)">
+            <summary>
+            Overrides the content of the skin button with the name skinID.
+            </summary>
+            <param name="skinID">Corresponds to the button name used in the raw skin file. Name of the text button is the same as the character they contain.</param>
+            <param name="scanCode">Keyboard HW scan code. Text buttons have this code same as the Ascii value of their upper-case character ('A'..'Z').
+            Numeric buttons should also use the Ascii value of the numeric character (0x30 for '0' .. 0x39 for '9').
+            Special characters like arrows or Enter use the particular virtual key (as specified in the _Default.csv language file).
+            All the custom character must use the typing-independent scan code (hex value from interval 0xBA .. 0xCF).
+            </param>
+            <param name="character">Button character.</param>
+            <param name="holdChar">A character which is typed after holding the button for a while.</param>
+            <param name="shiftChar">Button character for Shift/CAPS mode.</param>
+            <param name="advChars">An additional list of characters offered after holding the button. Used for accented characters.</param>
+            <param name="advShiftChars">Similar list as "advChars" for Shift/CAPS mode</param>
+            <remarks>
+            <para>OverrideButton method will fail to override the button, if the keyboard panel is not initialized.</para>
+            <para>There is a limitation on button names (skinID) that are allowed to be overridden. Such buttons must have one of following predefined names:<br/>
+            "a".."z", "0-"9"<br/>
+            "Layout_.."<br/>
+            "User_1".."User_64"<br/>
+            "Char_1".."Char_32"<br/>
+            "FX_1".."FX_32"<br/>
+            "Symbol_1".."Symbol_31"<br/>
+            "Calc_0".."Calc_9"<br/>
+            "Calc_"+ "[Display|Write|C|CE|MS|MC|Back|MPlus|MR|Minus|Divide|Plus|Multiply|Equal|Sign|Decimal|Percentage|Sqrt|Inversion]"<br/>
+            "Key_0".."Key_9"<br/>
+            "Key_F1".."Key_F24"<br/>
+            "Key_" + "[Shift|Ctrl|Alt|CapsLock|Left|Right|Up|Down|Return|Space|Back|Del|Tab|Comma|Dot|SymbolSet]"<br/>
+            "Key_"+ "[Copy|Cut|Paste|SelectAll|Undo|Redo]<br/>
+            "Key_" + "[Escape|Insert|PageUp|PageDown|Home|Left|Up|Right|Down|Start|ContextMenu|EndData|SpeakerPhone|TFlip|Lock|VoiceDial]"<br/>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.OverrideButtons(Resco.Controls.KeyboardPro.ButtonDefinition[])">
+            <summary>
+            Overrides the content of several skin buttons at once.
+            </summary>
+            <remarks>
+            If the keyboard panel is not initialized, it will fail.
+            </remarks>
+            <param name="buttonDef">an array of <see cref="T:Resco.Controls.KeyboardPro.ButtonDefinition"/> button definitions</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.OverrideSymbols(System.String[0:,0:])">
+             <summary>
+             Overrides the symbol table used in "Layout_Num" mode (see <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.Layout"/> property) 
+             </summary>
+             <param name="symbols">Symbol matrix, which can contain up to 25 rows (representing the skin buttons "Symbol_1"-"Symbol 25") and several columns (each representing one set of symbols)</param>
+             <example>
+             <code lang="C#" description="Defines two symbol sets with default symbol assignment"><![CDATA[
+                 keyboardPro1.OverrideSymbols
+                 (
+                    new string[,]
+                    {
+                        {".","°"},
+                        {",","«"},
+                        {":","»"},
+                        {";","~"},
+                        {"?","?"},
+                        {"!","!"},
+                        {"\"","["},
+                        {"'","]"},
+                        {"&","_"},
+                        {"@","^"},
+                        {"+","?"},
+                        {"-","±"},
+                        {"*","?"},
+                        {"/","1"},
+                        {"=","1"},
+                        {"<","3"},
+                        {">","?"},
+                        {"(","©"},
+                        {")","®"},
+                        {"%","|"},
+                        {"$","#"},
+                        {"€","{"},
+                        {"L","}"},
+                        {"Y","§"},
+                        {"c","\\"},
+                    }
+                 );
+            ]]></code>
+            <code lang="VisualBasic" description="Defines two symbol sets with default symbol assignment"><![CDATA[
+            keyboardPro1.OverrideSymbols(New String(,) {{".", "°"}, {",", "«"}, {":", "»"}, {";", "~"}, {"?", "?"}, {"!", "!"}, _
+            	{"""", "["}, {"'", "]"}, {"&", "_"}, {"@", "^"}, {"+", "?"}, {"-", "±"}, _
+            	{"*", "?"}, {"/", "1"}, {"=", "1"}, {"<", "3"}, {">", "?"}, {"(", "©"}, _
+            	{")", "®"}, {"%", "|"}, {"$", "#"}, {"€", "{"}, {"L", "}"}, {"Y", "§"}, _
+            	{"c", "\"}})
+            ]]></code>
+             </example>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.DisableChars(System.String)">
+            <summary>
+            Defines the set of character buttons, which are to be disabled under the current context.
+            </summary>
+            <param name="chars">A string containing characters, which are not relevant under the current context.</param>
+            <returns>true if succeeded</returns>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.SetFxPhrase(System.Int32,System.String)">
+            <summary>
+            Defines the FX phrase for "Layout_FX" keyboard layout.
+            </summary>
+            <remarks>Use this method to override certain FX button content. Users can later change the text, 
+            however it is possible to disable the FX content editing by setting the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.DisableFxEdit"/> property.</remarks>
+            <p>FX phrases support meta-tags for current date/time. Use $DATE[format] to type current date and $TIME[format] to type the time, where the
+            "format" syntax copies the syntax of the <see cref="T:System.DateTime"/> format definition.</p>
+            <param name="pos">Zero-based FX button index</param>
+            <param name="phrase">Button content</param>
+            <seealso cref="M:Resco.Controls.KeyboardPro.KeyboardPro.SetFxPhrases(System.String[])"/>
+            <seealso cref="P:Resco.Controls.KeyboardPro.KeyboardPro.DisableFxEdit"/>
+            <returns>true if succeded</returns>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.SetFxPhrases(System.String[])">
+            <summary>
+            Defines the FX phrases for "Layout_FX" keyboard layout.
+            </summary>
+            <remarks><p>Use this method to fill in all the FX phrases at once. Users can later change these texts, 
+            however it is possible to disable the FX content editing by setting the <see cref="P:Resco.Controls.KeyboardPro.KeyboardPro.DisableFxEdit"/> property.</p>
+            <p>FX phrases support meta-tags for current date/time. Use $DATE[format] to type current date and $TIME[format] to type the time, where the
+            "format" syntax copies the syntax of the <see cref="T:System.DateTime"/> format definition.</p>
+            </remarks>
+            <param name="phrases">An array of strings representing the FX phrases</param>
+            <seealso cref="M:Resco.Controls.KeyboardPro.KeyboardPro.SetFxPhrase(System.Int32,System.String)"/>
+            <seealso cref="P:Resco.Controls.KeyboardPro.KeyboardPro.DisableFxEdit"/>
+            <returns>true if succeded</returns>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.ShowSipButton(System.Boolean)">
+            <summary>
+            Shows/Hides the standard SIP button for current form
+            </summary>
+            <param name="show">true/false means show/hide</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.RegisterButtonCallback(System.String,Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallback)">
+            <summary>
+            Registers the callback delegate function which is called each time when a certain button is pressed. It can be used for overriding the button functionality under certain context.
+            Each callback function should be unregistered by calling <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.UnregisterButtonCallback(System.String)"/> method when it is no longer used. Otherwise the callback will be unregistered after the form form is closed.
+            </summary>
+            <param name="button">The name of the button as appears in skin RAML definition. It can be either one of the button names from default skin or a new button from custom skin definition.</param>
+            <param name="callback">Callback delegate function</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.UnregisterButtonCallback(System.String)">
+            <summary>
+            Unregisters the callback delegate function previously registered by a <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.RegisterButtonCallback(System.String,Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallback)"/> method.
+            </summary>
+            <param name="button">The name of the registered button</param>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.SetGlobalButtonCallback(Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallbackEx)">
+            <summary>
+            Registers the global button callback delegate function which is called each time when any button is pressed. It can be used for overriding the button functionality under certain context.
+            The callback function should be unregistered by calling this method with null callback.
+            </summary>
+            <param name="callback">Callback delegate function</param>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.KeyboardPro.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.KeyboardPro.KeyboardPro.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.KeyboardPro.KeyboardPro.VisibilityChanged">
+            <summary>Occurs when the Resco keyboard input panel visibility changes.</summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.SkinButtons">
+            <summary>Gets a collection of the <see cref="T:Resco.Controls.KeyboardPro.SkinButton"/> objects which are defining custom behavior of certain buttons.</summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Visible">
+            <summary>
+            Gets or sets current visibility state.
+            </summary>
+            <remarks>Setting this property changes the keyboard panel visibility state
+            only if the keyboard panel was already attached to one or more Form objects by calling the <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Attach(System.Windows.Forms.Form)"/> method.</remarks>
+            <seealso cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Show(System.Boolean)"/>
+            <seealso cref="M:Resco.Controls.KeyboardPro.KeyboardPro.Attach(System.Windows.Forms.Form)"/>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Enabled">
+            <summary>Indicates whether the keyboard panel is enabled.</summary>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Language">
+            <summary>
+            Gets or sets one of the keyboard language.
+            </summary>
+            <remarks>
+            The "Language" property defines the language, which should be used to define the button assignment.
+            It can either contain one of the predefined languages, or the explicit CSV file name (for language files located in the deploy subfolder Languages).
+            Language property can also contain an absolute CSV file path.
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Skin">
+            <summary>
+            Gets or sets one of the skin package.
+            </summary>
+            <remarks>
+            Defines the RPK file package, which should be used to render the keyboard panel.
+            Either specify the file name without extension (for skins located in the deploy subfolder Skins),
+            or the full path to the RPK skin package.
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Layout">
+            <summary>
+            Gets or sets one of the skin keyboard layouts.
+            </summary>
+            <remarks>
+            Layout property may have one of the layout values defined in skin files.
+            The "Default" skin contains following layouts:
+            <table>
+            <tr><td>Layout_Text</td><td>Default text writing layout</td></tr>
+            <tr><td>Layout_Num</td><td>Numeric layout with a switchable symbol sets</td></tr>
+            <tr><td>Layout_Navigation</td><td>Layout with arrows and basic editing functions.</td></tr>
+            <tr><td>Layout_Fx</td><td>FX layout with predefined phrases (see <see cref="M:Resco.Controls.KeyboardPro.KeyboardPro.SetFxPhrase(System.Int32,System.String)"/> method)</td></tr>
+            <tr><td>Layout_Calc</td><td>A calculator with text output.</td></tr>
+            </table>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.TapNotification">
+            <summary>
+            Gets or sets the button press notification mode.
+            </summary>
+            <remarks>
+            TapNotification property may have one of the following values:
+            <table>
+            <tr><td>String.Empty</td><td>Turns off the notification</td></tr>
+            <tr><td>"Vibrate"</td><td>Vibrate on button press</td></tr>
+            <tr><td>A valid WAV file name from the deploy subfolder "Sounds"</td><td>Play the sound on button press</td></tr>
+            <tr><td>A valid WAV file path</td><td>Play the sound on button press</td></tr>
+            </table>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.PreviewMode">
+            <summary>
+            Gets or sets the button preview position
+            </summary>
+            <remarks>
+            Can have one of <see cref="T:Resco.Controls.KeyboardPro.PreviewModeType"/> enum values
+            </remarks>
+            <seealso cref="T:Resco.Controls.KeyboardPro.PreviewModeType"/>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.GestureMode">
+            <summary>
+            Gets or sets the tap'n'drag gesture recognition mode
+            </summary>
+            <remarks>
+            Can have one of <see cref="T:Resco.Controls.KeyboardPro.GestureModeType"/> enum values
+            </remarks>
+            <seealso cref="T:Resco.Controls.KeyboardPro.GestureModeType"/>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.DisableFxEdit">
+            <summary>
+            Disables the FX phrases editing
+            </summary>
+            <remarks>If the editing is enabled, users may tap'n'hold the FX button and change its content. 
+            Similarly, it is possible to fill in the empty FX button by tapping its plus icon.</remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.SymbolSet">
+            <summary>Gets or sets the zero-based index of currently selected symbol set.</summary>
+            <remarks>
+            <para>The numeric layout may contain several sets of symbols which can be switched by user.
+            This property provides an access to the currently selected symbol set. It can be also used to force
+            certain set under some conditions.</para>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Bounds">
+            <summary>
+            Gets or sets the bounds rectangle of the keyboard input panel
+            </summary>
+            <remarks>
+            This is the rectangle of the keyboard input panel window in screen coordinates.
+            Returns Rectangle.Empty, if the keyboard is not visible
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Size">
+            <summary>
+            Gets or sets the size of the keyboard input panel
+            </summary>
+            <remarks>
+            This is the size of the keyboard input panel window in pixels.
+            Returns Size.Empty, if the keyboard panel was not created yet
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Location">
+            <summary>
+            Gets or sets the location of the keyboard input panel
+            </summary>
+            <remarks>
+            This is the location of the keyboard input panel window in screen coordinates.
+            Returns Point.Empty, if the keyboard panel was not created yet
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.PanelPlacement">
+            <summary>
+            Gets or sets the keyboard input panel placement
+            </summary>
+            <remarks>Defines the basic keyboard input panel position. Can have one of <see cref="T:Resco.Controls.KeyboardPro.PanelPlacementType"/> enum values</remarks>
+            <seealso cref="T:Resco.Controls.KeyboardPro.PanelPlacementType"/>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Top">
+            <summary>
+            Gets or sets the top position of the keyboard input panel
+            </summary>
+            <remarks>
+            This is the top of the keyboard input panel window in screen coordinates.
+            Returns zero, if the keyboard is not visible
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.Bottom">
+            <summary>
+            Gets or sets the bottom position of the keyboard input panel
+            </summary>
+            <remarks>
+            This is the bottom of the keyboard input panel window in screen coordinates.
+            Returns zero, if the keyboard is not visible
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.VisibleDesktop">
+            <summary>
+            Returns the rectangle representing the visible part of the desktop
+            </summary>
+            <remarks>
+            Returns Rectangle.Empty, if the keyboard is not visible
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.VibrateLED">
+            <summary>
+            Sets the vibration LED index
+            </summary>
+            <remarks>Leave this value unchanged to allow the keyboard to detect the LED index automatically.</remarks>
+        </member>
+        <member name="P:Resco.Controls.KeyboardPro.KeyboardPro.AutoHideSipButton">
+            <summary>Indicates whether the SIP button hiding is enabled.</summary>
+            <remarks>If enabled, KeyboardPro hides the system SIP button on every parent form activation.</remarks>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallback">
+            <summary>
+            Represents the callback function which can be registered to be called on certain button actions
+            </summary>
+            <param name="button">Button name as appears in the skin definition</param>
+            <returns>Returns <see cref="T:Resco.Controls.KeyboardPro.ButtonCallbackResult"/> value which defines if the default button click handling has to be called.</returns>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.KeyboardPro.ButtonCallbackEx">
+            <summary>
+            Represents the callback function which can be registered to be called on certain button actions
+            </summary>
+            <param name="button">Button name as appears in the skin definition</param>
+            <param name="pressType">A type of the button press that came to the button callback</param>
+            <returns>Returns <see cref="T:Resco.Controls.KeyboardPro.ButtonCallbackResult"/> value which defines if the default button click handling has to be called.</returns>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.ButtonCallbackResult">
+            <summary>
+            Defines the result of a button callback function.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonCallbackResult.Unhandled">
+            <summary>
+            Returned when a callback has overridden the button functionality and the default handling has not to be called.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonCallbackResult.Handled">
+            <summary>
+            Returned when a callback has not overridden the button functionality and the default handling should be called.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.KeyboardPro.ButtonPressType">
+            <summary>
+            Defines the type of the button press that came to the button callback
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonPressType.Click">
+            <summary>Button was pressed by a short click.</summary>
+        </member>
+        <member name="F:Resco.Controls.KeyboardPro.ButtonPressType.Hold">
+            <summary>Button was pressed for a longer period (it was held).</summary>
+        </member>
+    </members>
+</doc>

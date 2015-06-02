@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRescoToolKit", "TestRescoToolKit\TestRescoToolKit.csproj", "{2AB98523-0E16-4E41-B024-CC979BFFB825}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGCustomScrollBar", "SGCustomScrollBar\SGCustomScrollBar.csproj", "{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortOnHeaderClick", "15SortOnHeaderClick.cs.2008\SortOnHeaderClick.csproj", "{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditCell", "EditCell\EditCell.csproj", "{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB98523-0E16-4E41-B024-CC979BFFB825}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A9CCBC3-653D-4B4A-BAEE-0EF680B87629}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3192F4-36FB-4176-B2E7-E3F4FE9770B8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1413B1-A9FA-4F53-84FA-AB463EFCD36D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

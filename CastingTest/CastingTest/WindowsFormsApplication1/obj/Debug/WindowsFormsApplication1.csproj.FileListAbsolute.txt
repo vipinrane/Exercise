@@ -1,0 +1,11 @@
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\bin\Debug\CastingClassLibrary1.dll
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\bin\Debug\CastingClassLibrary1.pdb
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Exercise\CastingTest\CastingTest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

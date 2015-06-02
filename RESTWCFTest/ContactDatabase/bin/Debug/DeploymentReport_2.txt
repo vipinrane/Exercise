@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column City in table [dbo].[Contact] is currently  VARCHAR (100) NULL but is being changed to  VARCHAR (60)
+         NULL. Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Contact] (Table)
+
+** Supporting actions
+
+The type for column City in table [dbo].[Contact] is currently  VARCHAR (100) NULL but is being changed to  VARCHAR (60) NULL. Data loss could occur.
+

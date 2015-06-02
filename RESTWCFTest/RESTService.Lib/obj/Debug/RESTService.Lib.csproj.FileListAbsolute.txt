@@ -1,0 +1,5 @@
+E:\Exercise\RESTWCFTest\RESTService.Lib\bin\Debug\RESTService.Lib.dll
+E:\Exercise\RESTWCFTest\RESTService.Lib\bin\Debug\RESTService.Lib.pdb
+E:\Exercise\RESTWCFTest\RESTService.Lib\obj\Debug\RESTService.Lib.dll
+E:\Exercise\RESTWCFTest\RESTService.Lib\obj\Debug\RESTService.Lib.pdb
+E:\Exercise\RESTWCFTest\RESTService.Lib\obj\Debug\RESTService.Lib.csprojResolveAssemblyReference.cache

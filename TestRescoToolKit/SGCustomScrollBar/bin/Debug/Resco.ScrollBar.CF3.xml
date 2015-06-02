@@ -1,0 +1,2498 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resco.ScrollBar.CF3</name>
+    </assembly>
+    <members>
+        <member name="T:Resco.Controls.ScrollBar.HScrollBar">
+            <summary>
+            Resco horizontal ScrollBar control.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar">
+            <summary>
+            Resco ScrollBar control.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeArrowButtonsLayout">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.ArrowButtonsLayout"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeTrackClickBehavior">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.TrackClickBehavior"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeLowTrack">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.LowTrack"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeLowTrackHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.LowTrackHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeLowTrackDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.LowTrackDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeHighTrack">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.HighTrack"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeHighTrackHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.HighTrackHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeHighTrackDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.HighTrackDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeThumb">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Thumb"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeThumbHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.ThumbHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeThumbDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.ThumbDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeThumbMargins">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.ThumbMargins"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeExtension">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Extension"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.#ctor(Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation)">
+            <summary>
+            Initializes new ScrollBar control.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Overrided to disable default control's behavior.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack"/>, <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButton"/> and <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawThumb"/> events.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnDrawTrack(Resco.Controls.ScrollBar.DrawTrackEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.DrawEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnDrawArrowButton(Resco.Controls.ScrollBar.DrawArrowButtonEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButton"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.DrawArrowButtonEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnDrawThumb(Resco.Controls.ScrollBar.DrawEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawThumb"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.DrawEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnEnabledChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="P:System.Windows.Forms.Control.Enabled"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Resco.Controls.ScrollBar.ScrollBar"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Resco.Controls.ScrollBar.ScrollBar"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+            <summary>
+            This member overrides <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/>. Scales a control's location, size, padding and margin.
+            </summary>
+            <param name="factor">The factor by which the height and width of the control will be scaled.</param>
+            <param name="specified">A <see cref="T:System.Windows.Forms.BoundsSpecified"/> value that specifies the bounds of the control to use when defining its size and position.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.ShouldSerializeGradientColor(Resco.Controls.ScrollBar.GradientColor)">
+            <summary>
+            Indicates whether the <see cref="T:Resco.Controls.ScrollBar.GradientColor"/> properties should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.HandleChange(Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType)">
+            <summary>
+            Handles property change.
+            </summary>
+            <param name="type">A type of property changed.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnValueChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.ValueChanged"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnMinimumReached(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.MinimumReached"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnMaximumReached(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.MaximumReached"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseMove"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBar.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseUp"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack">
+            <summary>
+            Occurs when a control needs to repaint track.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButton">
+            <summary>
+            Occurs when a control needs to repaint arrow button.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.DrawThumb">
+            <summary>
+            Occurs when a control needs to repaint thumb.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.ValueChanged">
+            <summary>
+            Occurs when the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Value"/> property is changed.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.MinimumReached">
+            <summary>
+            Occurs when the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Value"/> property is set to <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Minimum"/> value.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBar.MaximumReached">
+            <summary>
+            Occurs when the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Value"/> property is set to <b><see cref="P:Resco.Controls.ScrollBar.ScrollBar.Maximum"/> - <see cref="P:Resco.Controls.ScrollBar.ScrollBar.LargeChange"/> + 1</b> (maximum) value.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Minimum">
+            <summary>
+            Gets or sets the lower limit of values of the scrollable range.
+            </summary>
+            <value>A numeric value. The default value is 0.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Maximum">
+            <summary>
+            Gets or sets the upper limit of values of the scrollable range.
+            </summary>
+            <value>A numeric value. The default value is 100.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LargeChange">
+            <summary>
+            Gets or sets a value to be added to or subtracted from the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Value"/> property when the thumb is moved a large distance.
+            </summary>
+            <value>A numeric value. The default value is 10.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.SmallChange">
+            <summary>
+            Gets or sets the value to be added to or subtracted from the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Value"/> property when the scroll box is moved a small distance.
+            </summary>
+            <value>A numeric value. The default value is 1.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Value">
+            <summary>
+            Gets or sets a numeric value that represents the current position of the thumb on the scroll bar control.
+            </summary>
+            <value>A numeric value that is within the <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Minimum"/> and <see cref="P:Resco.Controls.ScrollBar.ScrollBar.Maximum"/> range. The default value is 0.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ArrowButtonsLayout">
+            <summary>
+            Gets or sets the layout of arrow buttons.
+            </summary>
+            <value><see cref="T:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout"/> value. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout.Edges"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LeftUpButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left or up button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LeftUpButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left or up button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LeftUpButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left or up button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LeftUpButtonSize">
+            <summary>
+            Gets or sets the size of the left or up button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.RightDownButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right or down button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.RightDownButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right or down button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.RightDownButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right or down button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.RightDownButtonSize">
+            <summary>
+            Gets or sets the size of the right or down button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.TrackClickBehavior">
+            <summary>
+            Get or sets behavior when the track is clicked.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrackClickBehavior"/>. Default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarTrackClickBehavior.Scroll"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LowTrack">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the low track.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LowTrackHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the low track in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.LowTrackDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the low track in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.HighTrack">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the high track.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.HighTrackHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the high track in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.HighTrackDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component for the high track in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Thumb">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component for the thumb.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ThumbHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component for the thumb in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ThumbDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component for the thumb in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component. The default is null.</value>
+            <remarks>By default, thumb is not drawn when control's <see cref="P:System.Windows.Forms.Control.Enabled"/> property is set to <b>false</b>.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.MinimumThumbSize">
+            <summary>
+            Gets or sets minimum size of the thumb.
+            </summary>
+            <value>An integer value. Default is 11.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.MaximumThumbSize">
+            <summary>
+            Gets or sets maximum size of the thumb.
+            </summary>
+            <value>An integer value. Default is 0.</value>
+            <remarks>If this property is set to <b>0</b>, the size of the thumb is computed automatically.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ThumbMargins">
+            <summary>
+            Gets or sets the space between the edges of a thumb and its content.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> representing the space between thumb's edges and its content. The default is 0 for all edges.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Extension">
+            <summary>
+            Gets or sets scrollbars's extension.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase"/> derived class. Default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ExtensionSize">
+            <summary>
+            Gets or sets the width or height of the extension.
+            </summary>
+            <value>An integer value. Default is 13.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ExtensionLocationInControl">
+            <summary>
+            Gets or sets the location of the extension within control.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionLocation"/>. Default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarExtensionLocation.LeftTop"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ExtensionVisible">
+            <summary>
+            Gets or sets visibility of the extension.
+            </summary>
+            <value>A boolean specifying visibility of the extension. Default is true.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.BackColor">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.ForeColor">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Font">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBar.Text">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar.DrawTrackHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButtonHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButton"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar.DrawThumbHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawThumb"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation">
+            <summary>
+            Specifies the orientation of the control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation.Horizontal">
+            <summary>
+            Horizontal scrollbar.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation.Vertical">
+            <summary>
+            Vertical scrollbar.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType">
+            <summary>
+            Specifies the type of property group change.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.ScrollBarPropertyChanged">
+            <summary>
+            ScrollBar control property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.ScrollBarPropertySmallChangeChanged">
+            <summary>
+            <see cref="P:Resco.Controls.ScrollBar.ScrollBar.SmallChange"/> property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.LeftUpArrowPropertyChanged">
+            <summary>
+            Left or up arrow button property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.RightDownArrowPropertyChanged">
+            <summary>
+            Right or down arrow button property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.LowTrackPropertyChanged">
+            <summary>
+            Low track property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.HighTrackPropertyChanged">
+            <summary>
+            High track property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.ThumbPropertyChanged">
+            <summary>
+            Thumb property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.ExtensionPropertyChanged">
+            <summary>
+            Extension property has been changed.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBar.ScrollBarChangeType.NeedFullRedraw">
+            <summary>
+            Property, which needs full redraw of control has been changed.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeLeftButton">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.LeftButton"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeLeftButtonHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.LeftButtonHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeLeftButtonDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.LeftButtonDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeRightButton">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.RightButton"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeRightButtonHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.RightButtonHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeRightButtonDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.RightButtonDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.ShouldSerializeExtensionLocation">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.HScrollBar.ExtensionLocation"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.HScrollBar.#ctor">
+            <summary>
+            Initializes new HScrollBar control.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.LeftButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.LeftButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.LeftButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the left button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.LeftButtonWidth">
+            <summary>
+            Gets or sets the width of the left button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.RightButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.RightButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.RightButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the right button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.RightButtonWidth">
+            <summary>
+            Gets or sets the width of the right button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.MinimumThumbWidth">
+            <summary>
+            Gets or sets minimum width of the thumb.
+            </summary>
+            <value>An integer value. Default is 11.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.MaximumThumbWidth">
+            <summary>
+            Gets or sets maximum width of the thumb.
+            </summary>
+            <value>An integer value. Default is 0.</value>
+            <remarks>If this property is set to <b>0</b>, the width of the thumb is computed automatically.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.ExtensionHeight">
+            <summary>
+            Gets or sets the height of the extension.
+            </summary>
+            <value>An integer value. Default is 13.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.HScrollBar.ExtensionLocation">
+            <summary>
+            Gets or sets the location of the extension within control.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.HScrollBarExtensionLocation"/>. Default is <see cref="F:Resco.Controls.ScrollBar.HScrollBarExtensionLocation.Top"/>.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarTrack">
+            <summary>
+            Resco ScrollBar control's track component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarTrack.PropertyChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.#ctor">
+            <summary>
+            Initializes new ScrollBarTrack component.
+            </summary>
+            <remarks>Component is initialized with values for normal state.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.#ctor(Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults)">
+            <summary>
+            Initializes new ScrollBarTrack component.
+            </summary>
+            <param name="type">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults"/> specifying how to initialize component.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.ShouldSerializeBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.BorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.ShouldSerializeGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.GradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.ShouldSerializeTrackLayout">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.TrackLayout"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarTrack.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarTrackType,Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation,System.Drawing.Color)">
+            <summary>
+            Draws ScrollBar's track.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> surface to draw on.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw in. Part of this rectangle may be under thumb.</param>
+            <param name="visibleRect">Fully visible <see cref="T:System.Drawing.Rectangle"/> to draw in.</param>
+            <param name="trackRect">A <see cref="T:System.Drawing.Rectangle"/> of the whole track (low and high parts together).</param>
+            <param name="type"><see cref="T:Resco.Controls.ScrollBar.ScrollBarTrackType"/> type of the track.</param>
+            <param name="orientation"><see cref="T:Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation"/> of the track.</param>
+            <param name="parentColor"><see cref="T:System.Drawing.Color"/> used to draw transparent corners.</param>
+            <remarks><b>parentColor</b> parameter should be a BackColor of this control's parent.</remarks>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarTrack.PropertyChanged">
+            <summary>
+            Occurs when any property changes.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.Default">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> object with all properties set to default value.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.DefaultHighlight">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> object with all properties set to default value for highlighted state.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.DefaultDisabled">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> object with all properties set to default value for disabled state.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.BorderStyle">
+            <summary>
+            Gets or sets the style of the border.
+            </summary>
+            <value>The style of how the border is drawn. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Solid"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.Color">
+            <summary>
+            Gets or sets the color of the track.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the track.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.GradientColor"/> or <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.Image"/> properties are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.GradientColor">
+            <summary>
+            Gets or sets the gradient colors of the track.
+            </summary>
+            <value><see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.GradientColor"/> used to draw the button.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarTrack.Image"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.Image">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the track.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the track. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarTrack.TrackLayout">
+            <summary>
+            Gets or sets the layout of track's gradient colors or image.
+            </summary>
+            <value><see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackLayout"/> value. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackLayout.FixedToTrack"/>.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackLayout">
+            <summary>
+            Specifies how gradient colors or image are drawn.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackLayout.Stretched">
+            <summary>
+            The gradient color or image are stretched across the component's client rectangle.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackLayout.FixedToTrack">
+            <summary>
+            The gradient color or image are stretched across whole track (low and high part or it).
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults">
+            <summary>
+            Specifies how to initialize <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrack"/> component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults.Normal">
+            <summary>
+            Default values for normal state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults.Highlight">
+            <summary>
+            Default values for highlighted (pressed) state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrack.ScrollBarTrackDefaults.Disabled">
+            <summary>
+            Default values for disabled state.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.DrawEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack"/> and <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawThumb"/> events.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.DrawEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarElementState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.DrawEventArgs"/> class.
+            </summary>
+            <param name="graphics">Graphics surface to draw on.</param>
+            <param name="bounds">Rectangle that represents the bounds to draw to.</param>
+            <param name="state"><see cref="T:Resco.Controls.ScrollBar.ScrollBarElementState"/> state.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawEventArgs.Graphics">
+            <summary>
+            Gets the graphics surface to draw on.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawEventArgs.Bounds">
+            <summary>
+            Gets the rectangle that represents the bounds to draw to.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawEventArgs.State">
+            <summary>
+            Gets the <see cref="T:Resco.Controls.ScrollBar.ScrollBarElementState"/> of the arrow button.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.DrawArrowButtonEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawArrowButton"/> event.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.DrawArrowButtonEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarElementState,Resco.Controls.ScrollBar.ScrollBarArrow)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.DrawArrowButtonEventArgs"/> class.
+            </summary>
+            <param name="graphics">Graphics surface to draw on.</param>
+            <param name="bounds">Rectangle that represents the bounds to draw to.</param>
+            <param name="state"><see cref="T:Resco.Controls.ScrollBar.ScrollBarElementState"/> state.</param>
+            <param name="type"><see cref="T:Resco.Controls.ScrollBar.ScrollBarArrow"/> type.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawArrowButtonEventArgs.Type">
+            <summary>
+            Gets the <see cref="T:Resco.Controls.ScrollBar.ScrollBarArrow"/> type of the arrow button.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.DrawTrackEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBar.DrawTrack"/> event.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.DrawTrackEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarElementState,System.Drawing.Rectangle,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarTrackType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.DrawTrackEventArgs"/> class.
+            </summary>
+            <param name="graphics">Graphics surface to draw on.</param>
+            <param name="bounds">Rectangle that represents the bounds to draw to. Part of it may be under thumb.</param>
+            <param name="state"><see cref="T:Resco.Controls.ScrollBar.ScrollBarElementState"/> state.</param>
+            <param name="visibleRect">Rectangle that represents visible area.</param>
+            <param name="trackRect">Rectangle that represents whole track.</param>
+            <param name="track"><see cref="T:Resco.Controls.ScrollBar.ScrollBarTrackType"/> that represents which part of track is to be drawn.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawTrackEventArgs.VisibleRectangle">
+            <summary>
+            Gets the visible rectangle for drawing.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawTrackEventArgs.TrackRectangle">
+            <summary>
+            Gets the rectangle of the whole track.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.DrawTrackEventArgs.TrackType">
+            <summary>
+            Gets a <see cref="T:Resco.Controls.ScrollBar.ScrollBarTrackType"/> type.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarBorderStyle">
+            <summary>
+            Specifies the style used to draw the border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.None">
+            <summary>
+            No border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Solid">
+            <summary>
+            Rectangular border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Rounded">
+            <summary>
+            Border with rounded corners.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarArrow">
+            <summary>
+            Specifies the orientation of the arrow button.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrow.Left">
+            <summary>
+            Left arrow.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrow.Right">
+            <summary>
+            Right arrow.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrow.Up">
+            <summary>
+            Up arrow.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrow.Down">
+            <summary>
+            Down arrow.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarElementState">
+            <summary>
+            Specifies the state of control's elements.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarElementState.Normal">
+            <summary>
+            Element is in normal state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarElementState.Pressed">
+            <summary>
+            Element is in pressed state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarElementState.Disabled">
+            <summary>
+            Element is in disabled state.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarTrackType">
+            <summary>
+            Specifies part of the scrollbar's track.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrackType.Low">
+            <summary>
+            Part between left/up arrow button and the thumb.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrackType.High">
+            <summary>
+            Part between thumb and right/bottom arrow button.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout">
+            <summary>
+            Specifies the layout of the arrow buttons.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout.Hidden">
+            <summary>
+            Arrow buttons are hidden.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout.Beginning">
+            <summary>
+            Arrow buttons are both displayed at the beginning of the control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout.End">
+            <summary>
+            Arrow buttons are both displayed at the end of the control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarArrowButtonsLayout.Edges">
+            <summary>
+            Arrow buttons are displayed on both edges of the control.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarTrackClickBehavior">
+            <summary>
+            Specifies behavior when track is clicked.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrackClickBehavior.Scroll">
+            <summary>
+            Scroll thumb until it reaches the end or mouse button is released.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarTrackClickBehavior.Jump">
+            <summary>
+            Jump immediately to the cursor.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionLocation">
+            <summary>
+            Specifies location for extension.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionLocation.LeftTop">
+            <summary>
+            Extension is on the left (vertical scrollbar) or at the top (horizontal scrollbar).
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionLocation.RightBottom">
+            <summary>
+            Extension is on the right (vertical scrollbar) or at the bottom (horizontal scrollbar).
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.VScrollBarExtensionLocation">
+            <summary>
+            Specifies location for vertical scrollbar's extension.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.VScrollBarExtensionLocation.Left">
+            <summary>
+            Extension is on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.VScrollBarExtensionLocation.Right">
+            <summary>
+            Extension is on the right.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.HScrollBarExtensionLocation">
+            <summary>
+            Specifies location for horizontal scrollbar's extension.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.HScrollBarExtensionLocation.Top">
+            <summary>
+            Extension is at the top.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.HScrollBarExtensionLocation.Bottom">
+            <summary>
+            Extension is at the bottom.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase">
+            <summary>
+            Resco ScrollBar extension component base.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Invalidate">
+            <summary>
+            Invalidates back buffer.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.#ctor">
+            <summary>
+            Initializes new ScrollBarExtensionBase component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnPropertyChanged(Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChanged"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs"/> that contains the event data.</param>
+            <remarks>It is recommended to call this method always when any visual property has been changed, so component can be redrawn properly.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnPaint(Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Paint"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Resize"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnValueToIndex(Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueToIndex"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs"/> that contains the event data.</param>
+            <remarks>
+            <p>It is required to set handler for this event so extensions will work properly.</p>
+            <p>When overriding this method, you should call base's method before doing anything, so index can be set properly.</p>
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnIndexToValue(Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.IndexToValue"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs"/> that contains the event data.</param>
+            <remarks>
+            <p>It is required to set handler for this event so extensions will work properly.</p>
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseDown"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseMove"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseUp"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValidateIndex(System.Int32)">
+            <summary>
+            Validates index.
+            </summary>
+            <param name="index">An integer index to validate.</param>
+            <returns><b>true</b> if index is valid; otherwise <b>false</b>.</returns>
+            <remarks>If this method return <b>false</b>, index is not changed to the new value.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValidateValue(System.Int32)">
+            <summary>
+            Validates value.
+            </summary>
+            <param name="value">An integer value to validate.</param>
+            <returns><b>true</b> if value is valid; otherwise <b>false</b>.</returns>
+            <remarks>If this method returns <b>false</b>, scrollbar control is not notified about index change.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DeselectAllIndex(System.Int32)">
+            <summary>
+            Determines if index specifies no selection.
+            </summary>
+            <param name="index">An integer index.</param>
+            <returns><b>true</b> is index specifies no selection; othrwise <b>false</b>.</returns>
+            <remarks>If this method returns <b>true</b>, index is considered as valid for no selection and <see cref="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValidateIndex(System.Int32)"/> is not called.</remarks>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChanged">
+            <summary>
+            Occurs when any property changes.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Paint">
+            <summary>
+            Occurs when the component is redrawn.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Resize">
+            <summary>
+            Occurs when the component is resized.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueToIndex">
+            <summary>
+            Occurs when the scrollbar changes value to synchronize with scrollbar.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.IndexToValue">
+            <summary>
+            Occurs when the extension changes index.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseDown">
+            <summary>
+            Occurs when a mouse button is pressed.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseMove">
+            <summary>
+            Occurs when a mouse button is moved.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseUp">
+            <summary>
+            Occurs when a mouse button is released.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Bounds">
+            <summary>
+            Gets bounds of the component.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Rectangle"/> structure.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Location">
+            <summary>
+            Gets or sets component's location within main control.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation"/> indicationg component's location.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Index">
+            <summary>
+            Gets or sets index representing value.
+            </summary>
+            <value>An integer.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation">
+            <summary>
+            Specifies location of the component within main control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation.Left">
+            <summary>
+            The component is on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation.Right">
+            <summary>
+            The component is on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation.Top">
+            <summary>
+            The component is at the top.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ComponentLocation.Bottom">
+            <summary>
+            The component is at the bottom.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs"/> class.
+            </summary>
+            <param name="redraw">A <see cref="T:System.Boolean"/> indicating redrawing of the component.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedEventArgs.Redraw">
+            <summary>
+            Gets if component needs to redraw itself.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChangedHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.PropertyChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Paint"/> event.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs"/> class.
+            </summary>
+            <param name="graphics">Graphics surface to draw on.</param>
+            <param name="bounds">Rectangle that represents the bounds to draw to.</param>
+            <param name="parentColor">Color used to draw transparent rounded corners.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs.Graphics">
+            <summary>
+            Gets the graphics surface to draw on.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs.Bounds">
+            <summary>
+            Gets the rectangle that represents the bounds to draw to.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs.ParentColor">
+            <summary>
+            Gets the color used to draw transparent rounded corners.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Paint"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueToIndex"/> and <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.IndexToValue"/> events.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs"/> class.
+            </summary>
+            <param name="parameter">A scrollbar's value or extension's index.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionEventArgs.Parameter">
+            <summary>
+            Gets parameter.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueIndexConversionHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.ValueToIndex"/> or <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.IndexToValue"/> events.
+            </summary>
+            <returns>An integer representing extension's index or scrollbar's value.</returns>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.LetterBar">
+            <summary>
+            Resco LetterBar extension component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.#ctor">
+            <summary>
+            Initializes new LetterBar extension component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.ShouldSerializeBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.LetterBar.BorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.ShouldSerializeGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.LetterBar.GradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.OnPaint(Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Paint"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarExtensionBase.DrawExtensionEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            Draws component's border.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/>.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw to.</param>
+            <param name="parentColor"><see cref="T:System.Drawing.Color"/> of parent's background for simulating transparency.</param>
+            <returns><see cref="T:System.Drawing.Rectangle"/> containing client area for further drawing.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws background (based on <see cref="P:Resco.Controls.ScrollBar.LetterBar.Color"/>, <see cref="P:Resco.Controls.ScrollBar.LetterBar.GradientColor"/> or <see cref="P:Resco.Controls.ScrollBar.LetterBar.Image"/> properties).
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/>.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw to.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.DrawLetters(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws <see cref="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetters"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/>.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw to.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.Resize"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.ValidateIndex(System.Int32)">
+            <summary>
+            Validates index.
+            </summary>
+            <param name="index">An integer index.</param>
+            <returns><b>true</b> if index is valid letter; otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.ValidateValue(System.Int32)">
+            <summary>
+            Validates value.
+            </summary>
+            <param name="value">An integer value to validate.</param>
+            <returns><b>true</b> if value is valid; otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.HandleVisualChange">
+            <summary>
+            Invalidates backbuffer and raises redraw event.
+            </summary>
+            <remarks>Must be always called when component must redraw itself.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.CreateLetters(System.String)">
+            <summary>
+            Creates list of letters from string.
+            </summary>
+            <param name="letters">A string with letters.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.CreateVisibleLetters(System.Boolean,System.Collections.Generic.List{Resco.Controls.ScrollBar.LetterBar.VisibleLetter},System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            Creates list of visible letters.
+            </summary>
+            <param name="horizontal">Orientation.</param>
+            <param name="list">List of letters. Will be filled by this method.</param>
+            <param name="fontSize">Width (for horizontal) or height (for vertical) of letter.</param>
+            <param name="drawRect">Client rectangle.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.GetPen(System.Drawing.Color)">
+            <summary>
+            Gets cached pen.
+            </summary>
+            <param name="c"><see cref="T:System.Drawing.Color"/> of the pen.</param>
+            <returns>Cached <see cref="T:System.Drawing.Pen"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.GetSolidBrush(System.Drawing.Color)">
+            <summary>
+            Gets cached solid brush.
+            </summary>
+            <param name="c"><see cref="T:System.Drawing.Color"/> of the brush.</param>
+            <returns>Cache <see cref="T:System.Drawing.SolidBrush"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.EnableLetter(Resco.Controls.ScrollBar.LetterBar.Letters,System.Boolean)">
+            <summary>
+            Enables or disables desired letter.
+            </summary>
+            <param name="letter">A <see cref="T:Resco.Controls.ScrollBar.LetterBar.Letters"/> letter to enable or disable.</param>
+            <param name="enabled"><b>true</b> to enable letter; otherwise <b>false</b>.</param>
+            <remarks>Please do not use with customized letters. May lead to unexpected result. Use <see cref="M:Resco.Controls.ScrollBar.LetterBar.EnableLetter(System.Int32,System.Boolean)"/> instead.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.EnableLetter(System.Int32,System.Boolean)">
+            <summary>
+            Enables or disables desired letter.
+            </summary>
+            <param name="index">An index of letter to enable or disable.</param>
+            <param name="enabled"><b>true</b> to enable letter; otherwise <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.EnableLetter(System.Char,System.Boolean)">
+            <summary>
+            Enables or disables desired letter.
+            </summary>
+            <param name="letter">A letter to enable or disable.</param>
+            <param name="enabled"><b>true</b> to enable letter; otherwise <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.IndexToLetter(System.Int32)">
+            <summary>
+            Converts index to letter.
+            </summary>
+            <param name="index">An integer with index.</param>
+            <returns>A char with letter.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.LetterToIndex(System.Char)">
+            <summary>
+            Converts letter to index.
+            </summary>
+            <param name="letter">A char with letter.</param>
+            <returns>An integer with index.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarExtensionBase.MouseDown"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.LettersList">
+            <summary>
+            Gets readonly list of letters.
+            </summary>
+            <remarks>To modify letters, use <see cref="P:Resco.Controls.ScrollBar.LetterBar.CustomLetters"/> property of <see cref="M:Resco.Controls.ScrollBar.LetterBar.CreateLetters(System.String)"/> method.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.StringFormatCenter">
+            <summary>
+            Gets cached <see cref="T:System.Drawing.StringFormat"/> set to center.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetters">
+            <summary>
+            Gets list of visible letters.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.BorderStyle">
+            <summary>
+            Gets or sets the style of the border.
+            </summary>
+            <value>The style of how the border is drawn. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Solid"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.BorderClosed">
+            <summary>
+            Gets or sets if border should be closed or not.
+            </summary>
+            <value><b>true</b> if border should be closed; otherwise <b>false</b>. The default is false.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.Color">
+            <summary>
+            Gets or sets the color of the letter bar.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the letter bar.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.LetterBar.GradientColor"/> or <see cref="P:Resco.Controls.ScrollBar.LetterBar.Image"/> properties are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.GradientColor">
+            <summary>
+            Gets or sets the gradient colors of the letter bar.
+            </summary>
+            <value><see cref="P:Resco.Controls.ScrollBar.LetterBar.GradientColor"/> used to draw the letter bar.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.LetterBar.Image"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.Image">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the letter bar.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the letter bar. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.Font">
+            <summary>
+            Gets or sets the font used to draw the text.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Font"/> used to draw the text.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.ForeColor">
+            <summary>
+            Gets or sets the color of the text.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the text.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.HighlightColor">
+            <summary>
+            Gets or sets the color of the highlighted text.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the text.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.DisabledColor">
+            <summary>
+            Gets or sets the color of the disabled text.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the text.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.CustomLetters">
+            <summary>
+            Gets or sets custom letters.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.CaseSensitive">
+            <summary>
+            Gets or sets case sensitivity.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.LetterBar.Letters">
+            <summary>
+            Specifies letters used by <see cref="T:Resco.Controls.ScrollBar.LetterBar"/> component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.A">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.B">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.C">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.D">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.E">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.F">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.G">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.H">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.I">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.J">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.K">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.L">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.M">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.N">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.O">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.P">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.Q">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.R">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.S">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.T">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.U">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.V">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.W">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.X">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.Y">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.LetterBar.Letters.Z">
+            <summary>
+            Letter.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.LetterBar.Letter">
+            <summary>
+            Class representing letter with state (enabled or disabled).
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.Letter.Char">
+            <summary>
+            Letter as <see cref="T:System.Char"/> type.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.Letter.Enabled">
+            <summary>
+            State.
+            </summary>
+            <value>If <b>true</b>, letter is enabled; otherwise it is disabled.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.LetterBar.VisibleLetter">
+            <summary>
+            Class representing visible letter.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.LetterBar.VisibleLetter.#ctor(System.Int32,Resco.Controls.ScrollBar.LetterBar.Letter)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="index">Index of letter.</param>
+            <param name="letter"><see cref="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetter.Letter"/></param>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetter.Index">
+            <summary>
+            Index of letter in the list of ltters.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetter.Letter">
+            <summary>
+            <see cref="P:Resco.Controls.ScrollBar.LetterBar.VisibleLetter.Letter"/>.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.GradientColor">
+            <summary>
+            Represents a gradient color.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.#ctor">
+            <summary>
+            Initializes a new instance of the GradientColor class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.#ctor(Resco.Controls.ScrollBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,Resco.Controls.ScrollBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,Resco.Controls.ScrollBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="middleColor1">Middle color.</param>
+            <param name="middleColor2">Middle color.</param>
+            <param name="endColor">End color.</param>
+            <param name="middleColor1Offset">Offset of the first middle color in percent.</param>
+            <param name="middleColor2Offset">Offset of the second middle color in percent.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.CanDraw">
+            <summary>
+            Determines if gradient can be drawn.
+            </summary>
+            <returns><b>true</b> if gradient can be drawn; otherwise <b>false</b>.</returns>
+            <remarks><b>GradientColor</b> is valid when at least <see cref="P:Resco.Controls.ScrollBar.GradientColor.StartColor"/> and <see cref="P:Resco.Controls.ScrollBar.GradientColor.EndColor"/> are not transparent.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.DrawGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the gradient at the specified rectangle to the specified graphics. 
+            </summary>
+            <param name="gr">Graphics to draw gradient on.</param>
+            <param name="rc">Rectangle to draw gradient in.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.DrawVistaGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the vista gradient at the specified rectangle to the specified graphics.
+            </summary>
+            <param name="gr">Graphics to draw gradient on.</param>
+            <param name="rc">Rectangle to draw gradient in.</param>
+            <remarks><b>DrawVistaGradient</b> will use StartColor only to draw gradient.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeStartColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeMiddleColor1">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor1"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeMiddleColor2">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor2"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeEndColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.EndColor"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeMiddleColor1Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor1Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeMiddleColor2Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor2Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.ShouldSerializeFillDirection">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.GradientColor.FillDirection"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.GradientColor.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.GradientColor.PropertyChanged"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.GradientColor.PropertyChanged">
+            <summary>
+            Notify the parent control when some property was changed.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.StartColor">
+            <summary>
+            Gets or sets the starting color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor1">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor2">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.EndColor">
+            <summary>
+            Gets or sets the ending color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor1Offset">
+            <summary>
+            Gets or sets the offset of the first middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.MiddleColor2Offset">
+            <summary>
+            Gets or sets the offset of the second middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.GradientColor.FillDirection">
+            <summary>
+            Gets or sets the direction of the gradient.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.FillDirection">
+            <summary>
+            The direction of the gradient fill.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.FillDirection.Horizontal">
+            <summary>
+            The fill goes horizontally.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.FillDirection.Vertical">
+            <summary>
+            The fill goes vertically. 
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarThumb">
+            <summary>
+            Resco ScrollBar control's thumb component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarThumb.PropertyChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.#ctor">
+            <summary>
+            Initializes new ScrollBarThumb component.
+            </summary>
+            <remarks>Component is initialized with values for normal state.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.#ctor(Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbDefaults)">
+            <summary>
+            Initializes new ScrollBarThumb component.
+            </summary>
+            <param name="type">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbDefaults"/> specifying how to initialize component.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.ShouldSerializeBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.BorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.ShouldSerializeGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.ShouldSerializeImageLayout">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.ImageLayout"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.ShouldSerializeGripStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarThumb.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation)">
+            <summary>
+            Draws ScrollBar's thumb.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> surface to draw on.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw in.</param>
+            <param name="orientation"><see cref="T:Resco.Controls.ScrollBar.ScrollBar.ScrollBarOrientation"/> of the control.</param>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarThumb.PropertyChanged">
+            <summary>
+            Occurs when any property changes.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.Default">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> object with all properties set to default value.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.DefaultHighlight">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> object with all properties set to default value for highlighted state.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.BorderStyle">
+            <summary>
+            Gets or sets the style of the border.
+            </summary>
+            <value>The style of how the border is drawn. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Solid"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.Color">
+            <summary>
+            Gets or sets the color of the thumb.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the thumb.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GradientColor"/> or <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/> properties are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GradientColor">
+            <summary>
+            Gets or sets the gradient colors of the thumb.
+            </summary>
+            <value><see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GradientColor"/> used to draw the button.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the thumb.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the thumb. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.ImageLayout">
+            <summary>
+            Gets or sets the layout of the thumb's image.
+            </summary>
+            <value><see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout"/> value. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout.Stretch"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.ImageTransparentColor">
+            <summary>
+            Gets or sets a transparent color for <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/>.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to determine, which pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/> are transparent (not drawn). The default is <see cref="P:System.Drawing.Color.Transparent"/>.</value>
+            <remarks><see cref="P:System.Drawing.Color.Transparent"/> color indicates that all pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/> are drawn (No transparency).</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripStyle">
+            <summary>
+            Gets or sets the style of the thumb's grip.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripColor">
+            <summary>
+            Gets or sets the color of the thumb's grip.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the thumb's grip.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripImage">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the thumb's grip.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the thumb's grip. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripImageTransparentColor">
+            <summary>
+            Gets or sets a transparent color for <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripImage"/>.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to determine, which pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripImage"/> are transparent (not drawn). The default is <see cref="P:System.Drawing.Color.Transparent"/>.</value>
+            <remarks><see cref="P:System.Drawing.Color.Transparent"/> color indicates that all pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarThumb.Image"/> are drawn (No transparency).</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarThumb.GripLines">
+            <summary>
+            Gets or sets the number of grid lines.
+            </summary>
+            <value>An integer value. Default is 3.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout">
+            <summary>
+            Specifies the position of the image on the component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout.Center">
+            <summary>
+            The image is centered within the component's client rectangle.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout.Stretch">
+            <summary>
+            The image is stretched across the component's client rectangle.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbImageLayout.Tile">
+            <summary>
+            The image is tiled across the component's client rectangle. 
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle">
+            <summary>
+            Specifies the style of the thumb's grip.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle.None">
+            <summary>
+            No grip.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle.Lines">
+            <summary>
+            Grip is displayed as horizontal lines for vertical scrollbar and as vertical lines for horizontal scrollbar.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle.Dots">
+            <summary>
+            Grip is displayed as dots.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbGripStyle.Image">
+            <summary>
+            Displays image as a grip.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbDefaults">
+            <summary>
+            Specifies how to initialize <see cref="T:Resco.Controls.ScrollBar.ScrollBarThumb"/> component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbDefaults.Normal">
+            <summary>
+            Default values for normal state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarThumb.ScrollBarThumbDefaults.Highlight">
+            <summary>
+            Default values for highlighted (pressed) state.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.MarginPadding">
+            <summary>
+            Represents padding or margin information.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> class using the supplied padding size for all edges.
+            </summary>
+            <param name="all">The number of pixels to be used for padding for all edges.</param>
+            <remarks>This constructor sets the <see cref="P:Resco.Controls.ScrollBar.MarginPadding.Left"/>, <see cref="P:Resco.Controls.ScrollBar.MarginPadding.Right"/>, <see cref="P:Resco.Controls.ScrollBar.MarginPadding.Top"/> and <see cref="P:Resco.Controls.ScrollBar.MarginPadding.Bottom"/> properties to the value of the all parameter.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> class using a separate padding size for each edge. 
+            </summary>
+            <param name="left">The padding size, in pixels, for the left edge.</param>
+            <param name="top">The padding size, in pixels, for the top edge.</param>
+            <param name="right">The padding size, in pixels, for the right edge.</param>
+            <param name="bottom">The padding size, in pixels, for the bottom edge.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current padding.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.Equals(System.Object)">
+            <summary>
+            Determines whether the value of the specified object is equivalent to the current <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.
+            </summary>
+            <param name="o">The object to compare to the current <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.</param>
+            <returns><b>true</b> if the <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> objects are equivalent; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.GetHashCode">
+            <summary>
+            Generates a hash code for the current <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.op_Equality(Resco.Controls.ScrollBar.MarginPadding,Resco.Controls.ScrollBar.MarginPadding)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> objects are equivalent.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> to test.</param>
+            <param name="right">A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> to test.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> objects are equal; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.op_Inequality(Resco.Controls.ScrollBar.MarginPadding,Resco.Controls.ScrollBar.MarginPadding)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> objects are not equivalent.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> to test.</param>
+            <param name="right">A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> to test.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> objects are different; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.MarginPadding.op_Multiply(Resco.Controls.ScrollBar.MarginPadding,System.Drawing.SizeF)">
+            <summary>
+            Multiplies all properties of <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> with <see cref="T:System.Drawing.SizeF"/>, resulting in a new <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/>.</param>
+            <param name="right">A <see cref="T:System.Drawing.SizeF"/></param>
+            <returns>A new <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> resulting from multiplying left with right.</returns>
+            <remarks><b>Left</b> and <b>Right</b> are multiplied with <b>Width</b>. <b>Top</b> and <b>Bottom</b> are multiplied with <b>Height</b>.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.MarginPadding.Left">
+            <summary>
+            Gets the padding value for the left edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.MarginPadding.Right">
+            <summary>
+            Gets the padding value for the right edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.MarginPadding.Top">
+            <summary>
+            Gets the padding value for the top edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.MarginPadding.Bottom">
+            <summary>
+            Gets the padding value for the bottom edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.MarginPadding.Default">
+            <summary>
+            Returns <see cref="T:Resco.Controls.ScrollBar.MarginPadding"/> object with all properties set to default value.
+            </summary>
+            <remarks>The default is 0 for all edges.</remarks>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.VScrollBar">
+            <summary>
+            Resco vertical ScrollBar control.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeUpButton">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.UpButton"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeUpButtonHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.UpButtonHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeUpButtonDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.UpButtonDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeDownButton">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.DownButton"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeDownButtonHighlight">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.DownButtonHighlight"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeDownButtonDisabled">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.DownButtonDisabled"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.ShouldSerializeExtensionLocation">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.VScrollBar.ExtensionLocation"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.VScrollBar.#ctor">
+            <summary>
+            Initializes new VScrollBar control.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.UpButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the up button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.UpButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the up button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.UpButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the up button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.UpButtonHeight">
+            <summary>
+            Gets or sets the height of the up button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.DownButton">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the down button.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.DownButtonHighlight">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the down button in highlighted state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.DownButtonDisabled">
+            <summary>
+            Gets or sets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component for the down button in disabled state.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.DownButtonHeight">
+            <summary>
+            Gets or sets the height of the down button.
+            </summary>
+            <value>An integer value. Default is 19.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.MinimumThumbHeight">
+            <summary>
+            Gets or sets minimum height of the thumb.
+            </summary>
+            <value>An integer value. Default is 11.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.MaximumThumbHeight">
+            <summary>
+            Gets or sets maximum height of the thumb.
+            </summary>
+            <value>An integer value. Default is 0.</value>
+            <remarks>If this property is set to <b>0</b>, the height of the thumb is computed automatically.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.ExtensionWidth">
+            <summary>
+            Gets or sets the width of the extension.
+            </summary>
+            <value>An integer value. Default is 13.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.VScrollBar.ExtensionLocation">
+            <summary>
+            Gets or sets the location of the extension within control.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ScrollBar.VScrollBarExtensionLocation"/>. Default is <see cref="F:Resco.Controls.ScrollBar.VScrollBarExtensionLocation.Left"/>.</value>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarButton">
+            <summary>
+            Resco ScrollBar control's arrow button component.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ScrollBar.ScrollBarButton.PropertyChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.#ctor">
+            <summary>
+            Initializes new ScrollBarButton component.
+            </summary>
+            <remarks>Component is initialized with values for normal state.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.#ctor(Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults)">
+            <summary>
+            Initializes new ScrollBarButton component.
+            </summary>
+            <param name="type">A <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults"/> specifying how to initialize component.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.ShouldSerializeBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.BorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.ShouldSerializeGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.GradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.ShouldSerializeArrowImageLayout">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImageLayout"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ScrollBar.ScrollBarButton.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,Resco.Controls.ScrollBar.ScrollBarArrow,System.Drawing.Color)">
+            <summary>
+            Draws ScrollBar's button with arrow icon.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> surface to draw on.</param>
+            <param name="drawRect"><see cref="T:System.Drawing.Rectangle"/> to draw in.</param>
+            <param name="type"><see cref="T:Resco.Controls.ScrollBar.ScrollBarArrow"/> orientation type.</param>
+            <param name="parentColor"><see cref="T:System.Drawing.Color"/> used to draw transparent corners.</param>
+            <remarks><b>parentColor</b> parameter should be a BackColor of this control's parent.</remarks>
+        </member>
+        <member name="E:Resco.Controls.ScrollBar.ScrollBarButton.PropertyChanged">
+            <summary>
+            Occurs when any property changes.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.Default">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> object with all properties set to default value.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.DefaultHighlight">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> object with all properties set to default value for highlighted state.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.DefaultDisabled">
+            <summary>
+            Gets <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> object with all properties set to default value for disabled state.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.BorderStyle">
+            <summary>
+            Gets or sets the style of the border.
+            </summary>
+            <value>The style of how the border is drawn. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarBorderStyle.Solid"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.BorderClosed">
+            <summary>
+            Gets or sets if border should be closed or not.
+            </summary>
+            <value><b>true</b> if border should be closed; otherwise <b>false</b>. The default is false.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.Color">
+            <summary>
+            Gets or sets the color of the button.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the button.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.GradientColor"/> or <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.Image"/> properties are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.GradientColor">
+            <summary>
+            Gets or sets the gradient colors of the button.
+            </summary>
+            <value><see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.GradientColor"/> used to draw the button.</value>
+            <remarks>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.Image"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.Image">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the button.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the button. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowColor">
+            <summary>
+            Gets or sets the color of the arrow icon.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the arrow icon.</value>
+            <remarks>
+            <p>If <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImage"/> property is set, this property is not used.</p>
+            <p>To hide arrow icon, set this property to <see cref="P:System.Drawing.Color.Transparent"/> color.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImage">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> of the arrow icon.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the arrow icon. The default is null.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImageLayout">
+            <summary>
+            Gets or sets the layout of arrow icon's image.
+            </summary>
+            <value><see cref="T:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonArrowImageLayout"/> value. The default is <see cref="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonArrowImageLayout.Center"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImageTransparentColor">
+            <summary>
+            Gets or sets a transparent color for <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImage"/>.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to determine, which pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImage"/> are transparent (not drawn). The default is <see cref="P:System.Drawing.Color.Transparent"/>.</value>
+            <remarks><see cref="P:System.Drawing.Color.Transparent"/> color indicates that all pixels from <see cref="P:Resco.Controls.ScrollBar.ScrollBarButton.ArrowImage"/> are drawn (No transparency).</remarks>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonArrowImageLayout">
+            <summary>
+            Specifies the position of the arrow icon image on the component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonArrowImageLayout.Center">
+            <summary>
+            The image is centered within the component's client rectangle.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonArrowImageLayout.Stretch">
+            <summary>
+            The image is stretched across the component's client rectangle.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults">
+            <summary>
+            Specifies how to initialize <see cref="T:Resco.Controls.ScrollBar.ScrollBarButton"/> component.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults.Normal">
+            <summary>
+            Default values for normal state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults.Highlight">
+            <summary>
+            Default values for highlighted (pressed) state.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ScrollBar.ScrollBarButton.ScrollBarButtonDefaults.Disabled">
+            <summary>
+            Default values for disabled state.
+            </summary>
+        </member>
+    </members>
+</doc>

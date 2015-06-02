@@ -1,0 +1,8 @@
+E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe.config
+E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.pdb
+E:\Exercise\VPowerStatus\WindowsService1\obj\Debug\WindowsService1.exe
+E:\Exercise\VPowerStatus\WindowsService1\obj\Debug\WindowsService1.pdb
+E:\Exercise\VPowerStatus\WindowsService1\obj\Debug\WindowsService1.csprojResolveAssemblyReference.cache
+E:\Exercise\VPowerStatus\WindowsService1\obj\Debug\WindowsService1.Service1.resources
+E:\Exercise\VPowerStatus\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache

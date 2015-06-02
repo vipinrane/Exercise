@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resco.ProgressBar.CF3</name>
+    </assembly>
+    <members>
+        <member name="T:Resco.Controls.ProgressBar.DrawEventArgs">
+            <summary>
+            Class containing arguments for <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBackground"/>, <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBar"/> and <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawText"/> events.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.DrawEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ProgressBar.DrawEventArgs"/> class.
+            </summary>
+            <param name="graphics">Graphics surface to draw on.</param>
+            <param name="bounds">Rectangle that represents the bounds to draw to.</param>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.DrawEventArgs.Graphics">
+            <summary>
+            Gets the graphics surface to draw on.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.DrawEventArgs.Bounds">
+            <summary>
+            Gets the rectangle that represents the bounds to draw to.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBar">
+            <summary>
+            Resco ProgressBar control.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.#ctor">
+            <summary>
+            Initializes new ProgressBar control.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+            <param name="disposing"><b>true</b> if managed resources should be disposed; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Overrided to disable default control's behavior.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBackground"/>, <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBar"/> and <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawText"/> events.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnDrawBackground(Resco.Controls.ProgressBar.DrawEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBackground"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ProgressBar.DrawEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnDrawBar(Resco.Controls.ProgressBar.DrawEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBar"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ProgressBar.DrawEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnDrawText(Resco.Controls.ProgressBar.DrawEventArgs)">
+            <summary>
+            Raises <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawText"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Resco.Controls.ProgressBar.DrawEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.OnResize(System.EventArgs)">
+            <summary>
+            This member overrides <see cref="M:System.Windows.Forms.Control.OnResize(System.EventArgs)"/>.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+            <summary>
+            This member overrides <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/>. Scales a control's location, size, padding and margin.
+            </summary>
+            <param name="factor">The factor by which the height and width of the control will be scaled.</param>
+            <param name="specified">A <see cref="T:System.Windows.Forms.BoundsSpecified"/> value that specifies the bounds of the control to use when defining its size and position.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Resco.Controls.ProgressBar.ProgressBar"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:Resco.Controls.ProgressBar.ProgressBar"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.Increment(System.Int32)">
+            <summary>
+            Advances the current position of the progress bar by the specified amount.
+            </summary>
+            <param name="value">The amount by which to increment the progress bar's current position.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.PerformStep">
+            <summary>
+            Advances the current position of the progress bar by the amount of the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Step"/> property.
+            </summary>
+            <remarks>This method can be used with the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> property set to <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeBlocks"/> or <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeContinuous"/> to control marquee animation on your own.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.StartMarquee">
+            <summary>
+            Starts the marquee effect if <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> is set to <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeBlocks"/> or <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeContinuous"/>. Otherwise, it does nothing.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.StopMarquee">
+            <summary>
+            Stops the marquee effect if <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> is set to <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeBlocks"/> or <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeContinuous"/>. Otherwise, it does nothing.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ResetMarquee">
+            <summary>
+            Reset the marquee position.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBackgroundGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundGradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBarStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBarGradientColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarGradientColor"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBarMargins">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarMargins"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBarFillStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarFillStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeBarBorderStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarBorderStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.ProgressBar.ShouldSerializeMarqueeStyle">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.MarqueeStyle"/> property should be persisted.
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="E:Resco.Controls.ProgressBar.ProgressBar.DrawBackground">
+            <summary>
+            Occurs when a control needs to repaint background.
+            </summary>
+            <remarks>To draw your own border, set <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BorderStyle"/> property to None and draw your border here.</remarks>
+        </member>
+        <member name="E:Resco.Controls.ProgressBar.ProgressBar.DrawBar">
+            <summary>
+            Occurs when a control needs to repaint bar.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.ProgressBar.ProgressBar.DrawText">
+            <summary>
+            Occurs when a control needs to repaint text.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Minimum">
+            <summary>
+            Gets or sets the minimum value of the range of the control.
+            </summary>
+            <value>The minimum value of the range. Must be greater than or equal to 0. The default is 0.</value>
+            <remarks>This property specifies the lower limit of the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Value"/> property.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Maximum">
+            <summary>
+            Gets or sets the maximum value of the range of the control.
+            </summary>
+            <value>The maximum value of the range. Must be greater than or equal to 0. The default is 100.</value>
+            <remarks>This property specifies the upper limit of the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Value"/> property.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Value">
+            <summary>
+            Gets or sets the current position of the progress bar.
+            </summary>
+            <value>The position within the range of the progress bar. The default is 0.</value>
+            <remarks>The minimum and maximum values of the <b>Value</b> property are specified by the <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Minimum"/> and <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Maximum"/> properties. This property enables you to set the value of the progress bar directly.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Step">
+            <summary>
+            Gets or sets the amount by which a call to the <see cref="M:Resco.Controls.ProgressBar.ProgressBar.PerformStep"/> method increases the current position of the progress bar.
+            </summary>
+            <value>The amount by which to increment the progress bar with each call to the <see cref="M:Resco.Controls.ProgressBar.ProgressBar.PerformStep"/> method. The default is 10.</value>
+            <remarks>
+            <p>You can use the <b>Step</b> property to specify the amount that each completed task in an operation changes the value of the progress bar.</p>
+            <p>For marquee styled progress bar, this property specifies the amount the progress bar block moves each time.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.RightToLeft">
+            <summary>
+            Gets or sets a value indicating whether control's elements are aligned to support locales.
+            </summary>
+            <value><b>true</b> if control's elements should be aligned to the right; otherwise <b>false</b>. The default is false.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BorderStyle">
+            <summary>
+            Gets or sets the style of the border.
+            </summary>
+            <value>The style of how the border is drawn. The default is <see cref="F:Resco.Controls.ProgressBar.ProgressBarBorderStyle.Solid"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/></value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundColor">
+            <summary>
+            Gets or sets a color of the background.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the background. The default is <see cref="P:System.Drawing.SystemColors.Control"/>.</value>
+            <remarks>If <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundGradientColor"/> or <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundImage"/> are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundGradientColor">
+            <summary>
+            Gets or sets the gradient colors of the background.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ProgressBar.GradientColor"/> used to draw the background.</value>
+            <remarks>If <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundImage"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundImage">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> for the background.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the background. The default is <b>null</b>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle">
+            <summary>
+            Gets or sets a style of the progress bar.
+            </summary>
+            <value>A style used to indicate the progress of an operation. The default is <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Continuous"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarColor">
+            <summary>
+            Gets or sets a color of the progress bar.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the progress bar. The default is <see cref="P:System.Drawing.SystemColors.Highlight"/>.</value>
+            <remarks>If <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarGradientColor"/> or <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/> are set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarGradientColor">
+            <summary>
+            Gets or sets the gradient colors of the progress bar.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ProgressBar.GradientColor"/> used to draw the progress bar.</value>
+            <remarks>If <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/> property is set, this property is not used.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarBlockWidth">
+            <summary>
+            Gets or sets the width of the block.
+            </summary>
+            <value>The width (in pixels) of the block. Must be greater than or equal to 2. The default is 10.</value>
+            <remarks><b>BarBlockWidth</b> property specifies the width of the block used to draw the progress bar when <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> is <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Blocks"/> or <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.ContinuousBlocks"/>.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarBlockSpace">
+            <summary>
+            Gets or sets the space between blocks.
+            </summary>
+            <value>Space (in pixels) between blocks. Must be greater than or equal to 1. The default is 2.</value>
+            <remarks><b>BarBlockSpace</b> property specifies the width of the sapce between blocks used to draw the progress bar when <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> is <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Blocks"/> or <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.ContinuousBlocks"/>.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarMargins">
+            <summary>
+            Gets or sets the space between the edges of a control and its contents. 
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> representing the space between control's edges and its contents. The default is 1 for all edges.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarFillStyle">
+            <summary>
+            Gets or sets a style of how to fill the progress bar.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ProgressBar.ProgressBarBarFillStyle"/> indicating how to fill the progress bar with <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarGradientColor"/> or <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarBorderStyle">
+            <summary>
+            Gets or sets the style of the border of the progress bar.
+            </summary>
+            <value>The style of how the border of the progress bar is drawn. The default is <see cref="F:Resco.Controls.ProgressBar.ProgressBarBorderStyle.None"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarBorderColor">
+            <summary>
+            Gets or sets the color of the border of the progress bar.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to draw the border of the progress bar.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarImage">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> for the progress bar.
+            </summary>
+            <value>An <see cref="T:System.Drawing.Image"/> used to draw the progress bar. The default is <b>null</b>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BarImageTransparentColor">
+            <summary>
+            Gets or sets a transparent color for <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/>.
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> used to determine, which pixels from <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/> are transparent (not drawn). The default is <see cref="P:System.Drawing.Color.Transparent"/>.</value>
+            <remarks><see cref="P:System.Drawing.Color.Transparent"/> color indicates that all pixels from <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarImage"/> are drawn (No transparency).</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.MarqueeAnimationSpeed">
+            <summary>
+            Gets or sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
+            </summary>
+            <value>The time period, in milliseconds, that it takes the progress block to scroll across the progress bar. The default is 100.</value>
+            <remarks>
+            <p>A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.</p>
+            <p>Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.</p>
+            <p>The speed of the marquee animation also depends on <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Step"/> property.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.MarqueeBlockCount">
+            <summary>
+            Gets or sets the number of blocks within progress block in marquee animation.
+            </summary>
+            <value>Number of blocks within progress block. The default is 3.</value>
+            <remarks>A <b>MarqueeBlockCount</b> is valid for <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeBlocks"/> <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> only.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.MarqueeWidth">
+            <summary>
+            Gets or sets the width of progress block in marquee animation.
+            </summary>
+            <value>The width (in pixels) of progress block. The default is 20.</value>
+            <remarks>A <b>MarqueeWidth</b> is valid for <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeContinuous"/> <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> only.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.MarqueeStyle">
+            <summary>
+            Gets or sets the style of the marquee animation.
+            </summary>
+            <value>A <see cref="T:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle"/> indicating style of movement of the progress block. The default is <see cref="F:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle.Move"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Text">
+            <summary>
+            Gets the text associated with this control.
+            </summary>
+            <remarks>A <b>Text</b> property returns text formatted by <see cref="P:Resco.Controls.ProgressBar.ProgressBar.TextOutputFormat"/>. To change text, use <see cref="P:Resco.Controls.ProgressBar.ProgressBar.TextOutputFormat"/> property.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.ForeColor">
+            <summary>
+            Gets or sets the text color.
+            </summary>
+            <value>The text <see cref="T:System.Drawing.Color"/>. The default is <see cref="P:System.Drawing.SystemColors.ControlText"/>.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.Font">
+            <summary>
+            Gets or sets the font of text.
+            </summary>
+            <value>The <see cref="T:System.Drawing.Font"/> of text.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.TextOutputFormat">
+            <summary>
+            Gets or sets the format of text.
+            </summary>
+            <value>Formatting <see cref="T:System.String"/> of text. The default is "{0:P0}".</value>
+            <remarks>
+            In <b>TextOutputFormat</b>, you can use four optional parameters:
+            <list type="bullet">
+            <item>{0} - float value representing percentage (in range 0.0F to 1.0F)</item>
+            <item>{1} - value from <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Value"/> property</item>
+            <item>{2} - value from <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Minimum"/> property</item>
+            <item>{3} - value from <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Maximum"/> property</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.TextAlignment">
+            <summary>
+            Gets or sets horizontal alignment of text.
+            </summary>
+            <value>A <see cref="T:System.Windows.Forms.HorizontalAlignment"/> of text. The default is <see cref="F:System.Windows.Forms.HorizontalAlignment.Center"/>.</value>
+            <remarks>
+            <p><see cref="P:Resco.Controls.ProgressBar.ProgressBar.RightToLeft"/> property does not affect this property.</p>
+            <p>Text is vertically always aligned to center.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.ShowText">
+            <summary>
+            Gets or sets the visibility of text.
+            </summary>
+            <value><b>true</b> if text should be visible; otherwise <b>false</b>. The default is false.</value>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.ProgressBar.BackColor">
+            <summary>
+            Not used. Use <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BackgroundColor"/> instead.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBar.DrawBackgroundHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBackground"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBar.DrawBarHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawBar"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBar.DrawTextHandler">
+            <summary>
+            Delegate for the <see cref="E:Resco.Controls.ProgressBar.ProgressBar.DrawText"/> event.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBarBorderStyle">
+            <summary>
+            Specifies the style used to draw the border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBorderStyle.None">
+            <summary>
+            No border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBorderStyle.Solid">
+            <summary>
+            Rectangular border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBorderStyle.Rounded">
+            <summary>
+            Border with rounded corners.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBarBarStyle">
+            <summary>
+            Specifies the style that a progress bar uses to indicate the progress of an operation. 
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Blocks">
+            <summary>
+            Indicates progress by increasing the number of segmented blocks.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.ContinuousBlocks">
+            <summary>
+            Indicates progress by smoothly increasing the number of segmented blocks.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Continuous">
+            <summary>
+            Indicates progress by increasing the size of a smooth, continuous bar.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeBlocks">
+            <summary>
+            Indicates progress by continuously scrolling blocks in a marquee fashion.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.MarqueeContinuous">
+            <summary>
+            Indicates progress by continuously scrolling smooth continuous block in a marquee fashion.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBarBarFillStyle">
+            <summary>
+            Specifies the style which is used to draw the bar using gradient or image.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarFillStyle.Stretched">
+            <summary>
+            Gradient or image is stretched to the actual width of the bar.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarFillStyle.FixedToControl">
+            <summary>
+            Gradient or image is fixed to the with of the full bar (100%) and only required part of it is drawn.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarBarFillStyle.FixedToBlock">
+            <summary>
+            Gradient or image is repeatedly drawn in each block. When <see cref="P:Resco.Controls.ProgressBar.ProgressBar.BarStyle"/> is set to <see cref="F:Resco.Controls.ProgressBar.ProgressBarBarStyle.Continuous"/>, this is the same as Stretched style.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle">
+            <summary>
+            Specifies how the marquee block is moved.
+            </summary>
+            <remarks>To change the direction, set <see cref="P:Resco.Controls.ProgressBar.ProgressBar.Step"/> property to negative value.</remarks>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle.Move">
+            <summary>
+            Marquee block moves from left to right.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle.MoveInside">
+            <summary>
+            Marquee block moves from left to right and also wraps around the edges.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle.Bounce">
+            <summary>
+            Marquee block moves from left to right and back moving outside of control's area at the edges.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.ProgressBarMarqueeStyle.BounceInside">
+            <summary>
+            Marquee block moves from left to right inside control's area.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.MarginPadding">
+            <summary>
+            Represents padding or margin information.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> class using the supplied padding size for all edges.
+            </summary>
+            <param name="all">The number of pixels to be used for padding for all edges.</param>
+            <remarks>This constructor sets the <see cref="P:Resco.Controls.ProgressBar.MarginPadding.Left"/>, <see cref="P:Resco.Controls.ProgressBar.MarginPadding.Right"/>, <see cref="P:Resco.Controls.ProgressBar.MarginPadding.Top"/> and <see cref="P:Resco.Controls.ProgressBar.MarginPadding.Bottom"/> properties to the value of the all parameter.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> class using a separate padding size for each edge. 
+            </summary>
+            <param name="left">The padding size, in pixels, for the left edge.</param>
+            <param name="top">The padding size, in pixels, for the top edge.</param>
+            <param name="right">The padding size, in pixels, for the right edge.</param>
+            <param name="bottom">The padding size, in pixels, for the bottom edge.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current padding.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.Equals(System.Object)">
+            <summary>
+            Determines whether the value of the specified object is equivalent to the current <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.
+            </summary>
+            <param name="o">The object to compare to the current <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.</param>
+            <returns><b>true</b> if the <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> objects are equivalent; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.GetHashCode">
+            <summary>
+            Generates a hash code for the current <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.op_Equality(Resco.Controls.ProgressBar.MarginPadding,Resco.Controls.ProgressBar.MarginPadding)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> objects are equivalent.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> to test.</param>
+            <param name="right">A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> to test.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> objects are equal; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.op_Inequality(Resco.Controls.ProgressBar.MarginPadding,Resco.Controls.ProgressBar.MarginPadding)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> objects are not equivalent.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> to test.</param>
+            <param name="right">A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> to test.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> objects are different; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.MarginPadding.op_Multiply(Resco.Controls.ProgressBar.MarginPadding,System.Drawing.SizeF)">
+            <summary>
+            Multiplies all properties of <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> with <see cref="T:System.Drawing.SizeF"/>, resulting in a new <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.
+            </summary>
+            <param name="left">A <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/>.</param>
+            <param name="right">A <see cref="T:System.Drawing.SizeF"/></param>
+            <returns>A new <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> resulting from multiplying left with right.</returns>
+            <remarks><b>Left</b> and <b>Right</b> are multiplied with <b>Width</b>. <b>Top</b> and <b>Bottom</b> are multiplied with <b>Height</b>.</remarks>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.MarginPadding.Left">
+            <summary>
+            Gets the padding value for the left edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.MarginPadding.Right">
+            <summary>
+            Gets the padding value for the right edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.MarginPadding.Top">
+            <summary>
+            Gets the padding value for the top edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.MarginPadding.Bottom">
+            <summary>
+            Gets the padding value for the bottom edge.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.MarginPadding.Default">
+            <summary>
+            Returns <see cref="T:Resco.Controls.ProgressBar.MarginPadding"/> object with all properties set to default value.
+            </summary>
+            <remarks>The default is 1 for all edges.</remarks>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.GradientColor">
+            <summary>
+            Represents a gradient color.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.#ctor">
+            <summary>
+            Initializes a new instance of the GradientColor class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.#ctor(Resco.Controls.ProgressBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,Resco.Controls.ProgressBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,Resco.Controls.ProgressBar.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="middleColor1">Middle color.</param>
+            <param name="middleColor2">Middle color.</param>
+            <param name="endColor">End color.</param>
+            <param name="middleColor1Offset">Offset of the first middle color in percent.</param>
+            <param name="middleColor2Offset">Offset of the second middle color in percent.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.CanDraw">
+            <summary>
+            Determines if gradient can be drawn.
+            </summary>
+            <returns><b>true</b> if gradient can be drawn; otherwise <b>false</b>.</returns>
+            <remarks><b>GradientColor</b> is valid when at least <see cref="P:Resco.Controls.ProgressBar.GradientColor.StartColor"/> and <see cref="P:Resco.Controls.ProgressBar.GradientColor.EndColor"/> are not transparent.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.DrawGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the gradient at the specified rectangle to the specified graphics. 
+            </summary>
+            <param name="gr">Graphics to draw gradient on.</param>
+            <param name="rc">Rectangle to draw gradient in.</param>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.DrawVistaGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the vista gradient at the specified rectangle to the specified graphics.
+            </summary>
+            <param name="gr">Graphics to draw gradient on.</param>
+            <param name="rc">Rectangle to draw gradient in.</param>
+            <remarks><b>DrawVistaGradient</b> will use StartColor only to draw gradient.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeStartColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeMiddleColor1">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor1"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeMiddleColor2">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor2"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeEndColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.EndColor"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeMiddleColor1Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor1Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeMiddleColor2Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor2Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.ShouldSerializeFillDirection">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.ProgressBar.GradientColor.FillDirection"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.ProgressBar.GradientColor.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.ProgressBar.GradientColor.PropertyChanged"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:Resco.Controls.ProgressBar.GradientColor.PropertyChanged">
+            <summary>
+            Notify the parent control when some property was changed.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.StartColor">
+            <summary>
+            Gets or sets the starting color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor1">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor2">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.EndColor">
+            <summary>
+            Gets or sets the ending color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor1Offset">
+            <summary>
+            Gets or sets the offset of the first middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.MiddleColor2Offset">
+            <summary>
+            Gets or sets the offset of the second middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ProgressBar.GradientColor.FillDirection">
+            <summary>
+            Gets or sets the direction of the gradient.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ProgressBar.FillDirection">
+            <summary>
+            The direction of the gradient fill.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.FillDirection.Horizontal">
+            <summary>
+            The fill goes horizontally.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ProgressBar.FillDirection.Vertical">
+            <summary>
+            The fill goes vertically. 
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,11 @@
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\bin\Debug\DytrexLoggingDB.sdf
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\bin\Debug\SDPDBLogUsing1213.exe
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\bin\Debug\SDPDBLogUsing1213.pdb
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\SDPDBLogUsing1213.Form1.resources
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\SDPDBLogUsing1213.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\SDPDBLogUsing1213.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\SDPDBLogUsing1213.exe
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\obj\Debug\SDPDBLogUsing1213.pdb
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\bin\Debug\Config.xml
+E:\Exercise\TestReadAppSetting\SDPDBLogUsing1213\bin\Debug\log4netCF.dll

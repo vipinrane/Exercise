@@ -1,0 +1,11 @@
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\bin\Debug\DytrexLoggingDB.sdf
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\bin\Debug\Config.xml
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\bin\Debug\SDPTextLogTest.exe
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\bin\Debug\SDPTextLogTest.pdb
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\bin\Debug\System.Data.SqlServerCe.dll
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\SmartDeviceWithCF2._0.Form1.resources
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\SDPTextLogTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\SDPTextLogTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\SDPTextLogTest.exe
+E:\Exercise\TestReadAppSetting\SDPTextLogTest\obj\Debug\SDPTextLogTest.pdb

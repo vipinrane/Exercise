@@ -1,0 +1,2315 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resco.CommonControls.CF3</name>
+    </assembly>
+    <members>
+        <member name="T:Resco.Controls.CommonControls.TabPage">
+            <summary>
+            TabPage class specifies the panel for the tabs.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPage.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPage.ShouldSerializeTabItem">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabPage.TabItem"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPage.ShouldSerializeVisible">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabPage.Visible"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPage.ShouldSerializeVisiblePanel">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabPage.VisiblePanel"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabPage.TabItem">
+            <summary>
+            Gets or sets the Tab item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabPage.Owner">
+            <summary>
+            Gets the TabPage's owner.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabPage.Visible">
+            <summary>
+            Gets or sets a value indicating whether the control and all its parent controls
+            are displayed.
+            </summary>
+            <returns>
+            true if the control and all its parent controls are displayed; otherwise,
+            false. The default is true.
+            </returns>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabPage.VisiblePanel">
+            <summary>
+            Gets or sets a value indicating whether the control and all its parent controls
+            are displayed.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.DrawingHelper.DrawAlpha(System.Drawing.Graphics,System.Drawing.Bitmap,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Byte)">
+            <summary>
+            Draw alpha blend.
+            </summary>
+            <param name="graphics"></param>
+            <param name="image"></param>
+            <param name="transparency"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.DrawingHelper.GetStringRectangle(System.Windows.Forms.Form,System.String,System.Drawing.Font)">
+            <summary>
+            Gets the rectangle filled by the string
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.DrawingHelper.ResizeBitmap(System.Drawing.Bitmap,System.Drawing.Size)">
+            <summary>
+            Resize bitmap.
+            </summary>
+            <param name="bitmap"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.DrawingHelper.CloneImage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            Clone image.
+            </summary>
+            <param name="hdcDest"></param>
+            <param name="nWidth"></param>
+            <param name="nHeight"></param>
+            <param name="hdcSrc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarControl">
+            <summary>
+            Resco Toolbar control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeDockType">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.DockType"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBmpArrowPrevious">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowPrevious"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBmpArrowPreviousVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowPreviousVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBmpArrowNext">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowNext"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBmpArrowNextVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowNextVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeArrowsTransparency">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ArrowsTransparency"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeEnableArrowsTransparency">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.EnableArrowsTransparency"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItemsAlignment">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ItemsAlignment"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBackgroundImage">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BackgroundImage"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeBackgroundImageVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.BackgroundImageVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeStretchBackgroundImage">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.StretchBackgroundImage"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItemBackground">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackground"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItemBackgroundVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItemBackgroundPressed">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundPressed"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItemBackgroundPressedVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundPressedVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeSelectedIndex">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.SelectedIndex"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ShouldSerializeItems">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarControl.Items"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.GetItemAtPoint(System.Drawing.Point)">
+            <summary>
+            Gets the toolbar item at specified point.
+            </summary>
+            <param name="p"><see cref="T:System.Drawing.Point"/> in the client coordinates.</param>
+            <returns><see cref="T:Resco.Controls.CommonControls.ToolbarItem"/> at the selected point.</returns>
+            <remarks>Uses the client coordinates of the point (relative to ToolbarControl). If no item is at the selected point, a null reference is returned.</remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ItemEnter(System.Int32)">
+            <summary>
+            Raises ItemEntered event.
+            </summary>
+            <param name="anItemIndex">Item's index.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.EnsureVisible(System.Int32,System.Windows.Forms.HorizontalAlignment)">
+            <summary>
+            Scrolls the controls to ensure that chosen item is visible.
+            </summary>
+            <param name="index">Index of the chosen item.</param>
+            <param name="hAlign">Specifies how the item is horizontally aligned.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints the background of the control.
+            </summary>
+            <param name="e">A System.Windows.Forms.PaintEventArgs that contains information about the
+                control to paint.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnResize(System.EventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.Resize event.
+            </summary>
+            <param name="e">An System.EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+            <summary>
+            Scales Control.
+            </summary>
+            <param name="factor">The factor by which the height and width of the control will be scaled.</param>
+            <param name="specified">A System.Windows.Forms.BoundsSpecified value that specifies the bounds of
+                the control to use when defining its size and position.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.Paint event.
+            </summary>
+            <param name="e">A System.Windows.Forms.PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseDown event.
+            </summary>
+            <param name="e">A System.Windows.Forms.MouseEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseMove event.
+            </summary>
+            <param name="e">A System.Windows.Forms.MouseEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseUp event.
+            </summary>
+            <param name="e">A System.Windows.Forms.MouseEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.MakeClick(System.Drawing.Point)">
+            <summary>
+            Makes a click at specified point.
+            </summary>
+            <param name="pt"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.KeyDown event.
+            </summary>
+            <param name="e">A System.Windows.Forms.KeyEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.LoadXml(System.String,Resco.Controls.CommonControls.ToolbarControl.DesignTimeCallback)">
+            <summary>
+            Load the control from the specified <paramref name="location"/>.
+            </summary>
+            <remarks>You can use filename or any other valid URI as the <paramref name="location"/>.The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="location">Location where the XML representation of control is stored.</param>
+            <param name="dtc">Reserved for design-time support.</param>
+            <example>
+            The following sample demonstrates how to load the templates in the runtime:
+            </example>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.LoadXml(System.Xml.XmlReader)">
+            <summary>
+            Load the control from the specified  <paramref name="reader"/>.
+            </summary>
+            <remarks>The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="reader"><see cref="T:System.Xml.XmlReader"/> with the control parameters.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarControl.LoadXml(System.String)">
+            <summary>
+            Load the control from the specified <paramref name="location"/>.
+            </summary>
+            <remarks>You can use filename or any other valid URI as the <paramref name="location"/>.The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="location">Location where the XML representation of control is stored.</param>
+            <example>
+            The following sample demonstrates how to load the templates in the runtime:
+            </example>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.ToolbarControl.SelectionChanging">
+            <summary>
+            Occurs when index is going to change.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.ToolbarControl.SelectionChanged">
+            <summary>
+            Occurs when the selection was changed.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.ToolbarControl.ItemEntered">
+            <summary>
+            Occurs when the item was entered.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.ToolbarControl.FocusChanged">
+            <summary>
+            Occurs when a key was released.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.MarginAtBegin">
+            <summary>
+            Gets or sets the margin at the beginning.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.MarginAtEnd">
+            <summary>
+            Gets or sets the margin at the end.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemSpacing">
+            <summary>
+            Gets or sets the space between toolbar items.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.SelectBeforeScrolling">
+            <summary>
+            Enables or disables the selection before the touch scrolling.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.DockType">
+            <summary>
+            Specifies whether the control is a horizontal or vertical Toolbar.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowPrevious">
+            <summary>
+            Specifies the scrollbar's arrow image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowPreviousVGA">
+            <summary>
+            Specifies the scrollbar's arrow VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowNext">
+            <summary>
+            Specifies the scrollbar's arrow image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BmpArrowNextVGA">
+            <summary>
+            Specifies the scrollbar's arrow VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ArrowsTransparency">
+            <summary>
+            Specifies the arrows' transparency.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.EnableArrowsTransparency">
+            <summary>
+            Enables or disables the arrows' transparency.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemsAlignment">
+            <summary>
+            Specifies the alignment of items.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BackgroundImage">
+            <summary>
+            Specifies the background image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.BackgroundImageVGA">
+            <summary>
+            Specifies the background VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.StretchBackgroundImage">
+            <summary>
+            Enables or disables to stretch the background image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackground">
+            <summary>
+            Specifies the default background image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundVGA">
+            <summary>
+            Specifies the default background VGA image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundPressed">
+            <summary>
+            Specifies the default pressed background image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.ItemBackgroundPressedVGA">
+            <summary>
+            Specifies the default pressed background VGA image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.EnableTouchScrolling">
+            <summary>
+            Enables or disables the touch scrolling.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.TouchSensitivity">
+            <summary>
+            Specifies the touch navigation's sensitivity.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.SelectedIndex">
+            <summary>
+            Gets or sets the index of selected item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarControl.Items">
+            <summary>
+            Gets or sets the ToolbarItem collection.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarControl.DesignTimeCallback">
+            <summary>
+            For internal use only.
+            </summary>
+            <param name="o"></param>
+            <param name="o2"></param>
+        </member>
+        <member name="T:TouchScrolling.TouchTool">
+             <summary>
+            Class to handle the (Up/Down/Left/Right) thumb navigation.
+             </summary>
+        </member>
+        <member name="M:TouchScrolling.TouchTool.#ctor(System.Windows.Forms.UserControl)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:TouchScrolling.TouchTool.Reset">
+            <summary>
+            Reset the mouse state.
+            </summary>
+        </member>
+        <member name="M:TouchScrolling.TouchTool.MouseDown(System.Int32,System.Int32)">
+            <summary>
+            Handle the MouseDown event.
+            </summary>
+            <param name="aX">Mouse's X-coordinate.</param>
+            <param name="aY">Mouse's Y-coordinate.</param>
+        </member>
+        <member name="M:TouchScrolling.TouchTool.MouseMove(System.Int32,System.Int32)">
+            <summary>
+            Handle the MouseMove event.
+            </summary>
+            <param name="aX">Mouse's X-coordinate.</param>
+            <param name="aY">Mouse's Y-coordinate.</param>
+        </member>
+        <member name="M:TouchScrolling.TouchTool.MouseUp(System.Int32,System.Int32)">
+            <summary>
+            Handles the OnMouseUp event.
+            </summary>
+            <param name="aX">Mouse's X-coordinate.</param>
+            <param name="aY">Mouse's Y-coordinate.</param>
+            <returns>True when a gesture detected; otherwise false.</returns>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.ParentControl">
+            <summary>
+            Gets or sets the parent control.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.EnableTouchScrolling">
+            <summary>
+            Enables or disables the touch scrolling.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.TouchSensitivity">
+            <summary>
+            Gets or sets the touch sensitivity.
+            </summary>
+        </member>
+        <member name="E:TouchScrolling.TouchTool.GestureDetected">
+            <summary>
+            Occurs when the mouse gesture detected.
+            </summary>
+        </member>
+        <member name="E:TouchScrolling.TouchTool.MouseMoveDetected">
+            <summary>
+            Occurs when the mouse move detected.
+            </summary>
+        </member>
+        <member name="F:TouchScrolling.TouchTool.GestureType.Left">
+            <summary>
+            Mouse gesture: Left.
+            </summary>
+        </member>
+        <member name="F:TouchScrolling.TouchTool.GestureType.Right">
+            <summary>
+            Mouse gesture: Right.
+            </summary>
+        </member>
+        <member name="F:TouchScrolling.TouchTool.GestureType.Up">
+            <summary>
+            Mouse gesture: Up.
+            </summary>
+        </member>
+        <member name="F:TouchScrolling.TouchTool.GestureType.Down">
+            <summary>
+            Mouse gesture: Down.
+            </summary>
+        </member>
+        <member name="T:TouchScrolling.TouchTool.GestureDetectedHandler">
+            <summary>
+            Represents the method that will handle the gesture detected event.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.GestureEventArgs.Gesture">
+            <summary>
+            Gets the Mouse gesture type.
+            </summary>
+        </member>
+        <member name="T:TouchScrolling.TouchTool.MouseMoveDetectedHandler">
+            <summary>
+            Represents the method that will handle the mouse move while the button is still pressed.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.MouseMoveEventArgs.Gesture">
+            <summary>
+            Gets the Mouse gesture type.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.MouseMoveEventArgs.MoveX">
+            <summary>
+            Gets the X value of Mouse Move event.
+            </summary>
+        </member>
+        <member name="P:TouchScrolling.TouchTool.MouseMoveEventArgs.MoveY">
+            <summary>
+            Gets the Y value of Mouse Move event.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ScrollBarProperties.Finalize">
+            <summary>
+            The VScrollBarProperties class destructor. Disposes an VScrollBarProperties by calling this.Dispose(false). 
+            Destructor method is automatically invoked during garbage collection, unless finalization 
+            by the garbage collector has been disabled by a call to the GC.SuppressFinalize method. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ScrollBarProperties.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Resco.Controls.CommonControls.VScrollBarProperties"/>. 
+            </summary>
+            <remarks>Call <b>Dispose</b> when you are finished using the <b>VScrollBarProperties</b>. 
+            The <b>Dispose</b> method leaves the <b>VScrollBarProperties</b> in an unusable state. 
+            After calling <b>Dispose</b>, you must release all references to the <b>VScrollBarProperties</b> 
+            so the garbage collector can reclaim the memory that the <b>VScrollBarProperties</b> was occupying.
+            <note type="caution">Always call <b>Dispose</b> before you release your last reference to the <b>VScrollBarProperties</b>. 
+            Otherwise, the resources it is using will not be freed until the garbage collector calls the 
+            <b>VScrollBarProperties</b> object's <b>Finalize</b> method.</note>
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ScrollBarProperties.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="!:AudioDecoder"/> and optionally 
+            releases the managed resources. 
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+            <remarks>
+            This method is called by the public <b>Dispose()</b> method and the <see cref="M:Resco.Controls.CommonControls.ScrollBarProperties.Finalize"/> method. 
+            <b>Dispose()</b> invokes the protected <b>Dispose(Boolean)</b> method with the <i>disposing</i> 
+            parameter set to <b>true</b>. <b>Finalize</b> invokes <b>Dispose</b> with disposing set to <b>false</b>.
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ScrollBarProperties.ShouldSerializeScrollBar">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ScrollBarProperties.ScrollBar"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.AbstractToolbarRenderer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.AbstractToolbarRenderer.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="aParent">Parent control.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.AbstractToolbarRenderer.DrawText(System.Drawing.Graphics,Resco.Controls.CommonControls.ToolbarItem,System.Drawing.Rectangle)">
+            <summary>
+            Draws the text on top of the item.
+            </summary>
+            <param name="gr"></param>
+            <param name="anItem"></param>
+            <param name="aClientRect"></param>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.AbstractToolbarRenderer.Alignment">
+            <summary>
+            Gets or sets the alignment of items.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.AbstractToolbarRenderer.Parent">
+            <summary>
+            Gets or sets the parent control.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.AbstractToolbarRenderer.ToolbarItems">
+            <summary>
+            Gets or sets the ToolbarItem collection.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.VerticalToolbarRenderer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.VerticalToolbarRenderer.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Resco.Controls.CommonControls.VerticalToolbarRenderer.DrawCentered(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.SizeF)" -->
+        <member name="T:Resco.Controls.CommonControls.ToolbarItem">
+            <summary>
+            ToolbarItem
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.OnRefreshRequired">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.CommonControls.ToolbarItem.RefreshRequired"/> event. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeText">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.Text"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeForeColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ForeColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeFocusedForeColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ForeColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeBackColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.BackColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeFocusedColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.FocusedColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeTextAlignment">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.TextAlignment"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeAutoTransparent">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.AutoTransparent"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeImageAlignment">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ImageAlignment"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeImageDefault">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ImageDefault"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeImageDefaultVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ImageDefaultVGA"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeImagePressed">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ImagePressed"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeImagePressedVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ImagePressedVGA"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeCustomSize">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.CustomSize"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeItemSizeType">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ItemSizeType"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeToolbarItemBehavior">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.ToolbarItemBehavior"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.ShouldSerializeTag">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.Tag"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItem.RefreshControlAfterConvert">
+            <summary>
+            Refreshes the control, when the gray scale image created.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.DisableGrayScaleConverter">
+            <summary>
+            Enables or disables gray scale converter.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Visible">
+            <summary>
+            Determines whether the item is visible or hidden.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Enabled">
+            <summary>
+            Determines whether the item is enabled or disabled.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Text">
+            <summary>
+            Gets or sets the label text of the key, when the skin is turned off.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Name">
+            <summary>
+            The name of the ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ForeColor">
+            <summary>
+            Fore color of item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.FocusedForeColor">
+            <summary>
+            Fore color of selected item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.BackColor">
+            <summary>
+            Back color of item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.FocusedColor">
+            <summary>
+            Focused color of item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Font">
+            <summary>
+            The font used to display text in the control.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.TextAlignment">
+            <summary>
+            Gets or sets the Text's alignment.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.StretchImage">
+            <summary>
+            Gets or sets whether to stretch the DefaultImage.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.AutoTransparent">
+            <summary>
+            Enables or disables the auto transparency.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.TransparentColor">
+            <summary>
+            Gets or sets the transparent color (also called "Key" color) value for ToolbarItem images.
+            </summary>
+            <remarks>This property is an alternative to the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.AutoTransparent"/> property. 
+            Turns off the <see cref="P:Resco.Controls.CommonControls.ToolbarItem.AutoTransparent"/> mode to take TransparentColor effect.</remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImageAlignment">
+            <summary>
+            Gets or sets the Image's alignment.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImageDefault">
+            <summary>
+            The default item's image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImageDisabled">
+            <summary>
+            The disabled item's image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImageDisabledVGA">
+            <summary>
+            The disabled item's VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImageDefaultVGA">
+            <summary>
+            The default item's VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImagePressed">
+            <summary>
+            The pressed item's image.
+            </summary>
+            <remarks>
+            When ImagePressed is null, then control draws a border.
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ImagePressedVGA">
+            <summary>
+            The pressed item's VGA image.
+            </summary>
+            <remarks>
+            When ImagePressed is null, then control draws a border.
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ClientRectangle">
+            <summary>
+            The items client rectangle.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.CustomSize">
+            <summary>
+            The items custom size.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ItemSizeType">
+            <summary>
+            Specifies the item's size.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.ToolbarItemBehavior">
+            <summary>
+            Gets or sets the item's behavior after click.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItem.Tag">
+            <summary>
+            Gets or sets the object that contains data about the ToolbarItem.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarDockType">
+            <summary>
+            Specifies the appearance of control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarDockType.Horizontal">
+            <summary>
+            Horizontal toolbar.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarDockType.Vertical">
+            <summary>
+            Vertical toolbar.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TabsDockType">
+            <summary>
+            Specifies the place of Tabs in TabControl.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TabsDockType.Left">
+            <summary>
+            Docked on left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TabsDockType.Right">
+            <summary>
+            Docked on right.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TabsDockType.Top">
+            <summary>
+            Docked on top.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TabsDockType.Bottom">
+            <summary>
+            Docked on bottom.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TabPagesCollection">
+            <summary>
+            TabPage's collection.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.#ctor(Resco.Controls.CommonControls.TabControl,System.Windows.Forms.Control,Resco.Controls.CommonControls.ToolbarItemCollection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="parent"></param>
+            <param name="aToolbarItemCollection"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.Add(Resco.Controls.CommonControls.TabPage)">
+            <summary>
+            Add page.
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.Clear">
+            <summary>
+            Clears collection.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.Contains(Resco.Controls.CommonControls.TabPage)">
+            <summary>
+            Determines whether an element is in the System.Collections.ArrayList.
+            </summary>
+            <param name="page">The System.Object to locate in the System.Collections.ArrayList. The value
+                can be null.</param>
+            <returns>true if item is found in the System.Collections.ArrayList; otherwise, false.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.IndexOf(Resco.Controls.CommonControls.TabPage)">
+            <summary>
+            Searches for the specified System.Object and returns the zero-based index
+                of the first occurrence within the entire System.Collections.ArrayList.
+            </summary>
+            <param name="page">The TabPage to locate in the System.Collections.ArrayList. The value
+                can be null.</param>
+            <returns>The zero-based index of the first occurrence of value within the entire System.Collections.ArrayList,
+                if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.Insert(System.Int32,Resco.Controls.CommonControls.TabPage)">
+            <summary>
+                Inserts an element into the System.Collections.ArrayList at the specified
+                index.
+            </summary>
+            <param name="index">The zero-based index at which value should be inserted.</param>
+            <param name="page">The TabPage to insert. The value can be null.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.Remove(Resco.Controls.CommonControls.TabPage)">
+            <summary>
+            Removes the first occurrence of a specific object from the System.Collections.ArrayList.
+            </summary>
+            <param name="page">The TabPage to remove from the System.Collections.ArrayList. The value
+                can be null.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the specified index of the System.Collections.ArrayList.
+            </summary>
+            <param name="index">index is less than zero.  -or- index is equal to or greater than System.Collections.ArrayList.Count.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabPagesCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator for the entire System.Collections.ArrayList.
+            </summary>
+            <returns>An System.Collections.IEnumerator for the entire System.Collections.ArrayList.</returns>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabPagesCollection.Count">
+            <summary>
+            Gets the number of elements actually contained in the System.Collections.ArrayList.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarItemSizeType">
+            <summary>
+            Specifies the toolbar's item size.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemSizeType.ByImage">
+            <summary>
+            The toolbar's item depends on image. Scaling is enabled.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemSizeType.ByImageWithoutScaling">
+            <summary>
+            The toolbar's item depends on image. Scaling is disabled.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemSizeType.ByCustomSize">
+            <summary>
+            The toolbar's item depends on CustomSize property. Scaling is enabled.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemSizeType.ByCustomSizeWithoutScaling">
+            <summary>
+            The toolbar's item depends on CustomSize property. Scaling is disabled.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.SelectionChaningEventArgs">
+            <summary>
+            SelectionChanging event data.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.SelectionChaningEventArgs.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="!:SelectionChangingEventArgs"/> class with the <see cref="P:Resco.Controls.CommonControls.SelectionChaningEventArgs.Cancel"/> property set to <b>false</b>.
+            </summary>
+            <param name="newIndex">Index of new item.</param>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.SelectionChaningEventArgs.NewIndex">
+            <summary>
+            Gets index of newly selected item.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.SelectionChaningEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether the event should be canceled.
+            </summary>
+            <value><b>true</b> if the event should be canceled; otherwise, <b>false</b>.</value>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.SelectionChangingEventHandler">
+            <summary>
+            Represents the method that handles a selection changing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">A <see cref="T:Resco.Controls.CommonControls.SelectionChaningEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.Alignment">
+            <summary>
+            Defines the alignment of text, image or other content.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.TopLeft">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.TopCenter">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.TopRight">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.MiddleLeft">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.MiddleCenter">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.MiddleRight">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.BottomLeft">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.BottomCenter">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.Alignment.BottomRight">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarItemEventArgs">
+            <summary>
+            Provides data for the <see cref="!:RefreshRequired"/> event. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemEventArgs.#ctor(Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.CommonControls.ToolbarItemEventArgs"/> class. 
+            </summary>
+            <param name="aItem"></param>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItemEventArgs.Item">
+            <summary>
+            Gets pressed ToolbarItem.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.RefreshRequiredEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="!:RefreshRequired"/> event of a Control. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TabControl">
+            <summary>
+            Resco's TabControl.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeDockType">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.DockType"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeItemsAlignment">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ItemsAlignment"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBmpArrowPrevious">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BmpArrowPrevious"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBmpArrowPreviousVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BmpArrowPreviousVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBmpArrowNext">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BmpArrowNext"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBmpArrowNextVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BmpArrowNextVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeArrowsTransparency">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ArrowsTransparency"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBackgroundImage">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BackgroundImage"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeBackgroundImageVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.BackgroundImageVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeItemBackground">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ItemBackground"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeItemBackgroundVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeItemBackgroundPressed">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundPressed"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeItemBackgroundPressedVGA">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundPressedVGA"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeTabPages">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.TabPages"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.ShouldSerializeEnableArrowsTransparency">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TabControl.EnableArrowsTransparency"/> property should be persisted. 
+            </summary>
+            <returns>
+            <b>true</b> if the property value has changed from its default; otherwise, <b>false</b>. 
+            </returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.GetClientArea">
+            <summary>
+            Gets the toolbar's client area.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.DelayedInit">
+            <summary>
+            Private use only.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.OnResize(System.EventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.Resize event.
+            </summary>
+            <param name="e">An System.EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.GetItemAtPoint(System.Drawing.Point)">
+            <summary>
+            Gets the toolbar item at specified point.
+            </summary>
+            <param name="p"><see cref="T:System.Drawing.Point"/> in the client coordinates.</param>
+            <returns><see cref="T:Resco.Controls.CommonControls.ToolbarItem"/> at the selected point.</returns>
+            <remarks>Uses the client coordinates of the point (relative to ToolbarControl). If no item is at the selected point, a null reference is returned.</remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.EnsureVisible(System.Int32,System.Windows.Forms.HorizontalAlignment)">
+            <summary>
+            Scrolls the controls to ensure that chosen item is visible.
+            </summary>
+            <param name="index">Index of the chosen item.</param>
+            <param name="hAlign">Specifies how the item is horizontally aligned.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.LoadXml(System.String,Resco.Controls.CommonControls.TabControl.DesignTimeCallback)">
+            <summary>
+            Load the control from the specified <paramref name="location"/>.
+            </summary>
+            <remarks>You can use filename or any other valid URI as the <paramref name="location"/>.The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="location">Location where the XML representation of control is stored.</param>
+            <param name="dtc">Reserved for design-time support.</param>
+            <example>
+            The following sample demonstrates how to load the templates in the runtime:
+            </example>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.LoadXml(System.Xml.XmlReader)">
+            <summary>
+            Load the control from the specified  <paramref name="reader"/>.
+            </summary>
+            <remarks>The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="reader"><see cref="T:System.Xml.XmlReader"/> with the control parameters.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.LoadXml(System.String)">
+            <summary>
+            Load the control from the specified <paramref name="location"/>.
+            </summary>
+            <remarks>You can use filename or any other valid URI as the <paramref name="location"/>.The control properties are set and new templates are loaded from the file created by the <see cref="!:SaveXml"/> method. It is not recommended to change the file manualy.</remarks>
+            <param name="location">Location where the XML representation of control is stored.</param>
+            <example>
+            The following sample demonstrates how to load the templates in the runtime:
+            </example>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.BeginInit">
+            <summary>
+            Signals the object that initialization is starting.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControl.EndInit">
+            <summary>
+            Signals the object that initialization is complete.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.MarginAtBegin">
+            <summary>
+            Gets or sets the margin at the beginning.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.MarginAtEnd">
+            <summary>
+            Gets or sets the margin at the end.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.TabSpacing">
+            <summary>
+            Gets or sets the space between tabs.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ToolbarSize">
+            <summary>
+            Specifies the size of Tabs.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BackColor">
+            <summary>
+            Specifies the control's back color.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.DockType">
+            <summary>
+            Specifies the place of Tabs in TabControl.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.Items">
+            <summary>
+            Gets or sets the ToolbarItem collection.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ItemsAlignment">
+            <summary>
+            Specifies the alignment of items.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BmpArrowPrevious">
+            <summary>
+            Specifies the scrollbar's arrow image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BmpArrowPreviousVGA">
+            <summary>
+            Specifies the scrollbar's arrow VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BmpArrowNext">
+            <summary>
+            Specifies the scrollbar's arrow image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BmpArrowNextVGA">
+            <summary>
+            Specifies the scrollbar's arrow VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ArrowsTransparency">
+            <summary>
+            Specifies the arrows' transparency.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BackgroundImage">
+            <summary>
+            Specifies the background image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.BackgroundImageVGA">
+            <summary>
+            Specifies the background VGA image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.StretchBackgroundImage">
+            <summary>
+            Enables or disables to stretch the background image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ItemBackground">
+            <summary>
+            Specifies the default background image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundVGA">
+            <summary>
+            Specifies the default background VGA image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundPressed">
+            <summary>
+            Specifies the default pressed background image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.ItemBackgroundPressedVGA">
+            <summary>
+            Specifies the default pressed background VGA image for a ToolbarItem.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.EnableTouchScrolling">
+            <summary>
+            Enables or disables the touch scrolling.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.TouchSensitivity">
+            <summary>
+            Specifies the touch navigation's sensitivity.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.TabPages">
+            <summary>
+            Gets the collection of TabPages.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.SelectedIndex">
+            <summary>
+            Gets or sets the selected index.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.SelectedTab">
+            <summary>
+            Gets or sets the selected tab.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.SelectBeforeScrolling">
+            <summary>
+            Enables or disables the selection before the touch scrolling.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TabControl.EnableArrowsTransparency">
+            <summary>
+            Enables or disables the arrows' transparency.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.TabControl.SelectedIndexChanging">
+            <summary>
+            Occurs when selected index is going to change.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.TabControl.SelectedIndexChanged">
+            <summary>
+            Occures when the selected index changed.
+            </summary>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.TabControl.ItemEntered">
+            <summary>
+            Occurs when the item was entered.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TabControl.DesignTimeCallback">
+            <summary>
+            For internal use only.
+            </summary>
+            <param name="o"></param>
+            <param name="o2"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ConvertToGrayscaleInBackgrnd.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ConvertToGrayscaleInBackgrnd.RefreshControlAfterConvert">
+            <summary>
+            Refreshes the control, when the gray scale image created.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.GradientColor">
+            <summary>
+            Represents a gradient color.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.#ctor">
+            <summary>
+            Initializes a new instance of the GradientColor class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.#ctor(Resco.Controls.CommonControls.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,Resco.Controls.CommonControls.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.DrawGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the gradient at the specified rectangle to the specified graphics. 
+            </summary>
+            <param name="gr">Graphics to be gradient drawn.</param>
+            <param name="rc">Rectangle to be gradient drawn.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.DrawVistaGradient(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the vista gradient at the specified rectangle to the specified graphics.
+            </summary>
+            <param name="gr">Graphics to be gradient drawn.</param>
+            <param name="rc">Rectangle to be gradient drawn.</param>
+            <remarks><b>DrawVistaGradient</b> will use StartColor only to draw gradient.</remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.CanDraw">
+            <summary>
+            Determine whether the gradient could be drawn.
+            </summary>
+            <returns><b>true</b> if the gradient could be drawn, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.ShouldSerializeStartColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.ShouldSerializeEndColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.GradientColor.EndColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.ShouldSerializeFillDirection">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.GradientColor.FillDirection"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientColor.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.CommonControls.GradientColor.PropertyChanged"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:Resco.Controls.CommonControls.GradientColor.PropertyChanged">
+            <summary>
+            Notify the parent control when some property was changed.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.GradientColor.StartColor">
+            <summary>
+            Gets or sets the starting color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.GradientColor.EndColor">
+            <summary>
+            Gets or sets the ending color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.GradientColor.FillDirection">
+            <summary>
+            Gets or sets the direction of the gradient.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.FillDirection">
+            <summary>
+            The direction of the gradient will fill.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.FillDirection.Horizontal">
+            <summary>
+            The fill goes horizontally.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.FillDirection.Vertical">
+            <summary>
+            The fill goes vertically. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.GradientFill.GetAssemblyVersion">
+            <summary>
+            Gets the current application's or DLL's assembly version.
+            </summary>
+            <returns>Assembly version.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.ColorFromString(System.String)">
+            <summary>
+            Converts string representation of color to <see cref="T:System.Drawing.Color"/>.
+            </summary>
+            <remarks>The function searches first known colors, then system colors
+            and then tries to convert the color from ARGB integer (hexadecimal).</remarks>
+            <example>
+            <p>Known colors: <c>Conversion.ColorFromString("Gray")</c></p>
+            <p>System colors: <c>Conversion.ColorFromString("Control")</c></p>
+            <p>ARGB value: <c>Conversion.ColorFromString("FF808080")</c></p>
+            </example>
+            <param name="sColor">String representation of color.</param>
+            <returns><see cref="T:System.Drawing.Color"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.FontFromString(System.String)">
+            <summary>
+            Converts string representation of font to <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="sFont">String representation of font.</param>
+            <returns><see cref="T:System.Drawing.Font"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.EnumFromString(System.Type,System.String)">
+            <summary>
+            Converts string representation of enumeration values to <see cref="T:System.Enum"/>.
+            </summary>
+            <remarks>The function converts the string representing the value from the enumeration.</remarks>
+            <note type="caution">On compact framework the flags are not supported.</note>
+            <example>
+            <p>Alignment: <c>Conversion.ColorFromRectangle(typeof(Resco.Controls.DetailView.Alignment),"BottomLeft")</c></p>
+            </example>
+            <param name="sValue">String representation of rectangle.</param>
+            <param name="enumType">Type of enumeration</param>
+            <returns>Value of type <paramref name="enumType"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.StringDataFromString(System.String)">
+            <summary>
+            Converts the data from the comma separated strings to string array. 
+            </summary>
+            <param name="sData">Comma separated strings.</param>
+            <returns>Array of strings.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.DateTimeFromString(System.String)">
+            <summary>
+            Converts the data from the general format string to DateTime. 
+            </summary>
+            <param name="sData">DateTime represented with the string.</param>
+            <returns>DateTime represented by the string.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.RectangleFromString(System.String)">
+            <summary>
+            Converts string representation of rectangle to <see cref="T:System.Drawing.Rectangle"/>.
+            </summary>
+            <remarks>The function converts the comma separated values of X,Y,Width,Height.</remarks>
+            <example>
+            <p>Rectangle: <c>Conversion.ColorFromRectangle("0,0,50,16")</c></p>
+            </example>
+            <param name="sRect">String representation of rectangle.</param>
+            <returns><see cref="T:System.Drawing.Rectangle"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarConversion.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            Sets the property of object.
+            </summary>
+            <remarks>Handles special types of properties: Colors, Rectangles and CellSource.</remarks>
+            <param name="obj">Object to apply.</param>
+            <param name="name">Name of the property.</param>
+            <param name="value">New value of the property.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.ShouldSerializeCheckBoxLocation">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxLocation"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnCheckStateChanged(System.EventArgs)">
+            <summary>
+            Occurs whenever the CheckState property is changed.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnCheckedChanged(System.EventArgs)">
+            <summary>
+            Occurs whenever the Checked property is changed.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnLostFocus(System.EventArgs)">
+            <summary>
+            Handles the OnLostFocus event.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnParentChanged(System.EventArgs)">
+            <summary>
+            Handles the OnParentChanged.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles the OnPaintBackground event.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles the OnPaint event.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintBox(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Enables or disables border.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.VariablesRefresh">
+            <summary>
+            Refresh private variables.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintText(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint text for the CheckBox.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintTextBox(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint the rectangle around the Text, if the CheckBox is focused.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintIndeterminate(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Check whether the checkBox is indeterminate. If so, paint indeterminate checkBox.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnPaintChecked(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint checked the CheckBox.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.DrawImage(System.Windows.Forms.PaintEventArgs,System.Drawing.Image)">
+            <summary>
+            Paint image in the CheckBox.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+            <param name="img">A Image that contains the Checked, Unchecked or Indeterminate image.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnResize(System.EventArgs)">
+            <summary>
+            Handles the resize of the control.
+            </summary>
+            <param name="e">An EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnEnabledChanged(System.EventArgs)">
+            <summary>
+            Handles the OnEnabledChanged event.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnTextChanged(System.EventArgs)">
+            <summary>
+            Handles the OnTextChanged event.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnDoubleClick(System.EventArgs)">
+            <summary>
+            Handles the OnDoubleClick event.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.OnClick(System.EventArgs)">
+            <summary>
+            Handles the OnClick event.
+            </summary>
+            <param name="e">A EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.PerformClick">
+            <summary>
+            Check or uncheck the checkBox.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxStatus">
+            <summary>
+            If ThreeState is true, change the state to the next one.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.BoxColor">
+            <summary>
+            Gets or sets the checkBox color.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.TransparentColor">
+            <summary>
+            Gets or sets the transparent color.
+            </summary>
+            <value>The <see cref="T:System.Drawing.Color"/>, which is made transparent.</value>
+            <remarks>The default value is <see cref="P:System.Drawing.Color.Transparent"/>, which means that
+            no color in images is made transparent. Setting this property may not result in the
+            desired effect on the Compact Framework due to a use of 
+            <see cref="T:System.Drawing.Imaging.ImageAttributes"/>
+            to set the color key.</remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckedImage">
+            <summary>
+            Gets or sets the checked image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.UncheckedImage">
+            <summary>
+            Gets or sets the unchecked image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.IndeterminateImage">
+            <summary>
+            Gets or sets the indeterminate image.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxSize">
+            <summary>
+            Gets or sets the CheckBox size.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxPadding">
+            <summary>
+            Gets or sets the CheckBox padding.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.TextAlignment">
+            <summary>
+            Gets or sets the Alignment of a text diplayed in the CheckBox.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxLocation">
+            <summary>
+            Gets or sets the Alignment of a sqaure CheckBox.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.AutoTransparent">
+            <summary>
+            Gets or sets autotransparency.
+            </summary>
+            <value> If true, color in in pixel (0,0) of each image is made transparent. </value>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.Checked">
+            <summary>
+            Indicates whether the check box is checked or unchecked.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.AutoCheck">
+            <summary>
+            Causes the check box to automatically change state when clicked.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckBoxBorder">
+            <summary>
+            Enables or disables border.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.CheckState">
+            <summary>
+            Indicates the check state of the check box.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.ThreeState">
+            <summary>
+            Controls whether the user can select the indeterminate state of the CheckBox.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchCheckBox.BackColor">
+            <summary>
+            The backCground color used to displey test and graphics in the control.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchCheckBox.RescoCheckBoxLocation">
+            <summary>
+            Defines the location of the CheckBox.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchCheckBox.RescoCheckBoxLocation.Right">
+            <summary>
+            The CheckBox is displayed on the right side of the ItemCheckBox.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchCheckBox.RescoCheckBoxLocation.Left">
+            <summary>
+            The CheckBox button is displayed on the left side of the ItemCheckBox.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.GroupCheck">
+            <summary>
+            Uncheck all other TouchRadioButtons from the same Group.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.OnPaintBox(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles the OnPaintBox event.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.RefreshVariables">
+            <summary>
+            Refresh private variables.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.OnPaintCheckedArrow(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles the OnPaintCheckedArrow event.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.OnPaintIndeterminate(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles the OnPaintIndeterminate event.
+            </summary>
+            <param name="e">A PaintEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TouchRadioButton.PerformClick">
+            <summary>
+            Check or uncheck the checkBox.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchRadioButton.Group">
+            <summary>
+            Gets or sets the name of the Group.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchPanel.ScaleChildren">
+            <summary>
+            Gets a value that determines the scaling of child controls.
+            </summary>
+            <value><b>true</b> if child controls will be scaled when the <see cref="M:Resco.Controls.CommonControls.TouchPanel.Scale(System.Drawing.SizeF)"/> method on this control is 
+            called; otherwise, <b>false</b>. The default is <b>true</b>.</value>
+            <remarks>
+            <p>If the ScaleChildren property is true, then the <see cref="M:Resco.Controls.CommonControls.TouchPanel.Scale(System.Drawing.SizeF)"/> method will recursively call the <see cref="M:Resco.Controls.CommonControls.TouchPanel.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> method of each of its child controls.</p>
+            <p>The default implementation of <b>ScaleChildren</b> always returns <b>true</b>. Derived classes can override <b>ScaleChildren</b> 
+            to return <b>false</b> to indicate that scaling should not be performed on their children.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.TouchPanel.Panel">
+            <summary>
+            For internal use of TouchPanel designer.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.HorizontalToolbarRenderer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.HorizontalToolbarRenderer.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Resco.Controls.CommonControls.HorizontalToolbarRenderer.DrawCentered(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.SizeF)" -->
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.ColorFromString(System.String)">
+            <summary>
+            Converts string representation of color to <see cref="T:System.Drawing.Color"/>.
+            </summary>
+            <remarks>The function searches first known colors, then system colors
+            and then tries to convert the color from ARGB integer (hexadecimal).</remarks>
+            <example>
+            <p>Known colors: <c>Conversion.ColorFromString("Gray")</c></p>
+            <p>System colors: <c>Conversion.ColorFromString("Control")</c></p>
+            <p>ARGB value: <c>Conversion.ColorFromString("FF808080")</c></p>
+            </example>
+            <param name="sColor">String representation of color.</param>
+            <returns><see cref="T:System.Drawing.Color"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.FontFromString(System.String)">
+            <summary>
+            Converts string representation of font to <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="sFont">String representation of font.</param>
+            <returns><see cref="T:System.Drawing.Font"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.EnumFromString(System.Type,System.String)">
+            <summary>
+            Converts string representation of enumeration values to <see cref="T:System.Enum"/>.
+            </summary>
+            <remarks>The function converts the string representing the value from the enumeration.</remarks>
+            <note type="caution">On compact framework the flags are not supported.</note>
+            <example>
+            <p>Alignment: <c>Conversion.ColorFromRectangle(typeof(Resco.Controls.DetailView.Alignment),"BottomLeft")</c></p>
+            </example>
+            <param name="sValue">String representation of rectangle.</param>
+            <param name="enumType">Type of enumeration</param>
+            <returns>Value of type <paramref name="enumType"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.StringDataFromString(System.String)">
+            <summary>
+            Converts the data from the comma separated strings to string array. 
+            </summary>
+            <param name="sData">Comma separated strings.</param>
+            <returns>Array of strings.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.DateTimeFromString(System.String)">
+            <summary>
+            Converts the data from the general format string to DateTime. 
+            </summary>
+            <param name="sData">DateTime represented with the string.</param>
+            <returns>DateTime represented by the string.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.RectangleFromString(System.String)">
+            <summary>
+            Converts string representation of rectangle to <see cref="T:System.Drawing.Rectangle"/>.
+            </summary>
+            <remarks>The function converts the comma separated values of X,Y,Width,Height.</remarks>
+            <example>
+            <p>Rectangle: <c>Conversion.ColorFromRectangle("0,0,50,16")</c></p>
+            </example>
+            <param name="sRect">String representation of rectangle.</param>
+            <returns><see cref="T:System.Drawing.Rectangle"/> converted from string representation.</returns>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.TabControlConversion.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            Sets the property of object.
+            </summary>
+            <remarks>Handles special types of properties: Colors, Rectangles and CellSource.</remarks>
+            <param name="obj">Object to apply.</param>
+            <param name="name">Name of the property.</param>
+            <param name="value">New value of the property.</param>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarItemBehaviorType">
+            <summary>
+            Specifies the types of the ImageButton control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemBehaviorType.Separator">
+            <summary>
+            Item can't be entered.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemBehaviorType.KeepSelectedAfterClick">
+            <summary>
+            Item remains selected after click.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.ToolbarItemBehaviorType.UnselectAfterClick">
+            <summary>
+            Item will be unselected after click.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxSelectionMode">
+            <summary>
+            Specifies the input selection mode within a <see cref="T:Resco.Controls.CommonControls.TouchTextBox"/> control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxSelectionMode.Never">
+            <summary>
+            Edit control will never select text by mouse or keys.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxSelectionMode.Always">
+            <summary>
+            Edit element will always select text by mouse or keys.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxButtonStyle">
+            <summary>
+            Specifies the button style within a <see cref="T:Resco.Controls.CommonControls.TouchTextBox"/> control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonStyle.PushButton">
+            <summary>
+            A standard button.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonStyle.ToggleButton">
+            <summary>
+            A toggle button that appears pushed when clicked and retains the normal appearance until clicked again.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxButtonAlignment">
+            <summary>
+            Specifies the alignment of buttons within a <see cref="T:Resco.Controls.CommonControls.TouchTextBox"/> control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonAlignment.Left">
+            <summary>
+            The button is left aligned.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonAlignment.Right">
+            <summary>
+            The button is right aligned.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxCharacterCasing">
+            <summary>
+            Specifies the case of characters in a <see cref="T:Resco.Controls.CommonControls.TouchTextBox"/> control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxCharacterCasing.Normal">
+            <summary>
+            The case of characters is left unchanged.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxCharacterCasing.Upper">
+            <summary>
+            Converts all characters to uppercase.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxCharacterCasing.Lower">
+            <summary>
+            Converts all characters to lowercase.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxCharacterCasing.Numeric">
+            <summary>
+            Restrict the input to numeric characters only.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxButtonVisibleMode">
+            <summary>
+            Defines the times at which <see cref="T:Resco.Controls.CommonControls.TouchTextBoxButton"/> appear in a edit control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonVisibleMode.Never">
+            <summary>
+            The button never appears.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonVisibleMode.WhileEditing">
+            <summary>
+            The button is displayed only while text is being edited in the edit control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonVisibleMode.UnlessEditing">
+            <summary>
+            The button is displayed only when text is not being edited.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxButtonVisibleMode.Always">
+            <summary>
+            The button is always displayed.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.TouchTextBoxDefaultTextVisibleMode">
+            <summary>
+            Defines the times at which <see cref="!:TouchText.DefaultText"/> appear in a edit control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxDefaultTextVisibleMode.UnlessFocused">
+            <summary>
+            The default text is displayed when edit control is not focused.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.CommonControls.TouchTextBoxDefaultTextVisibleMode.UnlessEditing">
+            <summary>
+            The default text is displayed when text is not being edited.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.CommonControls.ToolbarItemCollection">
+            <summary>
+            ToolbarItemCollection
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.OnRefreshRequired(Resco.Controls.CommonControls.ToolbarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Controls.CommonControls.ToolbarItemCollection.RefreshRequired"/> event. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.Add(Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            Adds an item to the collection.
+            </summary>
+            <param name="anItem">The ToolbarItem to add to the collection.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.Insert(System.Int32,Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            Insert.
+            </summary>
+            <param name="index"></param>
+            <param name="anItem"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.Remove(System.Int32)">
+            <summary>
+            Removes the item at the specified index.
+            </summary>
+            <param name="anIndex">The zero-based index of the item to remove.</param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.Remove(Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            
+            </summary>
+            <param name="anItem"></param>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.IndexOf(Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the collection or in a portion of it.
+            </summary>
+            <param name="value">An object representing the item to locate in the collection.</param>
+            <returns>The zero-based index of the first occurrence of value within the entire collection, if found; otherwise, -1.</returns>
+            <remarks>
+            The <b>IndexOf</b> method enables you to determine where an item is located within the collection.
+            To determine if an item is located within the collection before calling this method, use the <see cref="M:Resco.Controls.CommonControls.ToolbarItemCollection.Contains(Resco.Controls.CommonControls.ToolbarItem)"/> method.
+            </remarks>
+        </member>
+        <member name="M:Resco.Controls.CommonControls.ToolbarItemCollection.Contains(Resco.Controls.CommonControls.ToolbarItem)">
+            <summary>
+            Determines whether an <see cref="T:Resco.Controls.CommonControls.ToolbarItem"/> is in the collection.
+            </summary>
+            <param name="value">The <see cref="T:Resco.Controls.CommonControls.ToolbarItem"/> to locate in the collection. </param>
+            <returns><b>true</b> if the item is found in the collection; otherwise, <b>false</b>.</returns>
+            <remarks>
+            Return boolean value that indicate if the <b>ToolbarItem</b> is in the collection.
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.CommonControls.ToolbarItemCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the ToolbarItem at the specified index within the collection.
+            </summary>
+            <param name="index">The index of the ToolbarItem in the collection to set or retrieve.</param>
+            <value>
+            An item representing the ToolbarItem located at the specified index within the collection.
+            </value>
+        </member>
+    </members>
+</doc>

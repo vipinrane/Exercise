@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- .NET application configuration file -->
+<configuration>
+  <!--Log for net config section start-->
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" />
+  </configSections>
+
+  <appSettings>
+    <add key="log4net.Internal.Debug" value="true"/>
+  </appSettings>
+
+  <system.diagnostics>
+    <trace autoflush="true">
+      <listeners>
+        <add name="textWriterTraceListener"
+             type="System.Diagnostics.TextWriterTraceListener"
+             initializeData="\Program Files\sdptextlogtest\log4net.txt" />
+      </listeners>
+    </trace>
+  </system.diagnostics>
+  
+  <log4net debug="true">
+    <root>
+      <level value="All" />
+      <!--Off,Fatel,Error,Info,Debug,All-->
+      <appender-ref ref="LogFileAppender" />
+      <appender-ref ref="AdoNetAppender" />
+    </root>
+    <appender name="LogFileAppender" type="log4net.Appender.RollingFileAppender">
+      <file value="logtxt.txt" />
+      <appendToFile value="true" />
+      <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+      <rollingStyle value="Size" />
+      <maxSizeRollBackups value="10" />
+      <maximumFileSize value="10MB" />
+      <staticLogFileName value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%n %-5p %n %d{dd-MMM-yyyy hh:mm:ss tt} %n %message %n %exception" />
+      </layout>
+    </appender>
+
+    <appender name="AdoNetAppender" type="log4net.Appender.AdoNetAppender">
+      <bufferSize value="1" />
+      <!--<connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />-->
+      <!--<connectionType value="System.Data.SqlServerCe.SqlCeConnection, System.Data.SqlServerCe" />-->
+      <connectionString value="Data Source=\Program Files\sdptextlogtest\DytrexLoggingDB.sdf; Persist Security Info=False; Password=admin@123;"/>
+      <!--<connectionString value="Data Source=\Program Files\sdptextlogtest\DytrexLoggingDB.sdf;"/>-->
+      <!--<commandText value="INSERT INTO Dytrexlog ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />-->
+      <commandText value="INSERT INTO Dytrexlog ([Thread],[Level],[Logger],[Message],[Exception]) VALUES ( @thread, @log_level, @logger, @message, @exception)" />
+      
+      <!--<parameter>
+        <parameterName value="@log_date"/>
+        <dbType value="DateTime"/>
+        <layout type="log4net.Layout.RawTimeStampLayout"/>
+      </parameter>-->
+      <parameter>
+        <parameterName value="@thread"/>
+        <dbType value="String"/>
+        <size value="255"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level"/>
+        <dbType value="String"/>
+        <size value="50"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger"/>
+        <dbType value="String"/>
+        <size value="255"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message"/>
+        <dbType value="String"/>
+        <size value="4000"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception"/>
+        <dbType value="String"/>
+        <size value="2000"/>
+        <layout type="log4net.Layout.ExceptionLayout"/>
+      </parameter>
+    </appender>
+
+  </log4net>
+  <!--Log for net config section end-->
+
+
+
+</configuration>

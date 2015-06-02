@@ -1,0 +1,5 @@
+E:\Exercise\TestReadAppSetting\log4netCF\bin\Debug\log4net.dll
+E:\Exercise\TestReadAppSetting\log4netCF\bin\Debug\log4net.pdb
+E:\Exercise\TestReadAppSetting\log4netCF\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\log4netCF\obj\Debug\log4net.dll
+E:\Exercise\TestReadAppSetting\log4netCF\obj\Debug\log4net.pdb

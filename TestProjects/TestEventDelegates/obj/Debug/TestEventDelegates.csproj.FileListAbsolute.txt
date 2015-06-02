@@ -1,0 +1,8 @@
+E:\Exercise\TestProjects\TestEventDelegates\bin\Debug\TestEventDelegates.exe
+E:\Exercise\TestProjects\TestEventDelegates\bin\Debug\TestEventDelegates.pdb
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\TestEventDelegates.Properties.Resources.resources
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\TestEventDelegates.TestEventDelegate.resources
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\TestEventDelegates.csproj.GenerateResource.Cache
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\TestEventDelegates.exe
+E:\Exercise\TestProjects\TestEventDelegates\obj\Debug\TestEventDelegates.pdb

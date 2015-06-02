@@ -1,0 +1,16 @@
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.XML
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF.Configuration\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\bin\Debug\OpenNETCF.Configuration.XML
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.machineconfig.resources
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.csproj.GenerateResource.Cache
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF.Configuration\obj\Debug\OpenNETCF.Configuration.pdb

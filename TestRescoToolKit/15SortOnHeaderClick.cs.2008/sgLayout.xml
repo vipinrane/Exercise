@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DSSmartGrid xmlns="http://www.resco-net.com/schemas/DSSmartGrid.xsd">
+  <SmartGrid>
+    <Property Name="BorderStyle" Value="FixedSingle" />
+    <Style>
+      <Property Name="ImageAlignment" Value="MiddleRight" />
+      <Property Name="ImagePosition" Value="Background" />
+      <Property Name="Font" Value="Tahoma, 8pt, style=Bold" />
+      <Property Name="Name" Value="Header" />
+    </Style>
+    <Property Name="Size" Value="233,161" />
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="Name" />
+      <Property Name="DataMember" Value="Name" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="City" />
+      <Property Name="DataMember" Value="City" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="Country" />
+      <Property Name="DataMember" Value="Country" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="OrderDate" />
+      <Property Name="DataMember" Value="OrderDate" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="ShippedDate" />
+      <Property Name="DataMember" Value="ShippedDate" />
+      <Property Name="Width" Value="100" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="ShipCity" />
+      <Property Name="DataMember" Value="ShipCity" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Column>
+      <Property Name="ImageList" Value="imageList1" />
+      <Property Name="HeaderText" Value="ShipCountry" />
+      <Property Name="DataMember" Value="ShipCountry" />
+      <Property Name="Width" Value="100" />
+      <Property Name="CustomizeCells" Value="true" />
+    </Column>
+    <Property Name="Location" Value="4,4" />
+    <Property Name="Name" Value="smartGrid1" />
+    <Property Name="TabIndex" Value="0" />
+    <DbConnector>
+      <CommandText />
+      <ConnectionString />
+    </DbConnector>
+  </SmartGrid>
+  <ImageList Name="imageList1" ImageSize="16,16">
+    <Image>
+      <Data>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAQABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+rn/gpZ8Rf2jk0f4T/Ab9jWD+2v2mvGn/AAtj9pDRvCkPiK68D3WueBP2LvAn/C1PDOj3fjO58XeAfDUfw/8Aiv8Atta5+w3+yx8evBGpeK7fWPH37OP7SXxg0vSo/DOi2fiz4vfCj7/+E/xS8CfHH4WfDT41/C3Xf+Eo+GXxg+H/AIN+KXw68Tf2ZrGif8JF4E+IHhzTfFnhHXf7G8RafpHiDSP7X8P6vp+of2ZrulaZrFh9o+y6np9lexT20X5g+MP2j/CXgL/go78YvHPxm+F37X9x4f8Agd+z/wDD79nv9nnVPh9+wT+3F8cfDl5rHxg1S1+O/wC1t488H+P/ANmv9nn4n/DLxl8P/iJZaD+xb8NrVvFvja98d+Bvin+zD8YtD0fwJ8O/D+t6h4p+NXr/APwSy1+dv2X7v4VW/gj4weC/BP7OPxg+KnwI+Bw+L3wN+MvwCn1T9mDw54gHir9lDS/BnhX9oTwJ8M/jT4i8P/CL9mnxp8Kf2d/Ffj/4ieC7XxB4s+Mvwa+Kl1J4p+KdtBbfF3x6Af/Z</Data>
+    </Image>
+    <Image>
+      <Data>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAQABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+nrxh+zh4S8e/8FHfjF4G+M3xR/a/t/D/AMcf2f8A4fftCfs86X8Pv29v24vgd4cs9Y+D+qWvwI/a28B+D/AH7Nf7Q3ww+GXg34f/AA7ste/Yt+JNqvi3wTZeO/HPxT/ae+MWuaP47+Inh/RNQ8LfBX1//glloE6/sv3fxVt/G/xg8aeCf2jvjB8VPjv8Dj8Xvjl8Zfj7Ppf7MHiPxAPCv7KGqeDPFX7Qnjv4mfGnw74f+Lv7NPgv4U/tEeK/AHxE8aXXiDwn8ZfjL8VLWTwt8LLae2+EXgLn/wDgpZ8Ov2jn0f4T/Hn9jWf+xf2mvBf/AAtj9m/RvFcPh268cXWh+BP20fAn/Cq/DOsXfgy58I+PvDUnw/8AhR+21of7Df7U/wAevG+peFLjWPAP7OP7Nvxg1TSpPE2i3niz4Q/Ff7/+E/wt8CfA74WfDT4KfC3Qv+EX+GXwf+H/AIN+Fvw68M/2nrGt/wDCO+BPh/4c03wn4R0L+2fEWoav4g1f+yPD+kafp/8Aaeu6rqesX/2f7VqeoXt7LPcygH//2Q==</Data>
+    </Image>
+  </ImageList>
+</DSSmartGrid>

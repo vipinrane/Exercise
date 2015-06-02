@@ -1,0 +1,15 @@
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\DSCustomers.xml
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\SGCustomScrollBar.exe
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\SGCustomScrollBar.pdb
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.ScrollBar.CF3.dll
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.SmartGrid.CF3.dll
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.Core.CF3.dll
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.SmartGrid.CF3.xml
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.Core.CF3.xml
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\bin\Debug\Resco.ScrollBar.CF3.xml
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\SGCustomScrollBar.Form1.resources
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\SGCustomScrollBar.Properties.Resources.resources
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\SGCustomScrollBar.csproj.GenerateResource.Cache
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\SGCustomScrollBar.exe
+E:\Exercise\TestRescoToolKit\SGCustomScrollBar\obj\Debug\SGCustomScrollBar.pdb

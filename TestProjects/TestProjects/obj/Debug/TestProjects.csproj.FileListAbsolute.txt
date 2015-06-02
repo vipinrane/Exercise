@@ -1,0 +1,14 @@
+E:\Exercise\TestProjects\TestProjects\bin\Debug\TestProjects.exe
+E:\Exercise\TestProjects\TestProjects\bin\Debug\TestProjects.pdb
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.Core.CF3.dll
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.ProgressBar.CF3.dll
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.UIElements.CF3.dll
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.ProgressBar.CF3.xml
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.Core.CF3.xml
+E:\Exercise\TestProjects\TestProjects\bin\Debug\Resco.UIElements.CF3.xml
+E:\Exercise\TestProjects\TestProjects\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestProjects\TestProjects\obj\Debug\TestProjects.Form1.resources
+E:\Exercise\TestProjects\TestProjects\obj\Debug\TestProjects.Properties.Resources.resources
+E:\Exercise\TestProjects\TestProjects\obj\Debug\TestProjects.csproj.GenerateResource.Cache
+E:\Exercise\TestProjects\TestProjects\obj\Debug\TestProjects.exe
+E:\Exercise\TestProjects\TestProjects\obj\Debug\TestProjects.pdb

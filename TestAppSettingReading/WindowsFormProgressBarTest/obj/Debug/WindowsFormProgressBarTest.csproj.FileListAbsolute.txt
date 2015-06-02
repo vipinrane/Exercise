@@ -1,0 +1,12 @@
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\WindowsFormProgressBarTest.exe
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\WindowsFormProgressBarTest.pdb
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\Resco.Core.dll
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\Resco.UIElements.dll
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\Resco.Core.xml
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\bin\Debug\Resco.UIElements.xml
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\WindowsFormProgressBarTest.Form1.resources
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\WindowsFormProgressBarTest.Properties.Resources.resources
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\WindowsFormProgressBarTest.csproj.GenerateResource.Cache
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\WindowsFormProgressBarTest.exe
+E:\Exercise\TestAppSettingReading\WindowsFormProgressBarTest\obj\Debug\WindowsFormProgressBarTest.pdb

@@ -1,0 +1,39 @@
+﻿Installing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Committing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Committing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Committing assembly 'E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\Exercise\VPowerStatus\WindowsService1\bin\Debug\WindowsService1.exe assembly.
+Remove InstallState file because there are no installers.

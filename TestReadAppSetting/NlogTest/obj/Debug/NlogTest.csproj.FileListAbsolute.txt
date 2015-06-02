@@ -1,0 +1,14 @@
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\NlogTest.Form1.resources
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\NlogTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\NlogTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\Nlog.config
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\NlogTest.exe
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\NlogTest.pdb
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\NLog.dll
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\NLog.pdb
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\NLog.xml
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\NlogTest.exe
+E:\Exercise\TestReadAppSetting\NlogTest\obj\Debug\NlogTest.pdb
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\DytrexLoggingDB.sdf
+E:\Exercise\TestReadAppSetting\NlogTest\bin\Debug\System.Data.SqlServerCe.dll

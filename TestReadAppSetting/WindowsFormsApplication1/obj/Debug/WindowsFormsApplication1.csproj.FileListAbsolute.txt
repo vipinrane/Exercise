@@ -1,0 +1,7 @@
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\Exercise\TestReadAppSetting\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

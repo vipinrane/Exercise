@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TestReadAppSetting">
+</Property><Property Name="Solution File" Value="E:\Exercise\TestReadAppSetting\TestReadAppSetting.sln">
+</Property><Property Name="Date" Value="Thursday, January 08, 2015">
+</Property><Property Name="Time" Value="11:16:19 AM">
+</Property><Property Name="Log Number" Value="5">
+</Property></Properties><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\ConsoleApp.csdproj" Description="Project file successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\ConsoleApp.csdproj">
+</Event><Event ErrorLevel="1" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\src\AssemblyVersionInfo.cs" Description="Backed up project may not build.  Project contains linked file: E:\Exercise\TestReadAppSetting\Backup4\AssemblyVersionInfo.cs">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\src\AssemblyVersionInfo.cs" Description="File successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\AssemblyVersionInfo.cs">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\AssemblyInfo.cs" Description="File successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\EntryPoint.cs" Description="File successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\EntryPoint.cs">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\LoggingExample.cs" Description="File successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\LoggingExample.cs">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\ConsoleApp.exe.config" Description="File successfully backed up as E:\Exercise\TestReadAppSetting\Backup4\ConsoleApp.exe.config">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\ConsoleApp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\ConsoleApp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ConsoleApp" Source="D:\Logging\log4net-1.2.13-src\log4net-1.2.13\examples\netcf\1.0\Tutorials\ConsoleApp\cs\src\ConsoleApp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

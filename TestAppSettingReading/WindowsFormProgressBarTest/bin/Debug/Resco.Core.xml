@@ -1,0 +1,2535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Resco.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Resco.Drawing.VirtualBitmap">
+            <summary>
+            Represents the virtual bitmap which is used by the <see cref="T:Resco.Drawing.BackBuffer"/> objects to speed up the drawing.
+            </summary>
+            <remarks>
+            <para>The Windows CE (and thus also Windows Mobile) operating system has a limitation for the process memory consumption. 
+            If the process reaches the memory limit of 32 MB, it is not able to allocate the memory anymore despite that there is still a lot of free physical memory.
+            Thus the <b>Bitmap</b> objects allocate their resources in the GWES process which is excluded from this limitation. The disadvantage of this solution is that
+            it is not possible to access the raw bits for these bitmaps.</para>
+            <para><b>VirtualBitmap</b> solves this problem by allocating its resource in the shared memory segment which is not included in the process memory limitation. The result is that
+            the process can allocate same space as it was in case of <b>Bitmap</b> but it is possible to access the raw bits what opens a space for drawing routines which can be several times
+            quicker than the standard GDI routines.</para>
+            <para>The problems described above relate only to WindowsCE 5.0 and later (that covers all the Windows Mobile family up to WM 6.5). The process memory limitation is not applied to WinCE 6.0
+            and later device. Each process can allocate the memory up to physical memory limitation. Thus the <b>VirtualBitmap</b> behaves differently for these devices - it allocates
+            the bitmap directly in the process memory.</para>
+            </remarks>
+            <seealso cref="T:Resco.Drawing.BackBuffer"/>
+            <seealso cref="T:Resco.Drawing.CircleDraw"/>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructs an instance of the <see cref="T:Resco.Drawing.VirtualBitmap"/> object and allocates the new bitmap resource
+            </summary>
+            <param name="width">A System.Int32 defining the width of the bitmap which has to be allocated.</param>
+            <param name="height">A System.Int32 defining the height of the bitmap which has to be allocated.</param>
+            <exception cref="T:System.OutOfMemoryException">Thrown if it is not possible to allocate required bitmap resource.</exception>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.#ctor(System.Int32,System.Int32,System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Constructs an instance of the <see cref="T:Resco.Drawing.VirtualBitmap"/> object and allocates the new bitmap resource
+            </summary>
+            <param name="width">A System.Int32 defining the width of the bitmap which has to be allocated.</param>
+            <param name="height">A System.Int32 defining the height of the bitmap which has to be allocated.</param>
+            <param name="pixelFormat">A <see cref="P:Resco.Drawing.VirtualBitmap.PixelFormat"/> value defining the format of the color data for each pixel in the bitmap.</param>
+            <exception cref="T:System.OutOfMemoryException">Thrown if it is not possible to allocate required bitmap resource.</exception>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.Finalize">
+            <summary>
+            The VirtualBitmap class destructor. Disposes an VirtualBitmap by calling this.Dispose(false). 
+            Destructor method is automatically invoked during garbage collection, unless finalization 
+            by the garbage collector has been disabled by a call to the GC.SuppressFinalize method. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Resco.Drawing.VirtualBitmap"/>. 
+            </summary>
+            <remarks>Call <b>Dispose</b> when you are finished using the <b>VirtualBitmap</b>. 
+            The <b>Dispose</b> method leaves the <b>VirtualBitmap</b> in an unusable state. 
+            After calling <b>Dispose</b>, you must release all references to the <b>VirtualBitmap</b> 
+            so the garbage collector can reclaim the memory that the <b>VirtualBitmap</b> was occupying.
+            <note type="caution">Always call <b>Dispose</b> before you release your last reference to the <b>VirtualBitmap</b>. 
+            Otherwise, the resources it is using will not be freed until the garbage collector calls the 
+            <b>VirtualBitmap</b> object's <b>Finalize</b> method.</note>
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Resco.Drawing.VirtualBitmap"/> and optionally releases the managed resources. 
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+            <remarks>
+            This method is called by the public <b>Dispose()</b> method and the <see cref="M:Resco.Drawing.VirtualBitmap.Finalize"/> method. 
+            <b>Dispose()</b> invokes the protected <b>Dispose(Boolean)</b> method with the <i>disposing</i> 
+            parameter set to <b>true</b>. <b>Finalize</b> invokes <b>Dispose</b> with disposing set to <b>false</b>.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.OnDisposed(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Drawing.VirtualBitmap.Disposed"/> event.
+            </summary>
+            <param name="e">Event arguments that have to be passed to the event handlers.</param>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.GetHdc">
+            <summary>Gets the handle to the device context associated with this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</summary>
+            <returns>An IntPtr that represents a handle to the device context.</returns>
+            <remarks>
+            The handle returned by this method is owned by this object and it must not be released by calling object.
+            It will be released during the <see cref="T:Resco.Drawing.VirtualBitmap"/> object disposal.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.BlitFrom(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>Transfers pixels from a specified source <see cref="T:System.Drawing.Graphics"/> object into this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</summary>
+            <param name="gr">A source <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="srcRect">A <see cref="T:System.Drawing.Rectangle"/> structure that specifies the area which has to be copied into this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the bitmap destination.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the bitmap destination.</param>
+            <remarks>The caller is responsible for the bitmap resolution. An exception is thrown if the bitmap resolution is smaller than the area defined by srcRect parameter.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.BlitFrom(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Transfers pixels from a specified source <see cref="T:System.Drawing.Graphics"/> object into this <see cref="T:Resco.Drawing.VirtualBitmap"/> object, 
+            stretching or compressing the bitmap to fit the dimensions of the destination rectangle, if necessary.
+            </summary>
+            <param name="gr">A source <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="srcRect">A <see cref="T:System.Drawing.Rectangle"/> structure that specifies the source area which has to be copied into this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</param>
+            <param name="dstRect">A <see cref="T:System.Drawing.Rectangle"/> structure that specifies the destination area of this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</param>
+            <remarks>The caller is responsible for the bitmap resolution. An exception is thrown if the bitmap resolution is smaller than the area defined by dstRect parameter.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.BlendRect(System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>Fills the rectangle of this VirtualBitmap with the passed color, respecting the color's alpha channel.</summary>
+            <param name="rect">Rectangle to fill.</param>
+            <param name="color">The color used for the fill.</param>
+            <remarks>Works only on VirtualBitmaps with PixelFormat==PixelFormat.Format16bppRgb565</remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBitmap.BlendRect(System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>Fills the rectangle of this VirtualBitmap with the passed color, respecting the color's alpha channel.</summary>
+            <param name="rect">Rectangle to fill.</param>
+            <param name="color">The color used for the fill.</param>
+            <remarks>Works only on VirtualBitmaps with PixelFormat==PixelFormat.Format16bppRgb565</remarks>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.IsDisposed">
+            <summary>
+            Gets the value indicating whether the object is disposed or not.
+            </summary>
+            <value><b>true</b> for disposed; otherwise <b>false</b>./</value>
+        </member>
+        <member name="E:Resco.Drawing.VirtualBitmap.Disposed">
+            <summary>
+            Occurs when the <b>VirtualBitmap</b> object is disposed.
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.PixelFormat">
+            <summary>Specifies the format of the color data for each pixel in the bitmap.</summary>
+            <remarks>Returns the value which was used to create the bitmap (passed to the constructor).</remarks>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.HBitmap">
+            <summary>Gets a handle to the GDI bitmap object associated with this object.</summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.HDC">
+            <summary>Gets the handle to the device context associated with this object.</summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.Width">
+            <summary>Gets the width, in pixels, of this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.Height">
+            <summary>Gets the height, in pixels, of this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.Stride">
+            <summary>Gets the stride width (also called scan width) of this <see cref="T:Resco.Drawing.VirtualBitmap"/> object.</summary>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBitmap.Scan0">
+            <summary>Gets the address of the first pixel data in the bitmap. This can also be thought of as the first scan line in the bitmap.</summary>
+        </member>
+        <member name="T:Resco.Drawing.GraphicsEx">
+            <summary>
+            Extends the <see cref="T:System.Drawing.Graphics"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,Resco.Drawing.VirtualBitmap,System.Int32,System.Int32)">
+            <summary>
+            Draws the specified image, using its original physical size, at the location specified by a coordinate pair.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:Resco.Drawing.VirtualBitmap"/> to draw.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the drawn image.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,Resco.Drawing.VirtualBitmap,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:Resco.Drawing.VirtualBitmap"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:Resco.Drawing.VirtualBitmap"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+            <remarks>The <i>srcRect</i> parameter specifies a rectangular portion of the <i>image</i> object to draw. 
+            This portion is scaled to fit inside the rectangle specified by the <i>destRect</i> parameter.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,Resco.Drawing.VirtualBitmap,System.Int32,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            Draws a portion of an image at a specified location.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:Resco.Drawing.VirtualBitmap"/> to draw.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FromVirtualImage(Resco.Drawing.VirtualBitmap)">
+            <summary>
+            Creates an instance of the <see cref="T:System.Drawing.Graphics"/> object that can be used to perform the GDI operation on an VirtualBitmap.
+            </summary>
+            <param name="image">An instance of the <see cref="T:Resco.Drawing.VirtualBitmap"/> object that has to be used as a GDI surface.</param>
+            <returns>An instance of the <see cref="T:System.Drawing.Graphics"/> object that can be used to perform the GDI operation on an VirtualBitmap.</returns>
+            <remarks>The caller is responsible for disposing the returned <see cref="T:System.Drawing.Graphics"/> object after it is not needed anymore.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.GetVirtualBackBufferImage(System.Drawing.Graphics)">
+            <summary>
+            Gets <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the specified graphics.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> for which to retrieve the associated <see cref="T:Resco.Drawing.VirtualBitmap"/>.</param>
+            <returns>Returns <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the specified <see cref="T:System.Drawing.Graphics"/>. 
+            If the <b>Graphics</b> is not associated with any back buffer, returns null (<b>Nothing</b> in Visual Basic).</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            Draws the specified image, using its original physical size, at the location specified by a coordinate pair.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the drawn image.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+            <remarks>The <i>srcRect</i> parameter specifies a rectangular portion of the <i>image</i> object to draw. 
+            This portion is scaled to fit inside the rectangle specified by the <i>destRect</i> parameter.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Int32,System.Int32,System.Drawing.Rectangle)">
+            <summary>
+            Draws a portion of an image at a specified location.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the drawn image.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Imaging.ImageAttributes)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcX">The x-coordinate of the upper-left corner of the portion of the source image to draw.</param>
+            <param name="srcY">The y-coordinate of the upper-left corner of the portion of the source image to draw.</param>
+            <param name="srcWidth">Width of the portion of the source image to draw.</param>
+            <param name="srcHeight">Height of the portion of the source image to draw.</param>
+            <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes"/> that specifies recoloring for the image object.</param>
+            <remarks>The <i>srcX</i>, <i>srcY</i>, <i>srcWidth</i>, and <i>srcHeight</i> parameters specify a rectangular 
+            portion, of the <i>image</i> object to draw. The rectangle is relative to the upper-left corner of the 
+            source image. This portion is scaled to fit inside the rectangle specified by the <i>destRect</i> parameter.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Imaging.ImageAttributes)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+            <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes"/> that specifies recoloring for the image object.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(Resco.Drawing.VirtualBitmap,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Imaging.ImageAttributes)">
+            <summary>
+            Draws to the <see cref="!:VirtualImage"/> the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the 
+            specified location and with the specified size.
+            </summary>
+            <param name="dstImage"><see cref="!:VirtualImage"/> draw to.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+            <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes"/> that specifies recoloring for the image object.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImage(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Size,System.Drawing.Point,System.Drawing.Imaging.ImageAttributes)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes"/> that specifies recoloring for the image object.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            raws the specified image, using its original physical size, at the location specified by a coordinate pair.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the portion of the source image to draw.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the portion of the source image to draw.</param>
+            <param name="opacity">Specifies the opacity of the image. Valid values are 0 through 255.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawImageEx(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:System.Drawing.Image"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="image"><see cref="T:System.Drawing.Image"/> to draw.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the portion of the image object to draw.</param>
+            <param name="opacity">Specifies the opacity of the image. Valid values are 0 through 255.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawGradient(System.Drawing.Graphics,Resco.Drawing.GradientColor,System.Drawing.Rectangle)">
+            <summary>
+            Draws a gradient specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="gradientColor">A <see cref="T:Resco.Drawing.GradientColor"/> that determines the colors and style of the gradient.</param>
+            <param name="destRect">A <see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to draw.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawGradient(System.Drawing.Graphics,Resco.Drawing.GradientColor,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Draws the specified portion of the specified <see cref="T:Resco.Drawing.GradientColor"/> at the specified location and with the specified size.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="gradientColor">A <see cref="T:Resco.Drawing.GradientColor"/> that determines the colors and style of the gradient.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the drawn gradient.</param>
+            <param name="srcRect"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location and size of the gradient object to draw.</param>
+            <remarks>The <i>destRect</i> is the portion within the <i>srcRect</i> of the drawn gradient. The <i>destRect</i> specifies the portion
+            which is drawn from the <i>srcRect</i>.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawVistaGradient(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>
+            Draws a vista gradient specified by a <see cref="T:System.Drawing.Color"/> and <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="color">A <see cref="T:Resco.Drawing.GradientColor"/> that determines the color of the vista gradient.</param>
+            <param name="destRect">A <see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to draw.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawVistaGradient(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Rectangle,Resco.Drawing.FillDirection)">
+            <summary>
+            Draws a vista gradient specified by a <see cref="T:System.Drawing.Color"/> and <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="color">A <see cref="T:Resco.Drawing.GradientColor"/> that determines the color of the vista gradient.</param>
+            <param name="destRect">A <see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to draw.</param>
+            <param name="fillDirection">A <see cref="T:Resco.Drawing.FillDirection"/> that determines the direction of the vista gradient.</param>
+        </member>
+        <member name="F:Resco.Drawing.GraphicsEx.DefaultRoundedCornerRadius">
+            <summary>
+            Specifies the default rounded corners radius.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Fills the interior of a rounded rectangle specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to fill.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Drawing.Rectangle,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Fills the interior of a rounded rectangle specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to fill.</param>
+            <param name="radius">Radius that determines the corners.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="width">Width of the rectangle to fill.</param>
+            <param name="height">Height of the rectangle to fill.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles,System.Boolean)">
+            <summary>
+            Fills the interior or exterior of a rounded rectangle specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="width">Width of the rectangle to fill.</param>
+            <param name="height">Height of the rectangle to fill.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+            <param name="inverted"><b>false</b> to fill interior, otherwise <b>true</b>.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Fills the interior of a rounded rectangle specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="width">Width of the rectangle to fill.</param>
+            <param name="height">Height of the rectangle to fill.</param>
+            <param name="radius">Radius that determines the corners.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillRoundedRectangle(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles,System.Boolean)">
+            <summary>
+            Fills the interior or exterior of a rounded rectangle specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to fill.</param>
+            <param name="width">&gt;Width of the rectangle to fill.</param>
+            <param name="height">Height of the rectangle to fill.</param>
+            <param name="radius">Radius that determines the corners.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the fill.</param>
+            <param name="inverted"><b>false</b> to fill interior, otherwise <b>true</b>.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Draws a rounded rectangle specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the rectangle.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to draw.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the rectangle.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Draws a rounded rectangle specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the rectangle.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to draw.</param>
+            <param name="radius">Radius that determines the corners.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the rectangle.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Draws a rounded rectangle specified by a coordinate pair, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the rectangle.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to draw.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to draw.</param>
+            <param name="width">Width of the rectangle to draw.</param>
+            <param name="height">Height of the rectangle to draw.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the rectangle.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Resco.Drawing.RoundedCornerStyles)">
+            <summary>
+            Draws a rounded rectangle specified by a coordinate pair, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the rectangle.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle to draw.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle to draw.</param>
+            <param name="width">Width of the rectangle to draw.</param>
+            <param name="height">Height of the rectangle to draw.</param>
+            <param name="radius">Radius that determines the corners.</param>
+            <param name="corners"><see cref="T:Resco.Drawing.RoundedCornerStyles"/> that determines the characteristics of the rectangle.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.BlendRectangle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            Fills the rectangle with the passed color, respecting the color's alpha channel.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> structure that represents the rectangle to fill.</param>
+            <param name="c">The <see cref="T:System.Drawing.Color"/> used for the fill.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureStringEx(System.Drawing.Graphics,System.String,System.Drawing.Font)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawStringEx(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Brush,System.Single,System.Single)">
+            <summary>
+            Draws the specified text string at the specified location with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="s">String to draw.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the drawn text.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the drawn text.</param>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <param name="maxWidth">Maximum width of the string in pixels.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Boolean)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <param name="rightToLeft"><b>true</b> to use right-to-left word wrap, otherwise <b>false</b>.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Int32,System.Boolean)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <param name="maxWidth">Maximum width of the string in pixels.</param>
+            <param name="rightToLeftWrap"><b>true</b> to use right-to-left word wrap, otherwise <b>false</b>.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Boolean,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/> scaled by the specified scale factor.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <param name="rightToLeftWrap"><b>true</b> to use right-to-left word wrap, otherwise <b>false</b>.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.MeasureString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Int32,System.Boolean,System.Drawing.SizeF)">
+            <summary>
+            Measures the specified string when drawn with the specified <see cref="T:System.Drawing.Font"/> scaled by the specified scale factor.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to measure.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the format of the string.</param>
+            <param name="maxWidth">Maximum width of the string in pixels.</param>
+            <param name="rightToLeftWrap"><b>true</b> to use right-to-left word wrap, otherwise <b>false</b>.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <returns>This method returns a <see cref="T:System.Drawing.Size"/> structure that represents the size, of the string specified in the <i>text</i> parameter as drawn 
+            with the <i>font</i> parameter.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawAlignedString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.Alignment,Resco.Drawing.DrawStringOptions)">
+            <summary>
+            Draws the specified text string in the specified rectangle with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects 
+            using the formatting attributes of the specified <see cref="T:Resco.Drawing.DrawStringOptions"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to draw.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="layoutRectangle"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location of the drawn text.</param>
+            <param name="textAlignment"><see cref="T:Resco.Drawing.Alignment"/> that specifies the aligment of the drawn text.</param>
+            <param name="options"><see cref="T:Resco.Drawing.DrawStringOptions"/> that specifies formatting attributes that are applied to the drawn text.</param>
+            <returns>Returns <b>true</b> if the drawn text fits into specified rectangle, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawAlignedString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.Alignment,Resco.Drawing.DrawStringOptions)">
+            <summary>
+            Draws the specified text string in the specified rectangle with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects 
+            using the formatting attributes of the specified <see cref="T:Resco.Drawing.DrawStringOptions"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to draw.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="shadowBrush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text shadow.</param>
+            <param name="layoutRectangle"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location of the drawn text.</param>
+            <param name="textAlignment"><see cref="T:Resco.Drawing.Alignment"/> that specifies the alignment of the drawn text.</param>
+            <param name="options"><see cref="T:Resco.Drawing.DrawStringOptions"/> that specifies formatting attributes that are applied to the drawn text.</param>
+            <returns>Returns <b>true</b> if the drawn text fits into specified rectangle, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawAlignedString(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.Alignment,Resco.Drawing.DrawStringOptions,System.Drawing.Rectangle@)">
+            <summary>
+            Draws the specified text string in the specified rectangle with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects 
+            using the formatting attributes of the specified <see cref="T:Resco.Drawing.DrawStringOptions"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to draw.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="layoutRectangle"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location of the drawn text.</param>
+            <param name="textAlignment"><see cref="T:Resco.Drawing.Alignment"/> that specifies the aligment of the drawn text.</param>
+            <param name="options"><see cref="T:Resco.Drawing.DrawStringOptions"/> that specifies formatting attributes that are applied to the drawn text.</param>
+            <param name="ellipsisArea"><see cref="T:System.Drawing.Rectangle"/> structure that is fill with the location of the ellipsis.</param>
+            <returns>Returns <b>true</b> if the drawn text fits into specified rectangle, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawAlignedString(System.Drawing.Graphics,System.String,System.String,System.Globalization.CompareOptions,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Brush,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.Alignment,Resco.Drawing.DrawStringOptions,System.Drawing.Rectangle@,Resco.Drawing.GraphicsEx.DrawTextLine)">
+            <summary>
+            Draws the specified text string in the specified rectangle with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects 
+            using the formatting attributes of the specified <see cref="T:Resco.Drawing.DrawStringOptions"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to draw.</param>
+            <param name="selectedText">Selected string to draw.</param>
+            <param name="compareOptions"><see cref="T:System.Globalization.CompareOptions"/> that specifies comparing attributes that are applied to selected text.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="selectedBrush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the selected text.</param>
+            <param name="selectedBackBrush"><see cref="T:System.Drawing.Brush"/> that determines the back color and texture of the selected text.</param>
+            <param name="layoutRectangle"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location of the drawn text.</param>
+            <param name="textAlignment"><see cref="T:Resco.Drawing.Alignment"/> that specifies the aligment of the drawn text</param>
+            <param name="options"><see cref="T:Resco.Drawing.DrawStringOptions"/> that specifies formatting attributes that are applied to the drawn text.</param>
+            <param name="ellipsisArea"><see cref="T:System.Drawing.Rectangle"/> structure that is fill with the location of the ellipsis.</param>
+            <param name="drawTextLineDelegate"><see cref="T:Resco.Drawing.GraphicsEx.DrawTextLine"/> delegate used to draw the text.</param>
+            <returns>Returns <b>true</b> if the drawn text fits into specified rectangle, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawAlignedString(System.Drawing.Graphics,System.String,System.String,System.Globalization.CompareOptions,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Brush,System.Drawing.Brush,System.Drawing.Rectangle,Resco.Drawing.Alignment,Resco.Drawing.DrawStringOptions,System.Drawing.SizeF,System.Drawing.Rectangle@,Resco.Drawing.GraphicsEx.DrawTextLine)">
+            <summary>
+            Draws the specified text string in the specified rectangle with the specified <see cref="T:System.Drawing.Brush"/> and <see cref="T:System.Drawing.Font"/> objects 
+            using the formatting attributes of the specified <see cref="T:Resco.Drawing.DrawStringOptions"/>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="text">String to draw.</param>
+            <param name="selectedText">Selected string to draw.</param>
+            <param name="compareOptions"><see cref="T:System.Globalization.CompareOptions"/> that specifies comparing attributes that are applied to selected text.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="selectedBrush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the selected text.</param>
+            <param name="selectedBackBrush"><see cref="T:System.Drawing.Brush"/> that determines the back color and texture of the selected text.</param>
+            <param name="layoutRectangle"><see cref="T:System.Drawing.Rectangle"/> structure that specifies the location of the drawn text.</param>
+            <param name="textAlignment"><see cref="T:Resco.Drawing.Alignment"/> that specifies the aligment of the drawn text</param>
+            <param name="options"><see cref="T:Resco.Drawing.DrawStringOptions"/> that specifies formatting attributes that are applied to the drawn text.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <param name="ellipsisArea"><see cref="T:System.Drawing.Rectangle"/> structure that is fill with the location of the ellipsis.</param>
+            <param name="drawTextLineDelegate"><see cref="T:Resco.Drawing.GraphicsEx.DrawTextLine"/> delegate used to draw the text.</param>
+            <returns>Returns <b>true</b> if the drawn text fits into specified rectangle, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Single,System.Single)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a <see cref="T:System.Drawing.Rectangle"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> structure that defines the boundaries of the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.RectangleF,System.Single,System.Single)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a <see cref="T:System.Drawing.RectangleF"/> structure.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="rect"><see cref="T:System.Drawing.RectangleF"/> structure that defines the boundaries of the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="width">Width of the rectangle that defines the ellipse.</param>
+            <param name="height">Height of the rectangle that defines the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="width">Width of the rectangle that defines the ellipse.</param>
+            <param name="height">Height of the rectangle that defines the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <param name="closeArc"><b>true</b> to close the portion of an ellipse, otherwise <b>false</b>.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="width">Width of the rectangle that defines the ellipse.</param>
+            <param name="height">Height of the rectangle that defines the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.DrawArc(System.Drawing.Graphics,System.Drawing.Pen,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Draws an arc representing a portion of an ellipse specified by a pair of coordinates, a width, and a height.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="pen"><see cref="T:System.Drawing.Pen"/> that determines the color, width, and style of the arc.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle that defines the ellipse.</param>
+            <param name="width">Width of the rectangle that defines the ellipse.</param>
+            <param name="height">Height of the rectangle that defines the ellipse.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the starting point of the arc.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the <i>startAngle</i> parameter to ending point of the arc.</param>
+            <param name="closeArc"><b>true</b> to close the portion of an ellipse, otherwise <b>false</b>.</param>
+            <remarks>This method draws an arc that is a portion of the perimeter of an ellipse. The ellipse is defined by the boundaries 
+            of a rectangle. The arc is the portion of the perimeter of the ellipse between the <i>startAngle</i> parameter and 
+            the <i>startAngle</i> + <i>sweepAngle</i> parameters.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillPie(System.Drawing.Graphics,System.Drawing.Brush,System.Drawing.Rectangle,System.Single,System.Single)">
+            <summary>
+            Fills the interior of a pie section defined by an ellipse specified by a <see cref="T:System.Drawing.Rectangle"/> structure and two radial lines.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="rect"><see cref="T:System.Drawing.Rectangle"/> structure that represents the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the first side of the pie section.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the startAngle parameter to the second side of the pie section.</param>
+            <remarks>This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect 
+            with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial 
+            lines defined by the <i>startAngle</i> and <i>sweepAngle</i> parameters and the arc between the intersections of those radial 
+            lines with the ellipse.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillPie(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="width">Width of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="height">Height of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the first side of the pie section.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the startAngle parameter to the second side of the pie section.</param>
+            <remarks>This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect 
+            with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines 
+            defined by the <i>startAngle</i> and <i>sweepAngle</i> parameters and the arc between the intersections of those radial lines with 
+            the ellipse.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillPie(System.Drawing.Graphics,System.Drawing.Brush,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fills the interior or exterior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes</param>
+            <param name="y">The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="width">Width of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="height">Height of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the first side of the pie section.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the startAngle parameter to the second side of the pie section.</param>
+            <param name="inverted"><b>false</b> to fill interior, otherwise <b>true</b>.</param>
+            <remarks>This method fills the interior or exterior of a pie section defined by an arc of an ellipse and the two radial lines that intersect 
+            with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines 
+            defined by the <i>startAngle</i> and <i>sweepAngle</i> parameters and the arc between the intersections of those radial lines with 
+            the ellipse.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillPie(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes</param>
+            <param name="y">The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="width">Width of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="height">Height of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the first side of the pie section.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the startAngle parameter to the second side of the pie section.</param>
+            <remarks>This method fills the interior of a pie section defined by an arc of an ellipse and the two radial lines that intersect 
+            with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines 
+            defined by the <i>startAngle</i> and <i>sweepAngle</i> parameters and the arc between the intersections of those radial lines with 
+            the ellipse.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.FillPie(System.Drawing.Graphics,System.Drawing.Brush,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Fills the interior or exterior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the characteristics of the fill.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes</param>
+            <param name="y">The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="width">Width of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="height">Height of the bounding rectangle that defines the ellipse from which the pie section comes.</param>
+            <param name="startAngle">Angle in degrees measured clockwise from the x-axis to the first side of the pie section.</param>
+            <param name="sweepAngle">Angle in degrees measured clockwise from the startAngle parameter to the second side of the pie section.</param>
+            <param name="inverted"><b>false</b> to fill interior, otherwise <b>true</b>.</param>
+            <remarks>This method fills the interior or exterior of a pie section defined by an arc of an ellipse and the two radial lines that intersect 
+            with the endpoints of the arc. The ellipse is defined by the bounding rectangle. The pie section consists of the two radial lines 
+            defined by the <i>startAngle</i> and <i>sweepAngle</i> parameters and the arc between the intersections of those radial lines with 
+            the ellipse.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.GraphicsEx.GetBackBufferImage(System.Drawing.Graphics)">
+            <summary>
+            Gets <see cref="T:System.Drawing.Bitmap"/> object associated with the specified graphics.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> for which to retreive the assiciated <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <returns>Returns <see cref="T:System.Drawing.Bitmap"/> object associated with the specified <see cref="T:System.Drawing.Graphics"/>. 
+            If the <b>Graphics</b> is not associated with any back buffer, returns null (<b>Nothing</b> in Visual Basic).</returns>
+        </member>
+        <member name="P:Resco.Drawing.GraphicsEx.CurrentDpi">
+            <summary>
+            Gets the current screen DPI.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.GraphicsEx.DrawTextLine">
+            <summary>
+            Represents the method that handles calls from a <b>DrawAlignedString</b>.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to use.</param>
+            <param name="line">String to draw.</param>
+            <param name="font"><see cref="T:System.Drawing.Font"/> that defines the text format of the string.</param>
+            <param name="brush"><see cref="T:System.Drawing.Brush"/> that determines the color and texture of the drawn text.</param>
+            <param name="x">The x-coordinate of the upper-left corner of the text to draw</param>
+            <param name="y">The y-coordinate of the upper-left corner of the text to draw</param>
+            <param name="width">Width of the text to draw.</param>
+            <param name="height">Height of the rectangle to draw.</param>
+            <param name="textIndex">Index of the text in original string.</param>
+        </member>
+        <member name="T:Resco.Drawing.DrawStringOptions">
+            <summary>
+            Specifies the display and layout information for text strings.
+            <p>This enumeration has a <see cref="T:System.FlagsAttribute"/> attribute that allows a bitwise combination of its member values.</p>
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.None">
+            <summary>
+            No options specified.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.NoClip">
+            <summary>
+            Overhanging parts of glyphs, and unwrapped text reaching outside the formatting rectangle are allowed to 
+            show. By default all text and glyph parts reaching outside the formatting rectangle are clipped.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.NoWrap">
+            <summary>
+            Text wrapping between lines when formatting within a rectangle is disabled. 
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.RightToLeft">
+            <summary>
+            Text is displayed from right to left.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.DrawEllipsis">
+            <summary>
+            Truncates a text string that is wider than the display rectangle and adds an ellipsis to indicate the truncation.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.DrawStringOptions.RestrictSelectedTextToStart">
+            <summary>
+            Restrict select text to start from the beggining of the string.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.ColorHSV">
+            <summary>
+            Represents an HSV (hue, saturation, value) color. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates new instance of <see cref="T:Resco.Drawing.ColorHSV"/> structure.
+            </summary>
+            <param name="hue">The hue component value for the new <see cref="T:Resco.Drawing.ColorHSV"/>.</param>
+            <param name="saturation">The saturation component value for the new <see cref="T:Resco.Drawing.ColorHSV"/>. Valid values are 0 through 1.</param>
+            <param name="value">The value component value for the new <see cref="T:Resco.Drawing.ColorHSV"/>. Valid values are 0 through 1.</param>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.#ctor(System.Drawing.Color)">
+            <summary>
+            Creates new instance of <see cref="T:Resco.Drawing.ColorHSV"/> structure of the specified color.
+            </summary>
+            <param name="color">The <see cref="T:System.Drawing.Color"/> of the new <see cref="T:Resco.Drawing.ColorHSV"/>.</param>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.ToColor">
+            <summary>
+            Gets the <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSV"/> structure. 
+            </summary>
+            <returns>The <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSV"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.ToColor(System.Double,System.Double,System.Double)">
+            <summary>
+            Gets the <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSV"/> structure. 
+            </summary>
+            <returns>The <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSV"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.FromColor(System.Drawing.Color)">
+            <summary>
+            Gets the <see cref="T:Resco.Drawing.ColorHSV"/> of the specified <see cref="T:System.Drawing.Color"/> structure. 
+            </summary>
+            <param name="color">The <see cref="T:System.Drawing.Color"/> of the new <see cref="T:Resco.Drawing.ColorHSV"/>.</param>
+            <returns>The <see cref="T:Resco.Drawing.ColorHSV"/> of the specified <see cref="T:System.Drawing.Color"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.Equals(System.Object)">
+            <summary>
+            Tests whether the specified object is a <see cref="T:Resco.Drawing.ColorHSV"/> structure and is equivalent to this <see cref="T:Resco.Drawing.ColorHSV"/> structure. 
+            </summary>
+            <param name="obj">The object to test.</param>
+            <returns><b>true</b> if obj is a <see cref="T:Resco.Drawing.ColorHSV"/> structure equivalent to this <see cref="T:Resco.Drawing.ColorHSV"/> structure; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.GetHashCode">
+            <summary>
+            Returns a hash code for this <see cref="T:Resco.Drawing.ColorHSV"/> structure. 
+            </summary>
+            <returns>An integer value that specifies the hash code for this <see cref="T:Resco.Drawing.ColorHSV"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.op_Equality(Resco.Drawing.ColorHSV,Resco.Drawing.ColorHSV)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Drawing.ColorHSV"/> structures are equivalent. 
+            </summary>
+            <param name="left">The <see cref="T:Resco.Drawing.ColorHSV"/> that is to the left of the equality operator.</param>
+            <param name="right">The <see cref="T:Resco.Drawing.ColorHSV"/> that is to the right of the equality operator. </param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Drawing.ColorHSV"/> structures are equal; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSV.op_Inequality(Resco.Drawing.ColorHSV,Resco.Drawing.ColorHSV)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Drawing.ColorHSV"/> structures are different. 
+            </summary>
+            <param name="left">The <see cref="T:Resco.Drawing.ColorHSV"/> that is to the left of the inequality operator.</param>
+            <param name="right">The <see cref="T:Resco.Drawing.ColorHSV"/> that is to the right of the inequality operator.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Drawing.ColorHSV"/> structures are different; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSV.Hue">
+            <summary>
+            Gets or sets Hue.
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSV.Saturation">
+            <summary>
+            Gets or sets Saturation.
+            </summary>
+            <remarks>Valid values are 0 through 1.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSV.Value">
+            <summary>
+            Gets or sets Value.
+            </summary>
+            <remarks>Valid values are 0 through 1.</remarks>
+        </member>
+        <member name="T:Resco.Drawing.IDrawBackground">
+            <summary>
+            Allows a control to provide background to child control.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.IDrawBackground.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draw control background to the specified <see cref="T:System.Drawing.Graphics"/> object.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to draw.</param>
+            <param name="rect">Bounds of the child control to draw the background.</param>
+        </member>
+        <member name="E:Resco.Drawing.IDrawBackground.BackgroundInvalidated">
+            <summary>
+            Occurs when a control's display requires redrawing.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.BitmapEx">
+            <summary>
+            Extends the <see cref="T:System.Drawing.Bitmap"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromFile(System.String)">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified file.
+            </summary>
+            <param name="filename">A string that contains the name of the file from which to create the <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromFile(System.String,System.Drawing.SizeF)">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified file and scale by the specified scale factor.
+            </summary>
+            <param name="filename">A string that contains the name of the file from which to create the <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromArray(System.Byte[])">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified byte array.
+            </summary>
+            <param name="array">A byte arrat that represents the <see cref="T:System.Drawing.Bitmap"/> to create.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromArray(System.Byte[],System.Drawing.SizeF)">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified byte array and scale by the specified scale factor.
+            </summary>
+            <param name="array">A byte arrat that represents the <see cref="T:System.Drawing.Bitmap"/> to create.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromStream(System.IO.Stream)">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified data stream.
+            </summary>
+            <param name="stream">A <see cref="T:System.IO.Stream"/> that contains the data for this <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.FromStream(System.IO.Stream,System.Drawing.SizeF)">
+            <summary>
+            Creates an <see cref="T:System.Drawing.Bitmap"/> from the specified data stream and scale by the specified scale factor.
+            </summary>
+            <param name="stream">A <see cref="T:System.IO.Stream"/> that contains the data for this <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <param name="scaleFactor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <returns>The <see cref="T:System.Drawing.Bitmap"/> this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.SaveEx(System.Drawing.Image,System.IO.Stream,Resco.Drawing.ImageFormatEx)">
+            <summary>
+            Saves the <see cref="T:System.Drawing.Image"/> to the specified stream in the specified format.
+            </summary>
+            <param name="image">The <see cref="T:System.Drawing.Image"/> to be saved.</param>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> where the image will be saved.</param>
+            <param name="format">An <see cref="T:Resco.Drawing.ImageFormatEx"/> that specifies the format of the saved image.</param>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.SaveEx(System.Drawing.Image,System.String,Resco.Drawing.ImageFormatEx)">
+            <summary>
+            Saves the <see cref="T:System.Drawing.Image"/> to the specified file in the specified format. 
+            </summary>
+            <param name="image">The <see cref="T:System.Drawing.Image"/> to be saved.</param>
+            <param name="filename">A string that contains the name of the file to which to save this <see cref="T:System.Drawing.Image"/>.</param>
+            <param name="format">The <see cref="T:Resco.Drawing.ImageFormatEx"/> for this Image.</param>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.Create(System.Int32,System.Int32,Resco.Drawing.PixelFormatEx)">
+            <summary>Creates a new instance of the System.Drawing.Bitmap class with the specified size and format.</summary>
+            <param name="width">The width, in pixels, of the new System.Drawing.Bitmap.</param>
+            <param name="height">The height, in pixels, of the new System.Drawing.Bitmap.</param>
+            <param name="format">The Resco.Drawing.PixelFormatEx enumeration for the new System.Drawing.Bitmap.</param>
+            <returns>A new instance of the System.Drawing.Bitmap class with the specified size and format.</returns>
+            <remarks>This method extends the <see cref="T:System.Drawing.Bitmap"/> construction.
+            It can be used to create the 32-bit bitmaps with alpha channel that can be drawn using GraphicsEx.DrawImageEx methods.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.BitmapEx.HasAlphaChannel(System.Drawing.Bitmap)">
+            <summary>Inspects whether the Bitmap object has an alpha channel.</summary>
+            <param name="bmp">A <see cref="T:System.Drawing.Bitmap"/> object that has to be inspected.</param>
+            <returns>true, if an inspected bitmap is a 32-bit bitmap with alpha channel; false, otherwise.</returns>
+        </member>
+        <member name="T:Resco.Drawing.ImageFormatEx">
+            <summary>
+            Specifies the file format of the image.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.ImageFormatEx.Bmp">
+            <summary>
+            Gets the bitmap (BMP) image format. 
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.ImageFormatEx.Png">
+            <summary>
+            Gets the W3C Portable Network Graphics (PNG) image format.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.ImageFormatEx.Jpeg">
+            <summary>
+            Gets the Joint Photographic Experts Group (JPEG) image format.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.ImageFormatEx.Gif">
+            <summary>
+            Gets the Graphics Interchange Format (GIF) image format. 
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.RescoBorderStyle">
+            <summary>
+            Specifies the border style for a control.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.RescoBorderStyle.None">
+            <summary>
+            No border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.RescoBorderStyle.FixedSingle">
+            <summary>
+            A single-line border.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.RescoBorderStyle.Rounded">
+            <summary>
+            A single-line rounded border.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ImageCollectionProxy.Finalize">
+            <summary>
+            The ImageCollectionProxy class destructor. 
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.RegionQuadrant">
+            <summary>Internal use only</summary>
+        </member>
+        <member name="F:Resco.Drawing.RegionQuadrant.TopLeft">
+            <summary>Internal use only</summary>
+        </member>
+        <member name="F:Resco.Drawing.RegionQuadrant.TopRight">
+            <summary>Internal use only</summary>
+        </member>
+        <member name="F:Resco.Drawing.RegionQuadrant.BottomRight">
+            <summary>Internal use only</summary>
+        </member>
+        <member name="F:Resco.Drawing.RegionQuadrant.BottomLeft">
+            <summary>Internal use only</summary>
+        </member>
+        <member name="T:Resco.Drawing.ScreenGraphics">
+            <summary>
+            Get the <see cref="P:Resco.Drawing.ScreenGraphics.Graphics"/> object associated with the screen.
+            </summary>
+            <remarks>You should always call the <see cref="M:Resco.Drawing.ScreenGraphics.Dispose"/> method to release the <see cref="P:Resco.Drawing.ScreenGraphics.Graphics"/> and 
+            related resources created by the <b>ScreenGraphics</b> class.</remarks>
+        </member>
+        <member name="T:Resco.Drawing.FillDirection">
+            <summary>
+            The direction of the gradient will fill.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.FillDirection.Horizontal">
+            <summary>
+            The fill goes horizontally.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.FillDirection.Vertical">
+            <summary>
+            The fill goes vertically. 
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.ColorEx">
+            <summary>
+            Extends the <see cref="T:System.Drawing.Color"/> structure.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.ColorEx.FromArgb(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a <see cref="T:System.Drawing.Color"/> structure from the four ARGB component (alpha, red, green, and blue) values. 
+            Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
+            </summary>
+            <param name="alpha">The alpha component. Valid values are 0 through 255.</param>
+            <param name="red">The red component. Valid values are 0 through 255.</param>
+            <param name="green">The green component. Valid values are 0 through 255.</param>
+            <param name="blue">The blue component. Valid values are 0 through 255.</param>
+            <returns>The <see cref="T:System.Drawing.Color"/> that this method creates.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorEx.FromColor(System.Int32,System.Drawing.Color)">
+            <summary>
+            Creates a <see cref="T:System.Drawing.Color"/> structure from the alpha component and color values. 
+            Although this method allows a 32-bit value to be passed for alpha component, the value of the alpha component is limited to 8 bits.
+            </summary>
+            <param name="alpha">The alpha component. Valid values are 0 through 255.</param>
+            <param name="color">The color component.</param>
+            <returns>The <see cref="T:System.Drawing.Color"/> that this method creates.</returns>
+        </member>
+        <member name="T:Resco.Controls.ImageListEx">
+            <summary>
+            Provides methods to manage a collection of <see cref="T:System.Drawing.Image"/> objects.
+            </summary>
+            <remarks>You can add bitmaps or icons to the <b>ImageListEx</b>, and the other controls are able to use the images as they require.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ImageListEx"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.#ctor(System.Windows.Forms.ImageList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ImageListEx"/> class from the <see cref="T:System.Windows.Forms.ImageList"/> instance.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.ComponentModel.Component"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.Scale(System.Drawing.SizeF)">
+            <summary>
+            Scales the <see cref="P:Resco.Controls.ImageListEx.ImageSize"/> by the specified scaling factor.
+            </summary>
+            <param name="factor">A <see cref="T:System.Drawing.SizeF"/> containing the horizontal and vertical scaling factors.</param>
+            <remarks>The <see cref="M:Resco.Controls.ImageListEx.Scale(System.Drawing.SizeF)"/> method scales the <see cref="P:Resco.Controls.ImageListEx.ImageSize"/> by the specified scaling <i>factor</i>.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Resco.Controls.ImageListEx"/>.
+            </summary>
+            <returns>A string that represents the current <see cref="T:Resco.Controls.ImageListEx"/>.</returns>
+            <remarks>The <b>ToString</b> method returns a string that includes the <see cref="P:System.Collections.CollectionBase.Count"/> and <see cref="P:Resco.Controls.ImageListEx.ImageSize"/> properties.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.Draw(System.Drawing.Graphics,System.Drawing.Point,System.Int32)">
+            <summary>
+            Draws the image indicated by the specified index on the specified <see cref="T:System.Drawing.Graphics"/> at the given location.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> to draw on.</param>
+            <param name="pt">The location defined by a <see cref="T:System.Drawing.Point"/> at which to draw the image.</param>
+            <param name="index">The index of the image in the <see cref="T:Resco.Controls.ImageListEx"/> to draw.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draws the image indicated by the given index on the specified <see cref="T:System.Drawing.Graphics"/> at the specified location.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> to draw on.</param>
+            <param name="x">The horizontal position at which to draw the image.</param>
+            <param name="y">The vertical position at which to draw the image. </param>
+            <param name="index">The index of the image in the <see cref="T:Resco.Controls.ImageListEx"/> to draw.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draws the image indicated by the given index on the specified <see cref="T:System.Drawing.Graphics"/> using the specified location and size.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> to draw on.</param>
+            <param name="x">The horizontal position at which to draw the image.</param>
+            <param name="y">The vertical position at which to draw the image.</param>
+            <param name="width">The width, in pixels, of the destination image.</param>
+            <param name="height">The height, in pixels, of the destination image.</param>
+            <param name="index">The index of the image in the <see cref="T:Resco.Controls.ImageListEx"/> to draw.</param>
+            <remarks>The image is stretched or compressed as necessary to fit the bounds provided.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.op_Implicit(Resco.Controls.ImageListEx)~System.Windows.Forms.ImageList">
+            <summary>
+            Allows <see cref="T:Resco.Controls.ImageListEx"/> to be implicitly coerced to the <see cref="T:System.Windows.Forms.ImageList"/> type in a programming language.
+            </summary>
+            <param name="imageList">The <see cref="T:Resco.Controls.ImageListEx"/> to convert into an instance of the <see cref="T:System.Windows.Forms.ImageList"/> type.</param>
+            <returns>Type: <see cref="T:System.Windows.Forms.ImageList"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ImageListEx.op_Implicit(System.Windows.Forms.ImageList)~Resco.Controls.ImageListEx">
+            <summary>
+            Allows <see cref="T:System.Windows.Forms.ImageList"/> to be implicitly coerced to the <see cref="T:Resco.Controls.ImageListEx"/> type in a programming language.
+            </summary>
+            <param name="imageList">The <see cref="T:System.Windows.Forms.ImageList"/> to convert into an instance of the <see cref="T:Resco.Controls.ImageListEx"/> type.</param>
+            <returns>Type: <see cref="T:Resco.Controls.ImageListEx"/>.</returns>
+        </member>
+        <member name="P:Resco.Controls.ImageListEx.Images">
+            <summary>
+            Gets the <see cref="T:Resco.Controls.ImageCollection"/> for this image list.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ImageListEx.ImageSize">
+            <summary>
+            Gets or sets the size of the images in the image list.
+            </summary>
+            <remarks>The <see cref="T:System.Drawing.Size"/> that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16.
+            <p><font color="red">NOTE: </font><b>ImageSize</b> is used by <see cref="P:Resco.Controls.ImageListEx.NativeImageList"/> instance and by <see cref="M:Resco.Controls.ImageListEx.Draw(System.Drawing.Graphics,System.Drawing.Point,System.Int32)"/> function. 
+            <see cref="P:Resco.Controls.ImageListEx.Images"/> property will always return images with orinal size.</p>
+            </remarks>
+        </member>
+        <member name="P:Resco.Controls.ImageListEx.NativeImageList">
+            <summary>
+            Gets native <see cref="T:System.Windows.Forms.ImageList"/> containing images from current instance.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ImageListEx.AutoScaleDimensions">
+            <summary>
+            Gets or sets the dimensions that the component was designed to.
+            </summary>
+            <value>A <see cref="T:System.Drawing.SizeF"/> containing the dots per inch (DPI) that the component was designed to.</value>
+        </member>
+        <member name="P:Resco.Controls.ImageListEx.CurrentAutoScaleDimensions">
+            <summary>
+            Gets the current run-time dimensions of the screen.
+            </summary>
+            <value>A <see cref="T:System.Drawing.SizeF"/> containing the current dots per inch (DPI) of the screen.</value>
+        </member>
+        <member name="T:Resco.Core.Version">
+            <summary>
+            Specifies the internal core version.
+            </summary>
+        </member>
+        <member name="F:Resco.Core.Version.Major">
+            <summary>
+            Major version number.
+            </summary>
+        </member>
+        <member name="F:Resco.Core.Version.Minor">
+            <summary>
+            Minor version number.
+            </summary>
+        </member>
+        <member name="M:Resco.Core.Version.VersionText">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current version.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current version.</returns>
+        </member>
+        <member name="T:Resco.Drawing.VirtualBackBufferManager">
+            <summary>Provide back buffer management for the custom controls.</summary>
+            <remarks>VirtualBackBufferManager is an analogy of the <see cref="T:Resco.Drawing.BackBufferManager"/> class.</remarks>
+            <seealso cref="T:Resco.Drawing.VirtualBackBuffer"/>
+            <seealso cref="T:Resco.Drawing.BackBuffer"/>
+        </member>
+        <member name="F:Resco.Drawing.VirtualBackBufferManager.BackBufferKey">
+            <summary>
+            Key used for the main back buffer.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.VirtualBackBufferManager.TempBufferKey">
+            <summary>
+            Key used for the temporary back buffer.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.VirtualBackBufferManager.CollectOnLastRelease">
+            <summary>
+            Determine whether to call <see cref="M:Resco.Drawing.VirtualBackBufferManager.Collect(System.Boolean)"/> on last <see cref="M:Resco.Drawing.VirtualBackBufferManager.Release"/> call.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.AddBackBuffer(System.Object,Resco.Drawing.VirtualBackBuffer)">
+            <summary>
+            Add existing <see cref="T:Resco.Drawing.VirtualBackBuffer"/> to the manager.
+            </summary>
+            <param name="key">The key of the back buffer to add.</param>
+            <param name="backBuffer">The value of the back buffer to add.</param>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.RemoveBackBuffer(System.Object)">
+            <summary>
+            Remove <see cref="T:Resco.Drawing.VirtualBackBuffer"/> from the manager.
+            </summary>
+            <param name="key">The key of the back buffer to remove.</param>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.GetBackBuffer(System.Object)">
+            <summary>
+            Gets the <see cref="T:Resco.Drawing.VirtualBackBuffer"/> associated with the specified key.
+            </summary>
+            <param name="key">The key whose back buffer to get.</param>
+            <returns>The <see cref="T:Resco.Drawing.VirtualBackBuffer"/> associated with the specified key. If the specified key is not found, 
+            it creates a new <b>VirtualBackBuffer</b> object using the specified key.</returns>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.Collect(System.Boolean)">
+            <summary>
+            Forces an immediate garbage collection of all back buffers. 
+            </summary>
+            <param name="forceCollection"><b>true</b> to indicate that this method can wait for garbage collection to occur before 
+            returning; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.AddRef">
+            <summary>
+            Add reference count to the manager.
+            </summary>
+            <remarks>Use this method in the constructor of your custom control to add reference count.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBufferManager.Release">
+            <summary>
+            Remove reference count to the manager.
+            </summary>
+            <remarks>Use this method in the <b>Dispose</b> of your custom control to remove reference count.
+            If last reference is removed and <see cref="F:Resco.Drawing.VirtualBackBufferManager.CollectOnLastRelease"/> is set to <b>true</b>, <see cref="M:Resco.Drawing.VirtualBackBufferManager.Collect(System.Boolean)"/> is called
+            to collect all back buffers and releases the memory.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBackBufferManager.BackBuffers">
+            <summary>
+            Gets back buffers collection.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.BackBuffer">
+            <summary>
+            Represents back buffer.
+            </summary>
+            <remarks><font color="red">Note:</font> Back buffer is not thread-safe and if more than one <see cref="T:System.Windows.Forms.Control"/> use it at same time,
+            the result may be unexpected (means in multiple threads, it does not apply if more controls use it within same thread).</remarks>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Drawing.BackBuffer"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.#ctor(System.Drawing.Size)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Drawing.BackBuffer"/> class with specified initial size.
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.Finalize">
+            <summary>
+            The BackBuffer class destructor. Disposes an BackBuffer by calling this.Dispose(false). 
+            Destructor method is automatically invoked during garbage collection, unless finalization 
+            by the garbage collector has been disabled by a call to the GC.SuppressFinalize method. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Resco.Drawing.BackBuffer"/>. 
+            </summary>
+            <remarks>Call <b>Dispose</b> when you are finished using the <b>BackBuffer</b>. 
+            The <b>Dispose</b> method leaves the <b>BackBuffer</b> in an unusable state. 
+            After calling <b>Dispose</b>, you must release all references to the <b>BackBuffer</b> 
+            so the garbage collector can reclaim the memory that the <b>BackBuffer</b> was occupying.
+            <note type="caution">Always call <b>Dispose</b> before you release your last reference to the <b>BackBuffer</b>. 
+            Otherwise, the resources it is using will not be freed until the garbage collector calls the 
+            <b>BackBuffer</b> object's <b>Finalize</b> method.</note>
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Resco.Drawing.BackBuffer"/> and optionally 
+            releases the managed resources. 
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+            <remarks>
+            This method is called by the public <b>Dispose()</b> method and the <see cref="M:Resco.Drawing.BackBuffer.Finalize"/> method. 
+            <b>Dispose()</b> invokes the protected <b>Dispose(Boolean)</b> method with the <i>disposing</i> 
+            parameter set to <b>true</b>. <b>Finalize</b> invokes <b>Dispose</b> with disposing set to <b>false</b>.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.GetGraphics(System.Windows.Forms.Control)">
+            <summary>
+            Gets <see cref="T:System.Drawing.Graphics"/> object associated with the back buffer.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to use the backbuffer.</param>
+            <returns>Returns <see cref="T:System.Drawing.Graphics"/> object associated with the back buffer and sets specified <see cref="T:System.Windows.Forms.Control"/> as
+            valid for this backbuffer.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.GetImage(System.Windows.Forms.Control)">
+            <summary>
+            Gets <see cref="T:System.Drawing.Bitmap"/> object associated with the back buffer.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to use the backbuffer.</param>
+            <returns>Returns <see cref="T:System.Drawing.Bitmap"/> object associated with the back buffer and sets specified <see cref="T:System.Windows.Forms.Control"/> as
+            valid for this backbuffer.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.GetImage(System.Drawing.Graphics)">
+            <summary>
+            Gets <see cref="T:System.Drawing.Bitmap"/> object associated with the specified graphics.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> for which to retreive the assiciated <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <returns>Returns <see cref="T:System.Drawing.Bitmap"/> object associated with the specified <see cref="T:System.Drawing.Graphics"/>. 
+            If the <b>Graphics</b> is not associated with this back buffer, returns null (<b>Nothing</b> in Visual Basic).</returns>
+        </member>
+        <member name="M:Resco.Drawing.BackBuffer.IsValid(System.Windows.Forms.Control)">
+            <summary>
+            Gets value idicating whether the back buffer is valid for the specified control.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to test validation.</param>
+            <returns><b>true</b> if the back buffer is valid for the specified contro, otherwise <b>false</b>.</returns>
+            <remarks>This methods tests whether the back buffer content is valid for the specified control. If you would reuse the backbuffer,
+            you should always use this method before you get the backbuffer graphics or image to detect, whether your control 
+            is the last one which used it.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.BackBuffer.IsDisposed">
+            <summary>
+            Gets the value indicating whether the object is disposed or not.
+            </summary>
+            <value><b>true</b> for disposed; otherwise <b>false</b>./</value>
+        </member>
+        <member name="T:Resco.Controls.ImageListProxy">
+            <summary>
+            Provides methods to manage <see cref="P:Resco.Controls.ImageListProxy.ImageList"/> or <see cref="T:Resco.Controls.ImageListEx"/> objects.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ImageCollection">
+            <summary>
+            Encapsulates the collection of <see cref="T:System.Drawing.Image"/> objects in an <see cref="T:Resco.Controls.ImageListEx"/>.
+            </summary>
+            <remarks>This is used to manage the images in the <see cref="T:Resco.Controls.ImageListEx"/> programmatically, providing methods to add and remove image objects.</remarks>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.ImageCollection"/> class
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.ToImages">
+            <summary>
+            Returns an <see cref="T:System.Drawing.Image"/> array that represents the current <see cref="T:Resco.Controls.ImageCollection"/>.
+            </summary>
+            <returns>An <see cref="T:System.Drawing.Image"/> array that represents the current <see cref="T:Resco.Controls.ImageCollection"/>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.Add(System.Drawing.Image)">
+            <summary>
+            Adds the specified image to the <see cref="T:Resco.Controls.ImageListEx"/>.
+            </summary>
+            <param name="value">A <see cref="T:System.Drawing.Bitmap"/> of the image to add to the list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.IndexOf(System.Drawing.Image)">
+            <summary>
+             The <b>IndexOf</b> method returns the index of a specified object in the list.
+            </summary>
+            <param name="value">The <see cref="T:System.Drawing.Image"/> to find in the list.</param>
+            <returns>The index of the image in the list.</returns>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.Insert(System.Int32,System.Drawing.Image)">
+            <summary>
+            Inserts the specified image to the <see cref="T:Resco.Controls.ImageListEx"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <i>image</i> should be inserted.</param>
+            <param name="value">A <see cref="T:System.Drawing.Bitmap"/> of the image to insert to the list.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.Remove(System.Drawing.Image)">
+            <summary>
+            The <b>Remove</b> method removes a specified image from the list.
+            </summary>
+            <param name="value">The <see cref="T:System.Drawing.Image"/> to remove from the list.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.Contains(System.Drawing.Image)">
+            <summary>
+             The <b>Contains</b> method indicates whether a specified image is contained in the list.
+            </summary>
+            <param name="value">The <see cref="T:System.Drawing.Image"/> to find in the list.</param>
+            <returns><b>true</b> if the image is found in the list; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.OnClearComplete">
+            <summary>
+            Performs additional custom processes after clearing the contents of the <see cref="T:Resco.Controls.ImageCollection"/> instance.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Performs additional custom processes after inserting a new element into the <see cref="T:Resco.Controls.ImageCollection"/> instance.
+            </summary>
+            <param name="index">The zero-based index at which to insert <i>value</i>.</param>
+            <param name="value">The new value of the element at <i>index</i>.</param>
+        </member>
+        <member name="M:Resco.Controls.ImageCollection.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            Performs additional custom processes after removing an element from the <see cref="T:Resco.Controls.ImageCollection"/> instance.
+            </summary>
+            <param name="index">The zero-based index at which <i>value</i> can be found.</param>
+            <param name="value">The value of the element to remove from <i>index</i>.</param>
+        </member>
+        <member name="P:Resco.Controls.ImageCollection.NativeImageList">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.ImageList"/> to be synchronized with <see cref="T:Resco.Controls.ImageCollection"/>.
+            </summary>
+        </member>
+        <member name="P:Resco.Controls.ImageCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets an <see cref="T:System.Drawing.Image"/> at the specified index within the collection.
+            </summary>
+            <param name="index">The index of the image to get or set.</param>
+            <returns>The image in the list specified by <i>index</i></returns>
+        </member>
+        <member name="P:Resco.Controls.ImageCollection.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the list is read-only.
+            </summary>
+            <remarks>Always <b>false</b>.</remarks>
+        </member>
+        <member name="T:Resco.Drawing.Alignment">
+            <summary>
+            Defines the alignment of text, image or other content.
+            </summary>
+            <remarks>This enumeration contains horizontal and vertical alignments.</remarks>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.MiddleCenter">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.MiddleRight">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.MiddleLeft">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.BottomCenter">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.BottomRight">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.BottomLeft">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.TopCenter">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.TopRight">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.Alignment.TopLeft">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.AlignmentDefault">
+            <summary>
+            Defines the alignment of text, image or other content.
+            </summary>
+            <remarks>This enumeration contains horizontal and vertical alignments. 
+            It contains also <see cref="F:Resco.Drawing.AlignmentDefault.Default"/> alignment to define inherited alignment.</remarks>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.Default">
+            <summary>
+            Content alignment should be inherited.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.MiddleCenter">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.MiddleRight">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.MiddleLeft">
+            <summary>
+            Content is vertically aligned in the middle, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.BottomCenter">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.BottomRight">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.BottomLeft">
+            <summary>
+            Content is vertically aligned at the bottom, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.TopCenter">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned at the center.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.TopRight">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the right.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.AlignmentDefault.TopLeft">
+            <summary>
+            Content is vertically aligned at the top, and horizontally aligned on the left.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.VirtualBackBuffer">
+            <summary>Represents back buffer based on <see cref="T:Resco.Drawing.VirtualBitmap"/>.</summary>
+            <remarks>
+            <para>
+            VirtualBackBuffer is an analogy of the <see cref="T:Resco.Drawing.BackBuffer"/> class. Unlike the BackBuffer, it uses the <see cref="T:Resco.Drawing.VirtualBitmap"/> object to store the cached image.
+            VirtualBitmap allows the direct access to the image data bits, what allows implementing the quick drawing routines and smooth scrolling.
+            </para>
+            <para>
+            <font color="red">Note:</font> Back buffer is not thread-safe and if more than one <see cref="T:System.Windows.Forms.Control"/> use it at same time,
+            the result may be unexpected (means in multiple threads, it does not apply if more controls use it within same thread).
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Drawing.VirtualBackBuffer"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.#ctor(System.Drawing.Size)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Drawing.VirtualBackBuffer"/> class with specified initial size.
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.Finalize">
+            <summary>
+            The VirtualBackBuffer class destructor. Disposes an VirtualBackBuffer by calling this.Dispose(false). 
+            Destructor method is automatically invoked during garbage collection, unless finalization 
+            by the garbage collector has been disabled by a call to the GC.SuppressFinalize method. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Resco.Drawing.VirtualBackBuffer"/>. 
+            </summary>
+            <remarks>Call <b>Dispose</b> when you are finished using the <b>VirtualBackBuffer</b>. 
+            The <b>Dispose</b> method leaves the <b>VirtualBackBuffer</b> in an unusable state. 
+            After calling <b>Dispose</b>, you must release all references to the <b>VirtualBackBuffer</b> 
+            so the garbage collector can reclaim the memory that the <b>VirtualBackBuffer</b> was occupying.
+            <note type="caution">Always call <b>Dispose</b> before you release your last reference to the <b>VirtualBackBuffer</b>. 
+            Otherwise, the resources it is using will not be freed until the garbage collector calls the 
+            <b>VirtualBackBuffer</b> object's <b>Finalize</b> method.</note>
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Resco.Drawing.VirtualBackBuffer"/> and optionally 
+            releases the managed resources. 
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+            <remarks>
+            This method is called by the public <b>Dispose()</b> method and the <see cref="M:Resco.Drawing.VirtualBackBuffer.Finalize"/> method. 
+            <b>Dispose()</b> invokes the protected <b>Dispose(Boolean)</b> method with the <i>disposing</i> 
+            parameter set to <b>true</b>. <b>Finalize</b> invokes <b>Dispose</b> with disposing set to <b>false</b>.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.GetGraphics(System.Windows.Forms.Control)">
+            <summary>
+            Gets <see cref="T:System.Drawing.Graphics"/> object associated with the back buffer.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to use the backbuffer.</param>
+            <returns>Returns <see cref="T:System.Drawing.Graphics"/> object associated with the back buffer and sets specified <see cref="T:System.Windows.Forms.Control"/> as
+            valid for this backbuffer.</returns>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.GetImage(System.Windows.Forms.Control)">
+            <summary>
+            Gets <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the back buffer.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to use the backbuffer.</param>
+            <returns>Returns <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the back buffer and sets specified <see cref="T:System.Windows.Forms.Control"/> as
+            valid for this backbuffer.</returns>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.GetImage(System.Drawing.Graphics)">
+            <summary>
+            Gets <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the specified graphics.
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> for which to retrieve the associated <see cref="T:System.Drawing.Bitmap"/>.</param>
+            <returns>Returns <see cref="T:Resco.Drawing.VirtualBitmap"/> object associated with the specified <see cref="T:System.Drawing.Graphics"/>. 
+            If the <b>Graphics</b> is not associated with this back buffer, returns null (<b>Nothing</b> in Visual Basic).</returns>
+        </member>
+        <member name="M:Resco.Drawing.VirtualBackBuffer.IsValid(System.Windows.Forms.Control)">
+            <summary>
+            Gets value indicating whether the back buffer is valid for the specified control.
+            </summary>
+            <param name="control"><see cref="T:System.Windows.Forms.Control"/> to test validation.</param>
+            <returns><b>true</b> if the back buffer is valid for the specified control, otherwise <b>false</b>.</returns>
+            <remarks>This methods tests whether the back buffer content is valid for the specified control. If you would reuse the backbuffer,
+            you should always use this method before you get the backbuffer graphics or image to detect, whether your control 
+            is the last one which used it.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.VirtualBackBuffer.IsDisposed">
+            <summary>
+            Gets the value indicating whether the object is disposed or not.
+            </summary>
+            <value><b>true</b> for disposed; otherwise <b>false</b>./</value>
+        </member>
+        <member name="T:Resco.ImageManager.ImageManager">
+            <summary>
+            Provides convenient access to image resources at run time.
+            </summary>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor">
+            <summary>
+            Initializes a new empty instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in assemblies based 
+            on information from the specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="resourceType">A <see cref="T:System.Type"/> from which the <see cref="T:Resco.ImageManager.ImageManager"/> derives all information for finding resource files.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.Type,Resco.ImageManager.ImageManagerType,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in assemblies based 
+            on information from the specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="resourceType">A <see cref="T:System.Type"/> from which the <see cref="T:Resco.ImageManager.ImageManager"/> derives all information for finding resource files.</param>
+            <param name="type">A <see cref="T:Resco.ImageManager.ImageManagerType"/> which defines how resource files are stored.</param>
+            <param name="contentPath">Relative or absolute path to the content. Used for <see cref="F:Resco.ImageManager.ImageManagerType.Content"/> only.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.Type,Resco.ImageManager.ImageManagerType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in assemblies based 
+            on information from the specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="resourceType">A <see cref="T:System.Type"/> from which the <see cref="T:Resco.ImageManager.ImageManager"/> derives all information for finding resource files.</param>
+            <param name="type">A <see cref="T:Resco.ImageManager.ImageManagerType"/> which defines how resource files are stored.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.String,System.Reflection.Assembly)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in files derived from 
+            the specified root name using the given <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="baseName">The root name of the resources.</param>
+            <param name="assembly">The main <see cref="T:System.Reflection.Assembly"/> for the resources.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.String,System.Reflection.Assembly,Resco.ImageManager.ImageManagerType,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in files derived from 
+            the specified root name using the given <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="baseName">The root name of the resources.</param>
+            <param name="assembly">The main <see cref="T:System.Reflection.Assembly"/> for the resources.</param>
+            <param name="type">A <see cref="T:Resco.ImageManager.ImageManagerType"/> which defines how resource files are stored.</param>
+            <param name="contentPath">Relative or absolute path to the content. Used for <see cref="F:Resco.ImageManager.ImageManagerType.Content"/> only.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.#ctor(System.String,System.Reflection.Assembly,Resco.ImageManager.ImageManagerType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.ImageManager.ImageManager"/> class that looks up resources contained in files derived from 
+            the specified root name using the given <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="baseName">The root name of the resources.</param>
+            <param name="assembly">The main <see cref="T:System.Reflection.Assembly"/> for the resources.</param>
+            <param name="type">A <see cref="T:Resco.ImageManager.ImageManagerType"/> which defines how resource files are stored.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.Finalize">
+            <summary>
+            The ImageManager class destructor. Disposes an ImageManager by calling this.Dispose(false). 
+            Destructor method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled 
+            by a call to the <see cref="M:System.GC.SuppressFinalize(System.Object)"/> method. 
+            </summary>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.Dispose">
+            <summary>
+            Releases the resources used by the <see cref="T:Resco.ImageManager.ImageManager"/>.
+            </summary>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Resco.ImageManager.ImageManager"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.GetImage(System.String)">
+            <summary>
+            Returns the value of the specified <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
+            <param name="name">The name of the image to get.</param>
+            <returns>The value of the specified image.</returns>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.ContainsImage(System.String)">
+            <summary>
+            Determines whether the <see cref="T:Resco.ImageManager.ImageManager"/> contains image with the specified name.
+            </summary>
+            <param name="name">The image name to locate in the <see cref="T:Resco.ImageManager.ImageManager"/>.</param>
+            <returns><b>true</b> if the <see cref="T:Resco.ImageManager.ImageManager"/> contains an image with specified name; otherwize <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.Collect(System.Boolean)">
+            <summary>
+            Forces an immediate garbage collection of all images. 
+            </summary>
+            <param name="forceCollection"><b>true</b> to indicate that this method can wait for garbage collection to occur before 
+            returning; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.GetSchema">
+             <summary>
+            This method is reserved and should not be used. When implementing the IXmlSerializable
+            interface, you should return null (Nothing in Visual Basic) from this method,
+            and instead, if specifying a custom schema is required, apply the System.Xml.Serialization.XmlSchemaProviderAttribute
+            to the class.
+             </summary>
+             <returns>
+            An System.Xml.Schema.XmlSchema that describes the XML representation of the
+            object that is produced by the System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)
+            method and consumed by the System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)
+            method.
+             </returns>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">
+            The System.Xml.XmlReader stream from which the object is deserialized.
+            </param>
+        </member>
+        <member name="M:Resco.ImageManager.ImageManager.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">
+            The System.Xml.XmlWriter stream to which the object is serialized.
+            </param>
+        </member>
+        <member name="P:Resco.ImageManager.ImageManager.CurrentDpi">
+            <summary>
+            Gets the current screen DPI.
+            </summary>
+        </member>
+        <member name="T:Resco.ImageManager.ImageManagerType">
+            <summary>
+            Specify how the images are stored for the ImageImanger.
+            </summary>
+        </member>
+        <member name="F:Resco.ImageManager.ImageManagerType.ResX">
+            <summary>
+            Images are stored in ResX resource file.
+            </summary>
+        </member>
+        <member name="F:Resco.ImageManager.ImageManagerType.Embedded">
+            <summary>
+            Images are stored as embedded resources.
+            </summary>
+        </member>
+        <member name="F:Resco.ImageManager.ImageManagerType.Content">
+            <summary>
+            Images are stored as content.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.PixelFormatEx">
+            <summary>Specifies the format of the color data for each pixel in the image.</summary>
+            <remarks>PixelFormatEx extends the <see cref="T:System.Drawing.Imaging.PixelFormat"/> enumeration to support the 32-bit images with alpha channel.</remarks>
+        </member>
+        <member name="F:Resco.Drawing.PixelFormatEx.Format16bppRgb555">
+            <summary>Specifies that the format is 16 bits per pixel; 5 bits each are used for the red, green, and blue components. The remaining bit is not used.</summary>
+        </member>
+        <member name="F:Resco.Drawing.PixelFormatEx.Format16bppRgb565">
+            <summary>Specifies that the format is 16 bits per pixel; 5 bits are used for the red component, 6 bits are used for the green component, and 5 bits are used for the blue component.</summary>
+        </member>
+        <member name="F:Resco.Drawing.PixelFormatEx.Format24bppRgb">
+            <summary>Specifies that the format is 24 bits per pixel; 8 bits each are used for the red, green, and blue components.</summary>
+        </member>
+        <member name="F:Resco.Drawing.PixelFormatEx.Format32bppRgb">
+            <summary>Specifies that the format is 32 bits per pixel; 8 bits each are used for the red, green, and blue components. The remaining 8 bits are not used.</summary>
+        </member>
+        <member name="F:Resco.Drawing.PixelFormatEx.Format32bppArgb">
+            <summary>Specifies that the format is 32 bits per pixel; 8 bits each are used for the red, green, blue components and the alpha channel.</summary>
+        </member>
+        <member name="T:Resco.Drawing.BackBufferManager">
+            <summary>
+            Provide back buffer management for the custom controls.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.BackBufferManager.BackBufferKey">
+            <summary>
+            Key used for the main back buffer.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.BackBufferManager.TempBufferKey">
+            <summary>
+            Key used for the temporary back buffer.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.BackBufferManager.CollectOnLastRelease">
+            <summary>
+            Determine whether to call <see cref="M:Resco.Drawing.BackBufferManager.Collect(System.Boolean)"/> on last <see cref="M:Resco.Drawing.BackBufferManager.Release"/> call.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.AddBackBuffer(System.Object,Resco.Drawing.BackBuffer)">
+            <summary>
+            Add existing <see cref="T:Resco.Drawing.BackBuffer"/> to the manager.
+            </summary>
+            <param name="key">The key of the back buffer to add.</param>
+            <param name="backBuffer">The value of the back buffer to add.</param>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.RemoveBackBuffer(System.Object)">
+            <summary>
+            Remove <see cref="T:Resco.Drawing.BackBuffer"/> from the manager.
+            </summary>
+            <param name="key">The key of the back buffer to remove.</param>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.GetBackBuffer(System.Object)">
+            <summary>
+            Gets the <see cref="T:Resco.Drawing.BackBuffer"/> associated with the specified key.
+            </summary>
+            <param name="key">The key whose back buffer to get.</param>
+            <returns>The <see cref="T:Resco.Drawing.BackBuffer"/> associated with the specified key. If the specified key is not found, 
+            it creates a new <b>BackBuffer</b> using the specified key.</returns>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.Collect(System.Boolean)">
+            <summary>
+            Forces an immediate garbage collection of all back buffers. 
+            </summary>
+            <param name="forceCollection"><b>true</b> to indicate that this method can wait for garbage collection to occur before 
+            returning; otherwise, <b>false</b>.</param>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.AddRef">
+            <summary>
+            Add reference count to the manager.
+            </summary>
+            <remarks>Use this method in the constructor of your custom control to add reference count.</remarks>
+        </member>
+        <member name="M:Resco.Drawing.BackBufferManager.Release">
+            <summary>
+            Remove reference count to the manager.
+            </summary>
+            <remarks>Use this method in the <b>Dispose</b> of your custom control to remove reference count.
+            If last reference is removed and <see cref="F:Resco.Drawing.BackBufferManager.CollectOnLastRelease"/> is set to <b>true</b>, <see cref="M:Resco.Drawing.BackBufferManager.Collect(System.Boolean)"/> is called
+            to collect all back buffers and releases the memory.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.BackBufferManager.BackBuffers">
+            <summary>
+            Gets back buffers collection.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.ColorHSL">
+            <summary>
+            Represents an HSL (hue, saturation, lightness) color. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates new instance of <see cref="T:Resco.Drawing.ColorHSL"/> structure.
+            </summary>
+            <param name="hue">The hue component value for the new <see cref="T:Resco.Drawing.ColorHSL"/>.</param>
+            <param name="saturation">The saturation component value for the new <see cref="T:Resco.Drawing.ColorHSL"/>. Valid values are 0 through 1.</param>
+            <param name="lightness">The lightness component value for the new <see cref="T:Resco.Drawing.ColorHSL"/>. Valid values are 0 through 1.</param>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.#ctor(System.Drawing.Color)">
+            <summary>
+            Creates new instance of <see cref="T:Resco.Drawing.ColorHSL"/> structure of the specified color.
+            </summary>
+            <param name="color">The <see cref="T:System.Drawing.Color"/> of the new <see cref="T:Resco.Drawing.ColorHSV"/>.</param>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.ToColor">
+            <summary>
+            Gets the <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSL"/> structure. 
+            </summary>
+            <returns>The <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSL"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.ToColor(System.Double,System.Double,System.Double)">
+            <summary>
+            Gets the <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSL"/> structure.
+            </summary>
+            <param name="lightness">Lightness of the color.</param>
+            <returns>The <see cref="T:System.Drawing.Color"/> of this <see cref="T:Resco.Drawing.ColorHSL"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.FormColor(System.Drawing.Color)">
+            <summary>
+            Gets the <see cref="T:Resco.Drawing.ColorHSL"/> of the specified <see cref="T:System.Drawing.Color"/> structure. 
+            </summary>
+            <param name="color">The <see cref="T:System.Drawing.Color"/> of the new <see cref="T:Resco.Drawing.ColorHSL"/>.</param>
+            <returns>The <see cref="T:Resco.Drawing.ColorHSL"/> of the specified <see cref="T:System.Drawing.Color"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.Equals(System.Object)">
+            <summary>
+            Tests whether the specified object is a <see cref="T:Resco.Drawing.ColorHSL"/> structure and is equivalent to this <see cref="T:Resco.Drawing.ColorHSL"/> structure. 
+            </summary>
+            <param name="obj">The object to test.</param>
+            <returns><b>true</b> if obj is a <see cref="T:Resco.Drawing.ColorHSL"/> structure equivalent to this <see cref="T:Resco.Drawing.ColorHSL"/> structure; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.GetHashCode">
+            <summary>
+            Returns a hash code for this <see cref="T:Resco.Drawing.ColorHSL"/> structure. 
+            </summary>
+            <returns>An integer value that specifies the hash code for this <see cref="T:Resco.Drawing.ColorHSL"/>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.op_Equality(Resco.Drawing.ColorHSL,Resco.Drawing.ColorHSL)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Drawing.ColorHSL"/> structures are equivalent. 
+            </summary>
+            <param name="left">The <see cref="T:Resco.Drawing.ColorHSL"/> that is to the left of the equality operator.</param>
+            <param name="right">The <see cref="T:Resco.Drawing.ColorHSL"/> that is to the right of the equality operator. </param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Drawing.ColorHSL"/> structures are equal; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Resco.Drawing.ColorHSL.op_Inequality(Resco.Drawing.ColorHSL,Resco.Drawing.ColorHSL)">
+            <summary>
+            Tests whether two specified <see cref="T:Resco.Drawing.ColorHSL"/> structures are different. 
+            </summary>
+            <param name="left">The <see cref="T:Resco.Drawing.ColorHSL"/> that is to the left of the inequality operator.</param>
+            <param name="right">The <see cref="T:Resco.Drawing.ColorHSL"/> that is to the right of the inequality operator.</param>
+            <returns><b>true</b> if the two <see cref="T:Resco.Drawing.ColorHSL"/> structures are different; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSL.Hue">
+            <summary>
+            Gets or sets Hue.
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSL.Saturation">
+            <summary>
+            Gets or sets Saturation.
+            </summary>
+            <remarks>Valid values are 0 through 1.</remarks>
+        </member>
+        <member name="P:Resco.Drawing.ColorHSL.Lightness">
+            <summary>
+            Gets or sets Lightness.
+            </summary>
+            <remarks>Valid values are 0 through 1.</remarks>
+        </member>
+        <member name="T:Resco.Drawing.GradientColor">
+            <summary>
+            Represents a gradient color.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor">
+            <summary>
+            Initializes a new instance of the GradientColor class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes Vista style of the GradientColor class.
+            </summary>
+            <param name="color">Basic gradient color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,System.Int32,System.Int32,Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes Vista style of the GradientColor class.
+            </summary>
+            <param name="color">Basic gradient color.</param>
+            <param name="middleColor1Offset">Offset of the first middle color in percent.</param>
+            <param name="middleColor2Offset">Offset of the second middle color in percent.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="endColor">End color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="middleColor1">Middle color.</param>
+            <param name="middleColor2">Middle color.</param>
+            <param name="endColor">End color.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,Resco.Drawing.FillDirection)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="startColor">Start color.</param>
+            <param name="middleColor1">Middle color.</param>
+            <param name="middleColor2">Middle color.</param>
+            <param name="endColor">End color.</param>
+            <param name="middleColor1Offset">Offset of the first middle color in percent.</param>
+            <param name="middleColor2Offset">Offset of the second middle color in percent.</param>
+            <param name="fillDirection">Fill direction.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.#ctor(Resco.Drawing.GradientColor)">
+            <summary>
+            Initializes a new instance of the GradientColor class.
+            </summary>
+            <param name="gradientColor">Gradient color used to intialize this instance.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeVistaColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeStartColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeMiddleColor1">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeMiddleColor2">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.StartColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeEndColor">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.EndColor"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeMiddleColor1Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.MiddleColor1Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeMiddleColor2Offset">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.MiddleColor2Offset"/> property should be persisted. 
+            </summary>
+            <returns><b>true</b> if the property value has changed from its default; otherwise, <b>false</b>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.ShouldSerializeFillDirection">
+            <summary>
+            Indicates whether the <see cref="P:Resco.Drawing.GradientColor.FillDirection"/> property should be persisted. 
+            </summary>
+            <returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.</returns>	
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.Draw(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the gradient at the specified rectangle to the specified graphics. 
+            </summary>
+            <param name="gr"><see cref="T:System.Drawing.Graphics"/> to be gradient drawn.</param>
+            <param name="destRect"><see cref="T:System.Drawing.Rectangle"/> to be gradient drawn.</param>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.Reset">
+            <summary>
+            Reset the gradient to its default values.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.GradientColor.OnPropertyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Resco.Drawing.GradientColor.PropertyChanged"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:Resco.Drawing.GradientColor.PropertyChanged">
+            <summary>
+            Notify the parent control when some property was changed.
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.CanDraw">
+            <summary>
+            Determine whether the gradient could be drawn.
+            </summary>
+            <value><b>true</b> if the gradient could be drawn, otherwise <b>false</b>.</value>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.VistaColor">
+            <summary>
+            Gets or sets the starting color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.StartColor">
+            <summary>
+            Gets or sets the starting color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.MiddleColor1">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.MiddleColor2">
+            <summary>
+            Gets or sets the middle color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.EndColor">
+            <summary>
+            Gets or sets the ending color of the gradient. 
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.MiddleColor1Offset">
+            <summary>
+            Gets or sets the offset of the first middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.MiddleColor2Offset">
+            <summary>
+            Gets or sets the offset of the second middle color (in percent).
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.GradientColor.FillDirection">
+            <summary>
+            Gets or sets the direction of the gradient.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.Design.GradientColorConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="sourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Resco.Drawing.WrapTextCache.CacheCapacity">
+            <summary>
+            Capacity of the cache of wrapped texts.
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.Design.ImageListExDesigner">
+            <summary>
+            Extends the design mode behavior of a <see cref="T:Resco.Controls.ImageListEx"/>.
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.Design.ImageListExDesigner.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Controls.Design.ImageListExDesigner"/> class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Controls.Design.ImageListExDesigner.Initialize(System.ComponentModel.IComponent)">
+            <summary>
+            Prepares the designer to view, edit, and design the specified component.
+            </summary>
+            <param name="component">The component for this designer.</param>
+            <remarks>The designer host calls this method when it is ready to use the designer.</remarks>
+        </member>
+        <member name="M:Resco.Controls.Design.ImageListExDesigner.PreFilterProperties(System.Collections.IDictionary)">
+            <summary>
+            Allows a designer to add to the set of properties that it exposes through a <see cref="T:System.ComponentModel.TypeDescriptor"/>.
+            </summary>
+            <param name="properties">The properties for the class of the component.</param>
+        </member>
+        <member name="T:Resco.Drawing.Design.GradientColorEditor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.GradientColorEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Resco.Controls.ToolTipType">
+            <summary>
+            Type of tooltip when the text does not fit.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ToolTipType.Triangle">
+            <summary>
+            Displays triangle.
+            </summary>
+        </member>
+        <member name="F:Resco.Controls.ToolTipType.Dots">
+            <summary>
+            Displays three dots.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.CircleDraw">
+            <summary>
+            This class is an extension of the <see cref="T:System.Drawing.Graphics"/> class.
+            It implements a set of methods for drawing simple or alliased circles, filled cirles, partially filled circles and a parts of a circle.
+            </summary>
+            <remarks>
+            CircleDraw methods achieve an optimal performance in connection with the <see cref="T:Resco.Drawing.BackBuffer"/> class. Drawing to the back-buffer may be up to 5 times quicker
+            than drawing to the destination <see cref="T:System.Drawing.Graphics"/> object directly using the GDI primitives. Moreover it reduces the visual effects which are caused by the direct drawing.
+            </remarks>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.FillCircle(System.Drawing.Graphics,System.Drawing.Point,System.Int32,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a filled rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="center">A <see cref="T:System.Drawing.Point"/> object that defines the center of the circle.</param>
+            <param name="R">A System.Int32 that defines the circle radius.</param>
+            <param name="col">A <see cref="T:System.Drawing.Color"/> value that defines a color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.FillCircle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a filled rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> that the circle should be drawn into.</param>
+            <param name="col">A <see cref="T:System.Drawing.Color"/> value that defines a color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.DrawCircle(System.Drawing.Graphics,System.Drawing.Point,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="center">A <see cref="T:System.Drawing.Point"/> object that defines the center of the circle.</param>
+            <param name="R">A System.Int32 that defines the circle radius.</param>
+            <param name="lineThickness">A System.Int defining the circle line thickness.</param>
+            <param name="col">A <see cref="T:System.Drawing.Color"/> value that defines a color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.DrawCircle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> that the circle should be drawn into.</param>
+            <param name="lineThickness">A System.Int defining the circle line thickness.</param>
+            <param name="col">A <see cref="T:System.Drawing.Color"/> value that defines a color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.FillAliasedCircle(System.Drawing.Graphics,System.Drawing.Point,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a filled aliased rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="center">A <see cref="T:System.Drawing.Point"/> object that defines the center of the circle.</param>
+            <param name="R">A System.Int32 that defines the circle radius.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Color"/> value that defines a pen (foreground) color.</param>
+            <param name="bkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a background color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.FillAliasedCircle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws a filled aliased rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> that the circle should be drawn into.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Color"/> value that defines a pen (foreground) color.</param>
+            <param name="bkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a background color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.DrawAliasedCircle(System.Drawing.Graphics,System.Drawing.Point,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws an aliased rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="center">A <see cref="T:System.Drawing.Point"/> object that defines the center of the circle.</param>
+            <param name="R">A System.Int32 that defines the circle radius.</param>
+            <param name="lineThickness">A System.Int defining the circle line thickness.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Color"/> value that defines a pen (foreground) color.</param>
+            <param name="bkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a background color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.DrawAliasedCircle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Rectangle)">
+            <summary>Draws an aliased rectangle into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="rect">A <see cref="T:System.Drawing.Rectangle"/> that the circle should be drawn into.</param>
+            <param name="lineThickness">A System.Int defining the circle line thickness.</param>
+            <param name="pen">A <see cref="T:System.Drawing.Color"/> value that defines a pen (foreground) color.</param>
+            <param name="bkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a background color.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for circle drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,Resco.Drawing.RoundedCornerStyles,System.Drawing.Rectangle)">
+            <summary>Draws a border with rounded corners into the <see cref="T:System.Drawing.Graphics"/> object.</summary>
+            <param name="gr">A destination <see cref="T:System.Drawing.Graphics"/> object.</param>
+            <param name="r">A <see cref="T:System.Drawing.Rectangle"/> that the border should be drawn into.</param>
+            <param name="borderThickness">A System.Int defining the border line thickness.</param>
+            <param name="roundRadius">A System.Int32 that defines the rounded corners radius.</param>
+            <param name="borderColor">A <see cref="T:System.Drawing.Color"/> value that defines a border pen color.</param>
+            <param name="outBkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a border pen color in case of aliased border. It may be <see cref="F:System.Drawing.Color.Empty"/> if no aliasing should be applied.</param>
+            <param name="inBkgnd">A <see cref="T:System.Drawing.Color"/> value that defines a border fill color.</param>
+            <param name="cornerStyle">A combination of the <see cref="T:Resco.Drawing.RoundedCornerStyles"/> values that define which corners should be rounded. Use a bit operations to define a combination of corners.</param>
+            <param name="clip">An instance of the <see cref="T:System.Drawing.Rectangle"/> object that clipping rectangle for border drawing. Set to <see cref="F:System.Drawing.Rectangle.Empty"/> to disable the clipping.</param>
+        </member>
+        <member name="M:Resco.Drawing.CircleDraw.CalculateClipRegions(System.Int32)">
+            <summary>Internal use only.</summary>
+            <param name="R">A System.Int32 that defines the circle radius.</param>
+            <returns>An array of 4 <see cref="T:System.Drawing.Region"/> objects that describe the regions for bottom-right, bottom-left, top-left and top-right segments of a circle with specified radius.</returns>
+        </member>
+        <member name="T:Resco.Drawing.BBCircleRegionDraw">
+            <summary>Internal use only</summary>
+            <remarks>Works only on VirtualBitmaps with PixelFormat==PixelFormat.Format16bppRgb565</remarks>
+        </member>
+        <member name="T:Resco.Drawing.RoundedCornerStyles">
+            <summary>
+            Specifies rounded corners.
+            <p>This enumeration has a <see cref="T:System.FlagsAttribute"/> attribute that allows a bitwise combination of its member values.</p>
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.None">
+            <summary>
+            None corner is rounded.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.TopLeft">
+            <summary>
+            Top-left corner is rounded.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.TopRight">
+            <summary>
+            Top-right corner is rounded.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.BottomLeft">
+            <summary>
+            Bottom-left corner is rounded.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.BottomRight">
+            <summary>
+            Bottom-right corner is rounded.
+            </summary>
+        </member>
+        <member name="F:Resco.Drawing.RoundedCornerStyles.All">
+            <summary>
+            All corners are rounded.
+            </summary>
+        </member>
+        <member name="T:Resco.Drawing.Design.RoundedCornerEditor">
+            <summary>
+            Provides a <see cref="T:System.Drawing.Design.UITypeEditor"/> for visually picking a rounded corner style.
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.RoundedCornerEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Resco.Drawing.Design.RoundedCornerEditor"/> class. 
+            </summary>
+        </member>
+        <member name="M:Resco.Drawing.Design.RoundedCornerEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the given object value using the editor style provided by the <see cref="M:Resco.Drawing.Design.RoundedCornerEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)"/> method.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that can be used to gain additional context information.</param>
+            <param name="provider">An <see cref="T:System.IServiceProvider"/> through which editing services may be obtained.</param>
+            <param name="value">An instance of the value being edited.</param>
+            <returns>The new value of the object. If the value of the object has not changed, this should return the same object it was passed.</returns>
+        </member>
+        <member name="M:Resco.Drawing.Design.RoundedCornerEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets the editing style of the <see cref="M:Resco.Drawing.Design.RoundedCornerEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)"/> method. 
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that can be used to gain additional context information.</param>
+            <returns>An enum value indicating the provided editing style.</returns>
+        </member>
+    </members>
+</doc>

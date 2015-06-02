@@ -1,0 +1,9 @@
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\bin\Debug\DatabaseAccessTest.exe
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\bin\Debug\DatabaseAccessTest.pdb
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\DatabaseAccessTest.Form1.resources
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\DatabaseAccessTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\DatabaseAccessTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\DatabaseAccessTest.exe
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\obj\Debug\DatabaseAccessTest.pdb
+E:\Exercise\TestReadAppSetting\DatabaseAccessTest\bin\Debug\testDatabase.sdf

@@ -1,0 +1,9 @@
+E:\Exercise\VPowerStatus\VPowerStatus\bin\Debug\VPowerStatus.exe.config
+E:\Exercise\VPowerStatus\VPowerStatus\bin\Debug\VPowerStatus.exe
+E:\Exercise\VPowerStatus\VPowerStatus\bin\Debug\VPowerStatus.pdb
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.PowerStatusBrowserForm.resources
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.Properties.Resources.resources
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.csproj.GenerateResource.Cache
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.exe
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.pdb
+E:\Exercise\VPowerStatus\VPowerStatus\obj\Debug\VPowerStatus.csprojResolveAssemblyReference.cache

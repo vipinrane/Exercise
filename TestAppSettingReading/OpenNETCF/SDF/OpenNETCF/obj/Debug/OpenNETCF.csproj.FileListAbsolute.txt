@@ -1,0 +1,15 @@
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\bin\Debug\OpenNETCF.dll
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\bin\Debug\OpenNETCF.pdb
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\bin\Debug\OpenNETCF.xml
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\obj\Debug\OpenNETCF.dll
+E:\Projects\EndirePro\Downloaded\SDF 2.3 Full Source\OpenNETCF\OpenNETCF\obj\Debug\OpenNETCF.pdb
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.dll
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.pdb
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.xml
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.Configuration.dll
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.Configuration.pdb
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\bin\Debug\OpenNETCF.Configuration.xml
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.dll
+E:\Exercise\TestAppSettingReading\OpenNETCF\SDF\OpenNETCF\obj\Debug\OpenNETCF.pdb

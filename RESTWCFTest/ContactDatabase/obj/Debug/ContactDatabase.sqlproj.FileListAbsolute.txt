@@ -1,0 +1,9 @@
+E:\Exercise\RESTWCFTest\ContactDatabase\bin\Debug\ContactDatabase.dacpac
+E:\Exercise\RESTWCFTest\ContactDatabase\bin\Debug\ContactDatabase.dll
+E:\Exercise\RESTWCFTest\ContactDatabase\bin\Debug\ContactDatabase.pdb
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\ContactDatabase.dll
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\ContactDatabase.pdb
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\Model.xml
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\refactor.xml
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\postdeploy.sql
+E:\Exercise\RESTWCFTest\ContactDatabase\obj\Debug\predeploy.sql

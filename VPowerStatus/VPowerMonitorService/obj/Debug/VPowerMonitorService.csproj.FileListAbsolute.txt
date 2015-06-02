@@ -1,0 +1,12 @@
+E:\Exercise\VPowerStatus\VPowerMonitorService\bin\Debug\VPowerMonitorService.exe.config
+E:\Exercise\VPowerStatus\VPowerMonitorService\bin\Debug\VPowerMonitorService.exe
+E:\Exercise\VPowerStatus\VPowerMonitorService\bin\Debug\VPowerMonitorService.pdb
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.PowerMonitor.resources
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.csproj.GenerateResource.Cache
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.exe
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.pdb
+E:\Exercise\VPowerStatus\VPowerMonitorService\bin\Debug\VPowerMonitorService.exe.manifest
+E:\Exercise\VPowerStatus\VPowerMonitorService\bin\Debug\VPowerMonitorService.application
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.exe.manifest
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.application
+E:\Exercise\VPowerStatus\VPowerMonitorService\obj\Debug\VPowerMonitorService.csprojResolveAssemblyReference.cache

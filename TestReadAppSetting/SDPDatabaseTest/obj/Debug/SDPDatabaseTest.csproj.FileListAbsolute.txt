@@ -1,0 +1,11 @@
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\SDPDatabaseTest.Form1.resources
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\SDPDatabaseTest.Properties.Resources.resources
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\SDPDatabaseTest.csproj.GenerateResource.Cache
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\bin\Debug\DytrexLoggingDB.sdf
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\bin\Debug\SDPDatabaseTest.exe
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\bin\Debug\SDPDatabaseTest.pdb
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\SDPDatabaseTest.exe
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\obj\Debug\SDPDatabaseTest.pdb
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\bin\Debug\log4net.dll
+E:\Exercise\TestReadAppSetting\SDPDatabaseTest\bin\Debug\log4net.pdb

@@ -1,0 +1,15 @@
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\ScanAPIDLLWM.dll
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\SmartDeviceProject1.exe
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\SmartDeviceProject1.pdb
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\Resco.Core.CF3.dll
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\Resco.UIElements.CF3.dll
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\ScanAPIManagedWM.dll
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\Resco.Core.CF3.xml
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\bin\Debug\Resco.UIElements.CF3.xml
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.Form1.resources
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.Properties.Resources.resources
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.SoundConfigTest.resources
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.csproj.GenerateResource.Cache
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.exe
+E:\Exercise\WindowsFormsApplication2\SmartDeviceProject1\obj\Debug\SmartDeviceProject1.pdb

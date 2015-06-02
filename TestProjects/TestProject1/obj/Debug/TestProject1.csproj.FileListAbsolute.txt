@@ -1,0 +1,5 @@
+E:\Exercise\TestProjects\TestProject1\bin\Debug\TestProject1.dll
+E:\Exercise\TestProjects\TestProject1\bin\Debug\TestProject1.pdb
+E:\Exercise\TestProjects\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+E:\Exercise\TestProjects\TestProject1\obj\Debug\TestProject1.dll
+E:\Exercise\TestProjects\TestProject1\obj\Debug\TestProject1.pdb

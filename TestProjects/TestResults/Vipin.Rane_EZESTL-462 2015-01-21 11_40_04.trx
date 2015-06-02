@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="fa81d302-48c8-48f7-a9f4-32cf86b5d5e9" name="Vipin.Rane@EZESTL-462 2015-01-21 11:40:04" runUser="EZEST\Vipin.Rane" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="40fb606d-1489-4529-a6cd-7c659ccbe1f6">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="E:\Exercise\TestProjects\TestResults\Vipin.Rane_EZESTL-462 2015-01-21 11_40_04" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2015-01-21T11:40:04.4978199+05:30" queuing="2015-01-21T11:40:04.6978219+05:30" start="2015-01-21T11:40:04.7178221+05:30" finish="2015-01-21T11:40:04.8178231+05:30" />
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="e:\exercise\testprojects\testproject1\bin\debug\testproject1.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1dc797c4-e74e-4fc0-a4ae-7e0c93508834" />
+      <TestMethod codeBase="E:\Exercise\TestProjects\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="e:\exercise\testprojects\testproject2\bin\debug\testproject2.dll" id="b96f2172-51f7-3767-573a-01ebaf3120be">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2ffd4c3e-9931-471c-87fe-a0a344a9c2db" />
+      <TestMethod codeBase="E:\Exercise\TestProjects\TestProject2\bin\Debug\TestProject2.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject2.UnitTest1, TestProject2" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="1dc797c4-e74e-4fc0-a4ae-7e0c93508834" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b96f2172-51f7-3767-573a-01ebaf3120be" executionId="2ffd4c3e-9931-471c-87fe-a0a344a9c2db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1dc797c4-e74e-4fc0-a4ae-7e0c93508834" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="EZESTL-462" duration="00:00:00.0004363" startTime="2015-01-21T11:40:04.7378223+05:30" endTime="2015-01-21T11:40:04.7778227+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2ffd4c3e-9931-471c-87fe-a0a344a9c2db" testId="b96f2172-51f7-3767-573a-01ebaf3120be" testName="TestMethod1" computerName="EZESTL-462" duration="00:00:00.0002895" startTime="2015-01-21T11:40:04.7778227+05:30" endTime="2015-01-21T11:40:04.8078230+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
